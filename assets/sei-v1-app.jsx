@@ -27,9 +27,8 @@ const C = {
     nav: [
       { id: "room",    label: "客室" },
       { id: "concept", label: "コンセプト" },
-      { id: "nearby",  label: "神倉・速玉" },
+      { id: "nearby",  label: "周辺" },
       { id: "otou",    label: "御燈祭", overlay: "otou" },
-      { id: "hayatama", label: "速玉大社", overlay: "hayatama" },
       { id: "kinegadani", label: "貴祷谷社", overlay: "kinegadani" },
       { id: "access",  label: "アクセス" },
       { id: "book",    label: "予約" },
@@ -140,14 +139,15 @@ const C = {
       nagiClosed: "日曜・1/1・1/3・1/4休",
       nagiPrice: "大人 400円 / 中人 140円 / 小人 80円",
       cards: [
-        { src: "web/nearby/restaurant-tanukiya.jpg", name: "たぬき屋",          dist: "徒歩2分",   desc: "うどん・そば・めはり寿司",  addr: "和歌山県新宮市千窂1-1-50",   tel: "0735-22-2978", hours: "11:00–20:00",        closed: "水曜休" },
-        { src: "web/nearby/restaurant-yokaya.jpg",   name: "陽香屋",          dist: "徒歩2分",   desc: "ラーメン・深夜2時まで",   addr: "和歌山県新宮市千窂2-4-17",   tel: "0735-21-7920", hours: "11:30–13:30 / 17:30–2:00", closed: "月曜休" },
-        { src: "web/nearby/restaurant-matsusaka.jpg", name: "ビフテキ松坂",     dist: "徒歩10分",  desc: "ステーキ・夜のみ",      addr: "和歌山県新宮市大橋通4-1-13", tel: "0735-22-9468", hours: "17:00–21:00",        closed: "—" },
-        { src: "web/nearby/restaurant-manten.jpg",   name: "まんてん",           dist: "徒歩12分",  desc: "お好み焼き・鉄板焼き",       addr: "和歌山県新宮市新宮542-1",      tel: "0735-23-9277", hours: "—",                    closed: "日曜休" },
-        { src: "web/nearby/familymart.jpg",          name: "ファミリーマート 千窂三丁目店", dist: "徒歩3分", desc: "コンビニ、24時間",     addr: "和歌山県新宮市千窂3丁目",      tel: "—",            hours: "24時間",             closed: "—" },
-        { src: "web/nearby/shop-organic-marche.jpg", name: "自然食品 コケコッコ",  dist: "徒歩3分",   desc: "無農薬野菜・天然酵母パン", addr: "和歌山県新宮市千窂1-1-45",   tel: "0735-23-0423", hours: "—",                    closed: "—" },
-        { src: "web/nearby/shop-liquor.jpg",         name: "堀酒店",            dist: "徒歩4分",   desc: "酒店・地酒",            addr: "和歌山県新宮市千窂1-8-13",   tel: "0735-22-5353", hours: "～19:00",              closed: "—" },
-        { src: "web/nearby/nachi-falls.jpg",         name: "那智の滝",          dist: "車で約30分", desc: "熊野三山・名瀑",          addr: "和歌山県那智勝浦町那智山",    tel: "—",            hours: "—",                    closed: "—" }
+        { src: "web/nearby/restaurant-yokaya.jpg",   name: "陽香屋",          dist: "徒歩2分",  desc: "ラーメン" },
+        { src: "web/nearby/restaurant-matsusaka.jpg", name: "ビフテキ 松坂",     dist: "徒歩10分", desc: "ステーキ・ビフテキ" },
+        { src: "web/nearby/restaurant-tanukiya.jpg", name: "たぬき屋",         dist: "徒歩5分",  desc: "そば・うどん" },
+        { src: "web/nearby/restaurant-manten.jpg",   name: "浪花っ子まんてん",  dist: "徒歩6分",  desc: "定食・中華" },
+        { src: "web/nearby/familymart.jpg",          name: "ファミリーマート", dist: "徒歩3分",  desc: "コンビニ（24時間）" },
+        { src: "web/nearby/shop-organic-marche.jpg", name: "Organic Marche",  dist: "徒歩8分",  desc: "オーガニック食品店" },
+        { src: "web/nearby/shop-liquor.jpg",         name: "酒店",             dist: "徒歩4分",  desc: "酒類" },
+        { src: "web/nearby/shop-kumaheiyo.jpg",      name: "熊平洋",           dist: "徒歩7分",  desc: "お土産・生鮮" },
+        { src: "web/nearby/nachi-falls.jpg",         name: "那智の滝",         dist: "車で約50分", desc: "観光スポット" }
       ]
     },
     access: {
@@ -214,9 +214,8 @@ const C = {
     nav: [
       { id: "room",    label: "Room" },
       { id: "concept", label: "Philosophy" },
-      { id: "nearby",  label: "Shrines" },
+      { id: "nearby",  label: "Neighborhood" },
       { id: "otou",    label: "Fire Festival", overlay: "otou" },
-      { id: "hayatama", label: "Hayatama-Taisha", overlay: "hayatama" },
       { id: "kinegadani", label: "Kinegadani-sha", overlay: "kinegadani" },
       { id: "access",  label: "Access" },
       { id: "book",    label: "Reserve" },
@@ -327,14 +326,15 @@ const C = {
       nagiClosed: "Closed Sundays · Jan 1, 3, 4",
       nagiPrice: "Adults ¥400 / Ages 6–12 ¥140 / under 6 ¥80",
       cards: [
-        { src: "web/nearby/restaurant-tanukiya.jpg", name: "Tanukiya",         dist: "2 min walk",  desc: "Udon, soba, mehari-zushi", addr: "1-1-50 Senbo, Shingū",        tel: "0735-22-2978", hours: "11:00–20:00",        closed: "Wed" },
-        { src: "web/nearby/restaurant-yokaya.jpg",   name: "Yōkaya",          dist: "2 min walk",  desc: "Ramen, until 2 am",       addr: "2-4-17 Senbo, Shingū",        tel: "0735-21-7920", hours: "11:30–13:30 / 17:30–2:00", closed: "Mon" },
-        { src: "web/nearby/restaurant-matsusaka.jpg", name: "Matsusaka",       dist: "10 min walk", desc: "Steak, dinner only",      addr: "4-1-13 Ōhashi-dōri, Shingū", tel: "0735-22-9468", hours: "17:00–21:00",        closed: "—" },
-        { src: "web/nearby/restaurant-manten.jpg",   name: "Manten",           dist: "12 min walk", desc: "Okonomiyaki",             addr: "542-1 Shingū, Shingū",       tel: "0735-23-9277", hours: "—",                    closed: "Sun" },
-        { src: "web/nearby/familymart.jpg",          name: "FamilyMart Senbo 3-chome", dist: "3 min walk", desc: "Convenience, 24h",  addr: "Senbo 3-chōme, Shingū",       tel: "—",            hours: "24h",                  closed: "—" },
-        { src: "web/nearby/shop-organic-marche.jpg", name: "Cocekokko",        dist: "3 min walk",  desc: "Organic produce & bakery", addr: "1-1-45 Senbo, Shingū",       tel: "0735-23-0423", hours: "—",                    closed: "—" },
-        { src: "web/nearby/shop-liquor.jpg",         name: "Hori Sake Shop",    dist: "4 min walk",  desc: "Local sake & spirits",    addr: "1-8-13 Senbo, Shingū",       tel: "0735-22-5353", hours: "– 19:00",            closed: "—" },
-        { src: "web/nearby/nachi-falls.jpg",         name: "Nachi Falls",       dist: "30 min by car", desc: "Kumano Sanzan, famous waterfall", addr: "Nachisan, Nachikatsuura", tel: "—", hours: "—", closed: "—" }
+        { src: "web/nearby/restaurant-yokaya.jpg",   name: "Yōkaya",          dist: "2 min walk",  desc: "Ramen" },
+        { src: "web/nearby/restaurant-matsusaka.jpg", name: "Matsusaka",        dist: "10 min walk", desc: "Steak / Bifteck" },
+        { src: "web/nearby/restaurant-tanukiya.jpg", name: "Tanukiya",         dist: "5 min walk",  desc: "Soba & Udon" },
+        { src: "web/nearby/restaurant-manten.jpg",   name: "Manten",            dist: "6 min walk",  desc: "Set meals" },
+        { src: "web/nearby/familymart.jpg",          name: "FamilyMart",        dist: "3 min walk",  desc: "Convenience (24h)" },
+        { src: "web/nearby/shop-organic-marche.jpg", name: "Organic Marche",    dist: "8 min walk",  desc: "Organic grocer" },
+        { src: "web/nearby/shop-liquor.jpg",         name: "Liquor Shop",       dist: "4 min walk",  desc: "Sake & spirits" },
+        { src: "web/nearby/shop-kumaheiyo.jpg",      name: "Kumaheiyō",         dist: "7 min walk",  desc: "Souvenirs & produce" },
+        { src: "web/nearby/nachi-falls.jpg",         name: "Nachi Falls",       dist: "50 min by car", desc: "Sightseeing" }
       ]
     },
     access: {
@@ -574,44 +574,32 @@ function RoomSection({ lang, layout = "strip", onOpen }) {
   const c = C[lang];
   const r = c.room;
   return (
-    <section className="ed-section" id="room">
-      <div className="ed-inner">
-        <div className="ed-head reveal">
-          <div className="ed-head__left">
-            <div className="ed-head__num"><span className="num">01</span><span className="sep">/</span>Room</div>
-            <h2 className="ed-head__ja"><L lang={lang}>{c.sectionHead.room.title}</L></h2>
-          </div>
-          <p className="ed-head__lede"><L lang={lang}>{c.sectionHead.room.lede}</L></p>
-        </div>
+    <section className="k-sec k-room" id="room" data-rooms={layout}>
+      <div className="k-sec__inner">
+        <SecHead data={c.sectionHead.room} lang={lang} />
 
-        <div className="ed-media reveal" onClick={() => onOpen(0)} style={{ cursor: "zoom-in" }}>
-          <img src={ROOM_IMAGES[0].src} alt="" />
-        </div>
-
-        <div className="ed-body reveal">
-          <div className="ed-body__copy">
-            <p><L lang={lang}>{r.lede}</L></p>
-            {r.body.map((p, i) => <p key={i}><L lang={lang}>{p}</L></p>)}
-          </div>
-          <div className="ed-body__aside">
-            <div className="ed-meta">
-              <div className="ed-meta__row">
-                <span className="ed-meta__lbl">{lang === "ja" ? "1日1組" : "Daily"}</span>
-                <span className="ed-meta__val">{lang === "ja" ? "1室・最大5〜6名" : "1 room · up to 5–6"}</span>
-              </div>
-              <div className="ed-meta__row">
-                <span className="ed-meta__lbl">{lang === "ja" ? "素泊まり" : "Room only"}</span>
-                <span className="ed-meta__val"><span className="price">¥9,000</span>〜</span>
-              </div>
-              <div className="ed-meta__row">
-                <span className="ed-meta__lbl">{lang === "ja" ? "床材" : "Floors"}</span>
-                <span className="ed-meta__val">{lang === "ja" ? "ヒノキ・全面張替" : "Hinoki, fully renewed"}</span>
-              </div>
+        <div className="k-room__lead">
+          <div className="k-room__copy reveal">
+            <div>
+              <h3><L lang={lang}>{r.title}</L></h3>
+              <p><L lang={lang}>{r.lede}</L></p>
+              {r.body.map((p, i) => <p key={i}><L lang={lang}>{p}</L></p>)}
+            </div>
+            <div className="k-room__stats">
+              {r.stats.map((s, i) => (
+                <div className="k-room__stat" key={i}>
+                  <div className="num">{s.num}<small>{s.unit}</small></div>
+                  <span className="lbl">{s.lbl}</span>
+                </div>
+              ))}
             </div>
           </div>
+          <figure className="k-room__hero reveal" data-delay="200" onClick={() => onOpen(0)}>
+            <img src={ROOM_IMAGES[0].src} alt="" />
+          </figure>
         </div>
 
-        <div className="k-room__strip" data-rooms={layout} style={{ marginTop: "clamp(40px, 5vw, 70px)" }}>
+        <div className="k-room__strip">
           {ROOM_IMAGES.map((img, i) => (
             <button key={i} onClick={() => onOpen(i)} aria-label={img.ja} className={i === 0 ? "is-first" : ""}>
               <div className="k-room__strip__media"><img src={img.src} alt="" loading="lazy" /></div>
@@ -654,337 +642,152 @@ function ConceptSection({ lang }) {
   const c = C[lang];
   const k = c.concept;
   return (
-    <section className="ed-section ed-section--alt" id="concept">
-      <div className="ed-inner">
-        <div className="ed-head reveal">
-          <div className="ed-head__left">
-            <div className="ed-head__num"><span className="num">02</span><span className="sep">/</span>Philosophy</div>
-            <h2 className="ed-head__ja"><L lang={lang}>{c.sectionHead.concept.title}</L></h2>
+    <section className="k-sec k-concept" id="concept">
+      <div className="k-sec__inner">
+        <SecHead data={c.sectionHead.concept} lang={lang} />
+        <div className="k-concept__grid">
+          <div className="k-concept__logo reveal">
+            <img src="web/kamikura-shrine/shimenawa.jpg" alt="" />
           </div>
-          <p className="ed-head__lede"><L lang={lang}>{c.sectionHead.concept.lede}</L></p>
-        </div>
-
-        <div className="ed-media reveal">
-          <img src="web/kamikura-shrine/shimenawa.jpg" alt="" />
-        </div>
-
-        <div className="ed-body reveal">
-          <div className="ed-body__copy">
-            <blockquote className="quote">
+          <div className="k-concept__body reveal" data-delay="100">
+            <blockquote className="k-concept__quote">
               <L lang={lang}>{k.quote[0]}</L>
               <br />
               <L lang={lang}>{k.quote[1]}</L>
             </blockquote>
-            <div className="attrib">{k.attrib}</div>
-            {k.body.map((p, i) => <p key={i}><L lang={lang}>{p}</L></p>)}
+            <div className="k-concept__attrib">{k.attrib}</div>
+            <div className="k-concept__prose">
+              {k.body.map((p, i) => <p key={i}><L lang={lang}>{p}</L></p>)}
+            </div>
           </div>
-          <div className="ed-body__aside"></div>
         </div>
       </div>
     </section>
   );
 }
 
-/* ── Kamikura / Nagi / Shops blocks (ex-Nearby) ─────────── */
-function KamikuraBlock({ lang }) {
+/* ── USP ──────────────────────────────────────────────────── */
+function UspSection({ lang }) {
+  const c = C[lang];
+  return (
+    <section className="k-sec" id="usp">
+      <div className="k-sec__inner">
+        <SecHead data={c.sectionHead.usp} lang={lang} />
+        <div className="k-usp__grid">
+          {c.usp.map((u, i) => (
+            <div className="k-usp__col reveal" key={i} data-delay={(i * 100).toString()}>
+              {u.img && (
+                <div className="k-usp__media">
+                  <img src={u.img} alt="" loading="lazy" />
+                </div>
+              )}
+              <div className="k-usp__num">{u.num}</div>
+              <h4><L lang={lang}>{u.title}</L></h4>
+              <p><L lang={lang}>{u.body}</L></p>
+              <div className="k-usp__meta">
+                <span className="num-em">{u.meta}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ── Nearby ───────────────────────────────────────────────── */
+function NearbySection({ lang }) {
   const c = C[lang];
   const n = c.nearby;
   return (
-    <section className="ed-section" id="nearby">
-      <div className="ed-inner">
-        <div className="ed-head reveal">
-          <div className="ed-head__left">
-            <div className="ed-head__num"><span className="num">03</span><span className="sep">/</span>Kamikura Shrine</div>
-            <h2 className="ed-head__ja">{n.featureTitle}</h2>
-          </div>
-          <p className="ed-head__lede">{lang === "ja" ? "熊野古道のはじまりの地。" : "The starting place of the Kumano Kodō."}</p>
-        </div>
-        <div className="ed-media reveal">
-          <img src="web/kamikura-shrine/view-2.jpg" alt="" />
-        </div>
-        <div className="ed-body reveal">
-          <div className="ed-body__copy">
+    <section className="k-sec" id="nearby">
+      <div className="k-sec__inner">
+        <SecHead data={c.sectionHead.nearby} lang={lang} />
+
+        <div className="k-nearby__feature reveal">
+          <img src="web/kamikura-shrine/main-hall.jpg" alt="" />
+          <div className="k-nearby__feature__copy">
+            <div className="label">{n.featureLabel}</div>
+            <h3><L lang={lang}>{n.featureTitle}</L></h3>
             <p><L lang={lang}>{n.featureBody}</L></p>
-          </div>
-          <div className="ed-body__aside">
-            <div className="ed-meta">
-              <div className="ed-meta__row"><span className="ed-meta__lbl">{lang === "ja" ? "距離" : "Distance"}</span><span className="ed-meta__val">{n.featureDist}</span></div>
-              <div className="ed-meta__row"><span className="ed-meta__lbl">{lang === "ja" ? "石段" : "Steps"}</span><span className="ed-meta__val">538</span></div>
-              <div className="ed-meta__row"><span className="ed-meta__lbl">{lang === "ja" ? "御祭神" : "Deities"}</span><span className="ed-meta__val">{lang === "ja" ? "熊野権現" : "Kumano-gongen"}</span></div>
-            </div>
+            <div className="distance">{n.featureDist}</div>
           </div>
         </div>
-      </div>
-    </section>
-  );
-}
 
-function HayatamaBlock({ lang, onOpenSpecial }) {
-  const ja = lang === "ja";
-  return (
-    <section className="ed-section ed-section--alt">
-      <div className="ed-inner">
-        <div className="ed-head reveal">
-          <div className="ed-head__left">
-            <div className="ed-head__num"><span className="num">04</span><span className="sep">/</span>Hayatama-Taisha</div>
-            <h2 className="ed-head__ja">{ja ? "熊野速玉大社" : "Hayatama-Taisha"}</h2>
-          </div>
-          <p className="ed-head__lede">{ja ? "熊野三山の一社、世界遺産。" : "Three-Mountain Shrine · World Heritage"}</p>
-        </div>
-        <div className="ed-media reveal" onClick={() => onOpenSpecial("hayatama")} style={{ cursor: "pointer" }}>
-          <img src="web/hayatama/hayatama-gate.jpg" alt="" />
-        </div>
-        <div className="ed-body reveal">
-          <div className="ed-body__copy">
-            <p>{ja
-              ? "神倉のゴトビキ岩に降臨した熊野の神を、この地にお迎えして造られました。神倉が「元宮」、速玉大社が「新宮」と呼ばれ、それが新宮市の地名の由来とも伝えられます。"
-              : "Built to receive the Kumano deities after their descent on Kamikura. Kamikura is the 'old shrine', Hayatama-Taisha the 'new shrine' — the origin of the city's name, Shingū."}</p>
-          </div>
-          <div className="ed-body__aside">
-            <button className="ed-cta" type="button" onClick={() => onOpenSpecial("hayatama")}>
-              {ja ? "速玉大社 特設ページへ" : "Open the special page"} <span className="arrow">→</span>
-            </button>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function NagiBlock({ lang }) {
-  const c = C[lang];
-  const n = c.nearby;
-  return (
-    <section className="ed-section ed-section--alt">
-      <div className="ed-inner">
-        <div className="ed-head reveal">
-          <div className="ed-head__left">
-            <div className="ed-head__num"><span className="num">04</span><span className="sep">/</span>Nagi-no-yu</div>
-            <h2 className="ed-head__ja">{n.nagiTitle}</h2>
-          </div>
-          <p className="ed-head__lede">{lang === "ja" ? "歩いていける、市民の銭湯。" : "The local public bathhouse, on foot."}</p>
-        </div>
-        <div className="ed-media reveal">
+        <div className="k-nearby__feature k-nearby__feature--right reveal">
           <img src="web/nagi-no-yu/nagi-no-yu-bath.jpg" alt="" />
-        </div>
-        <div className="ed-body reveal">
-          <div className="ed-body__copy">
+          <div className="k-nearby__feature__copy">
+            <div className="label">{n.nagiLabel}</div>
+            <h3><L lang={lang}>{n.nagiTitle}</L></h3>
             <p><L lang={lang}>{n.nagiBody}</L></p>
+            <ul className="k-nearby__feature__meta">
+              <li><span>{lang === "ja" ? "営業" : "Hours"}</span>{n.nagiHours}</li>
+              <li><span>{lang === "ja" ? "定休" : "Closed"}</span>{n.nagiClosed}</li>
+              <li><span>{lang === "ja" ? "料金" : "Fee"}</span>{n.nagiPrice}</li>
+            </ul>
+            <div className="distance">{n.nagiDist}</div>
           </div>
-          <div className="ed-body__aside">
-            <div className="ed-meta">
-              <div className="ed-meta__row"><span className="ed-meta__lbl">{lang === "ja" ? "距離" : "Distance"}</span><span className="ed-meta__val">{n.nagiDist}</span></div>
-              <div className="ed-meta__row"><span className="ed-meta__lbl">{lang === "ja" ? "営業" : "Hours"}</span><span className="ed-meta__val">{n.nagiHours}</span></div>
-              <div className="ed-meta__row"><span className="ed-meta__lbl">{lang === "ja" ? "定休" : "Closed"}</span><span className="ed-meta__val">{n.nagiClosed}</span></div>
-              <div className="ed-meta__row"><span className="ed-meta__lbl">{lang === "ja" ? "料金" : "Fee"}</span><span className="ed-meta__val">{n.nagiPrice}</span></div>
+        </div>
+
+        <div className="k-nearby__grid">
+          {n.cards.map((card, i) => (
+            <div className="k-nearby__card reveal" key={i} data-delay={((i % 3) * 100).toString()}>
+              <div className="k-nearby__card__media">
+                <img src={card.src} alt="" loading="lazy" />
+              </div>
+              <div className="k-nearby__card__row">
+                <div className="k-nearby__card__name">{card.name}</div>
+                <div className="k-nearby__card__dist">{card.dist}</div>
+              </div>
+              <div className="k-nearby__card__desc"><L lang={lang}>{card.desc}</L></div>
             </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>
   );
 }
-
-function OtouBlock({ lang, onOpenSpecial }) {
-  const o = C[lang].otou;
-  return (
-    <section className="ed-section ed-section--ink">
-      <div className="ed-inner">
-        <div className="ed-head reveal">
-          <div className="ed-head__left">
-            <div className="ed-head__num"><span className="num">05</span><span className="sep">/</span>Otō Matsuri</div>
-            <h2 className="ed-head__ja">{o.title}</h2>
-          </div>
-          <p className="ed-head__lede">{o.date}</p>
-        </div>
-        <div className="ed-media reveal" onClick={() => onOpenSpecial("otou")} style={{ cursor: "pointer" }}>
-          <img src="web/festival/otou-matsuri.jpg" alt="" />
-        </div>
-        <div className="ed-body reveal">
-          <div className="ed-body__copy">
-            <p><L lang={lang}>{o.sub}</L></p>
-          </div>
-          <div className="ed-body__aside">
-            <button className="ed-cta ed-cta--ghost" type="button" onClick={() => onOpenSpecial("otou")}>
-              {o.cta} <span className="arrow">→</span>
-            </button>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function KinegadaniBlock({ lang, onOpenSpecial }) {
-  const k = C[lang].kinegadani;
-  return (
-    <section className="ed-section">
-      <div className="ed-inner">
-        <div className="ed-head reveal">
-          <div className="ed-head__left">
-            <div className="ed-head__num"><span className="num">06</span><span className="sep">/</span>Kinegadani-sha</div>
-            <h2 className="ed-head__ja">{k.title}</h2>
-          </div>
-          <p className="ed-head__lede">{k.date}</p>
-        </div>
-        <div className="ed-media reveal" onClick={() => onOpenSpecial("kinegadani")} style={{ cursor: "pointer" }}>
-          <img src="web/kinegadani/kinegadani-shrine.jpg" alt="" />
-        </div>
-        <div className="ed-body reveal">
-          <div className="ed-body__copy">
-            <p><L lang={lang}>{k.sub}</L></p>
-          </div>
-          <div className="ed-body__aside">
-            <button className="ed-cta" type="button" onClick={() => onOpenSpecial("kinegadani")}>
-              {k.cta} <span className="arrow">→</span>
-            </button>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function ShopsBlock({ lang }) {
-  const cards = C[lang].nearby.cards;
-  const [hovered, setHovered] = useState(null);
-  const [modalIdx, setModalIdx] = useState(null);
-  const isMobile = typeof window !== "undefined" && window.matchMedia("(max-width: 720px)").matches;
-
-  const handleClick = (i) => { setModalIdx(i); };
-  const active = hovered != null ? cards[hovered] : null;
-  const modal = modalIdx != null ? cards[modalIdx] : null;
-
-  return (
-    <section className="ed-section ed-section--alt">
-      <div className="ed-inner">
-        <div className="ed-head reveal">
-          <div className="ed-head__left">
-            <div className="ed-head__num"><span className="num">07</span><span className="sep">/</span>Around</div>
-            <h2 className="ed-head__ja">{lang === "ja" ? "周辺の飲食と買物" : "Eat & shop nearby"}</h2>
-          </div>
-          <p className="ed-head__lede">{lang === "ja" ? "徒歩圏内のお店。素泊まり前提でどうぞ。" : "Within walking distance — room-only, by design."}</p>
-        </div>
-
-        <div className="ed-shops__wrap">
-          <ul className="ed-shops__list reveal">
-            {cards.map((card, i) => (
-              <li key={i}
-                  style={{ "--shop-bg": `url("../${card.src}")` }}
-                  onMouseEnter={() => setHovered(i)}
-                  onMouseLeave={() => setHovered(null)}
-                  onClick={() => handleClick(i)}
-                  className={hovered === i ? "is-hover" : ""}>
-                <span className="name">{card.name}</span>
-                <span className="cat">{card.desc}</span>
-                <span className="dist">{card.dist}</span>
-              </li>
-            ))}
-          </ul>
-          <div className={"ed-shops__preview" + (active ? " is-visible" : "")}>
-            {cards.map((card, i) => (
-              <div key={i} className={"ed-shops__preview-card" + (hovered === i ? " is-on" : "")}>
-                <div className="ed-shops__preview-media">
-                  <img src={card.src} alt="" loading="lazy" />
-                </div>
-                <div className="ed-shops__preview-meta">
-                  <div className="name">{card.name}</div>
-                  <div className="sub">{card.desc} · {card.dist}</div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      <div className={"ed-shops__modal" + (modalIdx != null ? " is-open" : "")} onClick={() => setModalIdx(null)}>
-        <button className="ed-shops__modal-close" onClick={() => setModalIdx(null)} aria-label="close">
-          <span></span><span></span>
-        </button>
-        <div className="ed-shops__modal-inner" onClick={(e) => e.stopPropagation()}>
-          {modal && (
-            <>
-              <div className="ed-shops__modal-media">
-                <img src={modal.src} alt="" />
-              </div>
-              <div className="ed-shops__modal-body">
-                <h4>{modal.name}</h4>
-                <div className="meta">{modal.desc} · {modal.dist}</div>
-                {(modal.hours !== "—" || modal.closed !== "—" || modal.tel !== "—") && (
-                  <ul className="ed-shops__modal-meta">
-                    {modal.addr && <li><span>{lang === "ja" ? "住所" : "Address"}</span>{modal.addr}</li>}
-                    {modal.hours && modal.hours !== "—" && <li><span>{lang === "ja" ? "営業" : "Hours"}</span>{modal.hours}</li>}
-                    {modal.closed && modal.closed !== "—" && <li><span>{lang === "ja" ? "定休" : "Closed"}</span>{modal.closed}</li>}
-                    {modal.tel && modal.tel !== "—" && <li><span>{lang === "ja" ? "電話" : "Tel"}</span><a href={"tel:" + modal.tel.replace(/-/g, "")}>{modal.tel}</a></li>}
-                  </ul>
-                )}
-                <a className="ed-cta" href={"https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(modal.addr || modal.name + " 和歌山県新宮市")} target="_blank" rel="noreferrer">
-                  {lang === "ja" ? "Googleマップで開く" : "Open in Google Maps"} <span className="arrow">→</span>
-                </a>
-              </div>
-            </>
-          )}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* (NearbySection removed — split into KamikuraBlock, NagiBlock, ShopsBlock) */
 
 /* ── Access ───────────────────────────────────────────────── */
 function AccessSection({ lang }) {
   const c = C[lang];
   const a = c.access;
   return (
-    <section className="ed-section" id="access">
-      <div className="ed-inner">
-        <div className="ed-head reveal">
-          <div className="ed-head__left">
-            <div className="ed-head__num"><span className="num">08</span><span className="sep">/</span>Access</div>
-            <h2 className="ed-head__ja">{c.sectionHead.access.title}</h2>
+    <section className="k-sec k-access" id="access">
+      <div className="k-sec__inner">
+        <SecHead data={c.sectionHead.access} lang={lang} />
+        <div className="k-access__grid">
+          <div className="k-access__map reveal">
+            <iframe
+              src="https://maps.google.com/maps?q=%E5%92%8C%E6%AD%8C%E5%B1%B1%E7%9C%8C%E6%96%B0%E5%AE%AE%E5%B8%82%E5%8D%83%E7%A9%821-8-5&t=&z=15&ie=UTF8&iwloc=&output=embed"
+              loading="lazy" title="map"></iframe>
+            <div className="k-access__map__pin">
+              {a.pin[0]}<br/>
+              <span className="en">{a.pin[1]}</span>
+            </div>
           </div>
-          <p className="ed-head__lede">{c.sectionHead.access.lede}</p>
-        </div>
-
-        <div className="ed-media reveal" style={{ aspectRatio: "16/8", background: "var(--ink)" }}>
-          <iframe
-            src="https://maps.google.com/maps?q=%E5%92%8C%E6%AD%8C%E5%B1%B1%E7%9C%8C%E6%96%B0%E5%AE%AE%E5%B8%82%E5%8D%83%E7%A9%821-8-5&t=&z=15&ie=UTF8&iwloc=&output=embed"
-            loading="lazy" title="map"
-            style={{ width: "100%", height: "100%", border: 0, filter: "grayscale(.3) contrast(1.02)" }}></iframe>
-          <div className="ed-media__cap" style={{ background: "var(--paper)", color: "var(--ink)", borderLeft: "3px solid var(--vermillion)", paddingLeft: 12 }}>
-            {a.pin[0]} · {a.pin[1]}
-          </div>
-        </div>
-
-        <div className="ed-body reveal">
-          <div className="ed-body__copy">
+          <div className="k-access__panel reveal" data-delay="100">
             {a.rows.map((row, i) => (
-              <div key={i} style={{ paddingBottom: 18, marginBottom: 18, borderBottom: "1px solid var(--hairline)" }}>
-                <div style={{ fontFamily: "var(--serif-en)", fontSize: 11, letterSpacing: ".3em", textTransform: "uppercase", color: "var(--moss)", marginBottom: 8 }}>{row.letter}{row.label !== row.letter ? "  ·  " + row.label : ""}</div>
-                <h5 style={{ fontFamily: "var(--mincho)", fontSize: 16, margin: "0 0 6px", letterSpacing: ".06em", fontWeight: 500 }}><L lang={lang}>{row.head}</L></h5>
-                <p style={{ fontSize: 14, lineHeight: 1.85, color: "var(--ink-soft)", margin: 0 }}><L lang={lang}>{row.body}</L></p>
-                {row.table && (
-                  <table className="k-bus-table" style={{ marginTop: 14 }}>
-                    <thead>
-                      <tr><th>{a.busTableHead[0]}</th><th>{a.busTableHead[1]}</th></tr>
-                    </thead>
-                    <tbody>
-                      {BUS_FROM.map((t, j) => (
-                        <tr key={j}><td>{t}</td><td>{BUS_TO[j]}</td></tr>
-                      ))}
-                    </tbody>
-                  </table>
-                )}
+              <div className="k-access__row" key={i}>
+                <div className="k-access__row__icon">{row.letter}<br/><span style={{ fontFamily: "var(--mincho)", fontSize: 11, letterSpacing: ".3em", color: "var(--ink-soft)" }}>{row.label}</span></div>
+                <div>
+                  <h5><L lang={lang}>{row.head}</L></h5>
+                  <p><L lang={lang}>{row.body}</L></p>
+                  {row.table && (
+                    <table className="k-bus-table">
+                      <thead>
+                        <tr><th>{a.busTableHead[0]}</th><th>{a.busTableHead[1]}</th></tr>
+                      </thead>
+                      <tbody>
+                        {BUS_FROM.map((t, j) => (
+                          <tr key={j}><td>{t}</td><td>{BUS_TO[j]}</td></tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  )}
+                </div>
               </div>
             ))}
-          </div>
-          <div className="ed-body__aside">
-            <div className="ed-meta">
-              <div className="ed-meta__row"><span className="ed-meta__lbl">{lang === "ja" ? "住所" : "Address"}</span><span className="ed-meta__val">{a.pin[1]}</span></div>
-              <div className="ed-meta__row"><span className="ed-meta__lbl">{lang === "ja" ? "駐車場" : "Parking"}</span><span className="ed-meta__val">{lang === "ja" ? "2台分" : "2 spaces"}</span></div>
-              <div className="ed-meta__row"><span className="ed-meta__lbl">{lang === "ja" ? "最寄駅" : "Station"}</span><span className="ed-meta__val">{lang === "ja" ? "JR新宮駅" : "Shingū (JR)"}</span></div>
-            </div>
           </div>
         </div>
       </div>
@@ -1298,12 +1101,8 @@ function App() {
       <IntroSection lang={lang} />
       <RoomSection lang={lang} layout={t.rooms} onOpen={openLB} />
       <ConceptSection lang={lang} />
-      <KamikuraBlock lang={lang} />
-      <HayatamaBlock lang={lang} onOpenSpecial={openSpecial} />
-      <NagiBlock lang={lang} />
-      <OtouBlock lang={lang} onOpenSpecial={openSpecial} />
-      <KinegadaniBlock lang={lang} onOpenSpecial={openSpecial} />
-      <ShopsBlock lang={lang} />
+      <NearbySection lang={lang} />
+      <SpecialsSection lang={lang} onOpenSpecial={openSpecial} />
       <AccessSection lang={lang} />
       <BookingSection lang={lang} />
       <Footer lang={lang} />
@@ -1314,9 +1113,6 @@ function App() {
       {window.FestivalOverlay && React.createElement(window.FestivalOverlay, {
         open: specialOpen === "otou", lang, onClose: closeSpecial
       }, window.FestivalContent && React.createElement(window.FestivalContent, { lang, onClose: closeSpecial }))}
-      {window.HayatamaContent && React.createElement(window.FestivalOverlay, {
-        open: specialOpen === "hayatama", lang, onClose: closeSpecial
-      }, React.createElement(window.HayatamaContent, { lang, onClose: closeSpecial }))}
       {window.FestivalOverlay && React.createElement(window.FestivalOverlay, {
         open: specialOpen === "kinegadani", lang, onClose: closeSpecial
       }, window.KinegadaniContent && React.createElement(window.KinegadaniContent, { lang, onClose: closeSpecial }))}

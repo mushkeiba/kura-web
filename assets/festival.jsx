@@ -556,3 +556,178 @@ function KinegadaniContent({ lang, onClose }) {
 }
 
 window.KinegadaniContent = KinegadaniContent;
+
+/* ─────────────────────────────────────────────────────────────
+   HAYATAMA — 熊野速玉大社 special page content
+   ───────────────────────────────────────────────────────────── */
+function HayatamaContent({ lang, onClose }) {
+  const ja = lang === "ja";
+  return (
+    <>
+      {/* HERO */}
+      <section className="otou-hero otou-hero--vermillion">
+        <div className="otou-hero__img">
+          <img src="web/hayatama/hayatama-gate.jpg" alt="" />
+        </div>
+        <div className="otou-hero__scrim"></div>
+
+        <div className="otou-hero__shell">
+          <div className="otou-hero__topmeta">
+            <button className="otou-hero__back" onClick={onClose}>
+              <span className="arrow">←</span> {ja ? "戻る" : "Back"}
+            </button>
+            <span>Special · {ja ? "熊野速玉大社" : "Hayatama-Taisha"}</span>
+          </div>
+
+          <div className="otou-hero__center">
+            <div>
+              <div className="otou-hero__eyebrow">
+                <span className="rule"></span>
+                <span className="vm">{ja ? "熊野三山の一社" : "One of the three Kumano Grand Shrines"}</span>
+              </div>
+              <h1 className="otou-hero__title">
+                {ja ? <>熊野速玉大社<small style={{ display: "block", fontSize: ".42em", letterSpacing: ".4em", marginTop: 10, fontWeight: 400, opacity: .85 }}>はやたまたいしゃ</small></> : "Kumano Hayatama-Taisha"}
+                <span className="small">{ja ? "Hayatama Taisha · Shingū" : "熊野速玉大社 · 新宮"}</span>
+              </h1>
+              <p className="otou-hero__sub">
+                {ja
+                  ? <>神倉のゴトビキ岩に降り立った熊野の神を、この地にお迎えして造られた神社です。<br/>熊野三山のひとつで、世界遺産にも登録されています。</>
+                  : <>The shrine built to enshrine the Kumano deities after their descent on Gotobiki-iwa.<br/>One of the three Kumano Grand Shrines, a UNESCO World Heritage site.</>}
+              </p>
+            </div>
+          </div>
+
+          <div className="otou-hero__bottom">
+            <div className="otou-hero__date">
+              <strong>世界遺産</strong>
+              {ja ? "紀伊山地の霊場と参詣道" : "Sacred Sites of the Kii Mountain Range"}
+            </div>
+            <div>{ja ? "全國熊野神社總本宮" : "Head shrine of all Kumano shrines"}</div>
+          </div>
+        </div>
+      </section>
+
+      {/* 概要・御祭神 */}
+      <section className="otou-sec">
+        <div className="otou-sec__inner">
+
+          <article className="otou-prose">
+            <div className="otou-prose__index">
+              <span className="num">01</span>
+              {ja ? "概要 / Outline" : "01 / Outline"}
+            </div>
+            <div className="otou-prose__body">
+              <h3>{ja ? "神倉から、この地へ。" : "From Kamikura, to this place."}</h3>
+              <p>{ja
+                ? "熊野速玉大社は、熊野三山の一社です。"
+                : "Kumano Hayatama-Taisha is one of the three Kumano Grand Shrines."}
+              </p>
+              <p>{ja
+                ? "神倉神社のゴトビキ岩に降臨した熊野の神を、この地にお迎えして造られました。神倉が「元宮」、速玉大社が「新宮」と呼ばれ、それが新宮市の地名の由来とも伝えられています。"
+                : "The shrine was founded to receive the Kumano deities who first descended on Gotobiki-iwa at Kamikura Shrine. Kamikura is called the 'old shrine', Hayatama-Taisha the 'new shrine' — the origin of the city's name, Shingū."}
+              </p>
+              <div className="otou-prose__pull">
+                {ja
+                  ? "「全國熊野神社總本宮」— 全国に三千あるとされる熊野神社の総本宮です。"
+                  : "Head shrine of an estimated 3,000 Kumano shrines throughout Japan."}
+              </div>
+            </div>
+          </article>
+
+          <article className="otou-prose">
+            <div className="otou-prose__index">
+              <span className="num">02</span>
+              {ja ? "御祭神・見どころ / Highlights" : "02 / Highlights"}
+            </div>
+            <div className="otou-prose__body">
+              <h3>{ja ? "夫婦神と、千年のナギ。" : "A divine couple, and a thousand-year nagi tree."}</h3>
+              <p>{ja
+                ? "熊野速玉大神と熊野夫須美大神の夫婦神をお祀りしています。境内には樹齢約千年とされるナギの巨木が立ち、国の天然記念物に指定されています。"
+                : "The shrine enshrines a divine couple — Hayatama and Fusumi. In its grounds stands a nagi tree said to be a thousand years old, designated a National Natural Monument."}
+              </p>
+              <p>{ja
+                ? "ナギの木は夫婦円満・縁結びのご利益で知られ、葉を護符として持ち帰る参拝者も多くおられます。"
+                : "The tree is associated with marital harmony and the tying of fates. Visitors often take a leaf home as a charm."}
+              </p>
+              <p>{ja
+                ? "境内の熊野神宝館には、室町時代に奉納された蒔絵手箱や檜扇などの神宝、約一千二百点が収められています。"
+                : "The shrine's treasure house preserves about 1,200 sacred objects, including lacquered boxes and folding fans donated during the Muromachi period."}
+              </p>
+            </div>
+          </article>
+
+          <article className="otou-prose">
+            <div className="otou-prose__index">
+              <span className="num">03</span>
+              {ja ? "KURAから / From the inn" : "03 / From the inn"}
+            </div>
+            <div className="otou-prose__body">
+              <h3>{ja ? "KURAから、徒歩圏内。" : "Within walking distance of KURA."}</h3>
+              <p>{ja
+                ? "KURAから徒歩でお越しいただける距離にあります。神倉神社（元宮）とあわせてお参りいただくと、熊野信仰のはじまりの順をたどっていただけます。"
+                : "Hayatama-Taisha is a short walk from KURA. Visit Kamikura Shrine (the old shrine) together, and you trace the founding of Kumano faith in order."}
+              </p>
+              <a className="otou-position__cta" href="#access" onClick={onClose}>
+                {ja ? "アクセスを見る" : "See access"}
+                <span className="en">{ja ? "Access" : "アクセス"}</span>
+              </a>
+            </div>
+          </article>
+
+          <article className="otou-prose">
+            <div className="otou-prose__index">
+              <span className="num">04</span>
+              {ja ? "実用情報 / Practical" : "04 / Practical"}
+            </div>
+            <div className="otou-prose__body">
+              <div className="otou-info" style={{ marginTop: 0 }}>
+                <div className="otou-info__cell">
+                  <h5>Where · {ja ? "所在地" : "Location"}</h5>
+                  <div className="val">{ja ? "新宮市新宮1番地" : "1 Shingū, Shingū"}<em>Shingū, Wakayama</em></div>
+                </div>
+                <div className="otou-info__cell">
+                  <h5>Status · {ja ? "認定" : "Status"}</h5>
+                  <div className="val">{ja ? "世界遺産" : "World Heritage"}<em>UNESCO listed</em></div>
+                </div>
+                <div className="otou-info__cell">
+                  <h5>Deities · {ja ? "御祭神" : "Deities"}</h5>
+                  <div className="val">{ja ? "夫婦神" : "Divine couple"}<em>Hayatama · Fusumi</em></div>
+                </div>
+                <div className="otou-info__cell">
+                  <h5>Visit · {ja ? "参拝" : "Hours"}</h5>
+                  <div className="val">{ja ? "要確認" : "Check on site"}<em>Hours vary</em></div>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      {/* Sources */}
+      <footer className="otou-foot">
+        <div className="otou-foot__inner">
+          <div>
+            <h6>{ja ? "References · 出典" : "References"}</h6>
+            <ul>
+              <li><a href="https://kumanohayatama.jp/" target="_blank" rel="noreferrer">{ja ? "熊野速玉大社 公式サイト" : "Kumano Hayatama-Taisha (official)"}</a></li>
+              <li><a href="https://www.shinguu.jp/spots/detail/A0001" target="_blank" rel="noreferrer">{ja ? "熊野速玉大社｜新宮市観光協会" : "Shingū Tourism Association"}</a></li>
+            </ul>
+          </div>
+          <div>
+            <h6>{ja ? "この特設ページについて" : "About this page"}</h6>
+            <p style={{ fontFamily: "var(--serif-ja)", fontSize: 13, lineHeight: 1.95, color: "var(--ink-soft)", margin: "0 0 24px", maxWidth: "60ch" }}>
+              {ja
+                ? <>写真は宿主が撮影したものです。記述は出典に基づき、事実情報を中心にまとめました。<br/>Photographs by the host. Information sourced from the references above.</>
+                : "Photographs by the host. Information sourced from the references above."}
+            </p>
+            <button className="otou-foot__back" onClick={onClose}>
+              {ja ? "熊野古道KURA トップへ戻る" : "Back to KURA"}
+            </button>
+          </div>
+        </div>
+      </footer>
+    </>
+  );
+}
+
+window.HayatamaContent = HayatamaContent;

@@ -47,6 +47,17 @@ body.kura-otou {
 .otou-hero--forest .otou-hero__eyebrow .vm { color: #B5C7A8; }
 .otou-hero--forest .otou-hero__date strong { color: #B5C7A8; }
 .otou-hero--forest .otou-hero__eyebrow .rule { background: #B5C7A8; }
+
+/* Vermillion hero variant — hayatama (朱の神門) */
+.otou-hero--vermillion { background: #1a0b07; }
+.otou-hero--vermillion .otou-hero__scrim {
+  background:
+    linear-gradient(180deg, rgba(26,11,7,.55) 0%, rgba(26,11,7,.1) 30%, rgba(26,11,7,.4) 60%, rgba(26,11,7,.92) 100%),
+    linear-gradient(90deg, rgba(26,11,7,.6) 0%, rgba(26,11,7,0) 55%);
+}
+.otou-hero--vermillion .otou-hero__eyebrow .vm { color: #D9967C; }
+.otou-hero--vermillion .otou-hero__date strong { color: #D9967C; font-family: var(--mincho); font-size: 22px; font-style: normal; }
+.otou-hero--vermillion .otou-hero__eyebrow .rule { background: #D9967C; }
 .otou-hero__shell {
   position: relative; z-index: 2;
   min-height: 100vh;
