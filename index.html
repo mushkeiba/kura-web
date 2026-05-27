@@ -17,6 +17,14 @@
 <body>
 <div id="root"></div>
 
+<!-- 編集ツール(tweaks-panel)の本番スタブ — パネルUIは出さず、デザインはデフォルト値で固定 -->
+<script type="text/babel" data-presets="react">
+  function useTweaks(defaults){ return [defaults, function(){}]; }
+  function TweaksPanel(){ return null; }
+  function TweakSection(){ return null; }
+  function TweakSelect(){ return null; }
+  function TweakRadio(){ return null; }
+</script>
 <script type="text/babel" src="assets/festival.jsx" data-presets="react"></script>
 <script type="text/babel" src="assets/sei-app.jsx" data-presets="react"></script>
 </body>
