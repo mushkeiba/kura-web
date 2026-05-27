@@ -1,0 +1,1140 @@
+/* eslint-disable */
+// ─────────────────────────────────────────────────────────────
+// 熊野古道KURA — Variation A (Sei / 静謐)
+// Bilingual content + components
+// ─────────────────────────────────────────────────────────────
+
+const { useState, useEffect, useRef, useMemo } = React;
+
+/* ── JaP: phrase-wrap helper ─────────────────────────────────
+   Splits at 、。 — each phrase is inline-block so the browser
+   only breaks BETWEEN phrases, never inside one. */
+function JaP({ children }) {
+  const text = String(children == null ? "" : children);
+  const parts = text.match(/[^、。，．！？]+[、。，．！？]?/g) || [text];
+  return (
+    <>
+      {parts.map((p, i) => (
+        <span key={i} className="ja-phrase" style={{ display: "inline-block" }}>{p}</span>
+      ))}
+    </>
+  );
+}
+
+/* ── Bilingual content ───────────────────────────────────── */
+const C = {
+  ja: {
+    nav: [
+      { id: "room",    label: "客室" },
+      { id: "concept", label: "コンセプト" },
+      { id: "usp",     label: "特徴" },
+      { id: "nearby",  label: "周辺" },
+      { id: "otou",    label: "御燈祭", overlay: "otou" },
+      { id: "kinegadani", label: "貴祷谷社", overlay: "kinegadani" },
+      { id: "access",  label: "アクセス" },
+      { id: "book",    label: "予約" },
+    ],
+    reserve: "予約",
+    hero: {
+      eyebrow: "和歌山県 新宮市 神倉",
+      title1: "神倉のふもと、",
+      title2: "ひとときの静けさ。",
+      sub: "熊野古道を歩く方のための、ひのきの床板が美しい一室貸しの民宿です。",
+      priceLbl: "素泊まり / 1室1泊",
+      scroll: "下へ"
+    },
+    sectionHead: {
+      room: {
+        index: "01 / 客室",
+        title: "客室のご案内",
+        titleEn: "The Room",
+        lede: "1日1組さま限定。ひのきの床板に整えた、落ち着いた一室です。"
+      },
+      concept: {
+        index: "02 / コンセプト",
+        title: "宿のコンセプト",
+        titleEn: "Our Philosophy",
+        lede: "派手さよりも、清潔さと心地よさを大切にしています。"
+      },
+      usp: {
+        index: "03 / 特徴",
+        title: "当宿の特徴",
+        titleEn: "Three Reasons to Stay",
+        lede: "立地・設え・貸切。シンプルですが、確かな三つです。"
+      },
+      nearby: {
+        index: "04 / 周辺",
+        title: "周辺のご案内",
+        titleEn: "Around the Inn",
+        lede: "神倉神社や飲食店、コンビニまで徒歩圏内に揃っています。"
+      },
+      access: {
+        index: "05 / アクセス",
+        title: "アクセス",
+        titleEn: "Getting Here",
+        lede: "〒647-0044 和歌山県新宮市千穂1-8-5"
+      },
+      book: {
+        index: "06 / 予約",
+        title: "ご予約",
+        titleEn: "Reserve",
+        lede: "Airbnbからのご予約、または直接のお問い合わせを承ります。"
+      }
+    },
+    room: {
+      title: "ひと部屋まるごと、貸切で。",
+      lede: "アパートの一室をリフォームし、ひのきの床板を全面に張り直しました。清潔で落ち着いた空間に整えています。",
+      body: [
+        "1日1組さま限定、最大5〜6名様までご宿泊いただけます。",
+        "ご家族・ご友人・グループ旅行に。共用スペースはなく、ゆっくりとお過ごしいただけます。"
+      ],
+      stats: [
+        { num: "1",        unit: "室",   lbl: "1日1組" },
+        { num: "5–6",      unit: "名",   lbl: "最大収容" },
+        { num: "¥9,000",   unit: "〜",   lbl: "素泊まり" }
+      ],
+      caption: "客室全景"
+    },
+    concept: {
+      quote: ["きれいさで、群を抜く。", "しかし、—— さりげなく。"],
+      attrib: "—— 代表 森本　みさ",
+      body: [
+        "数ある民宿のなかで、当宿はアパートの一室をリフォームしたものです。",
+        "ひのきの床板を張り直し、設備をひとつひとつ見直し、清潔さを何より大切に整えました。",
+        "派手な装飾はありません。それでも、戸を開けたときに「いい部屋だな」と感じていただける——そんな宿でありたいと考えています。"
+      ]
+    },
+    usp: [
+      {
+        num: "01",
+        title: "神倉神社まで徒歩約5分",
+        body: "熊野古道のはじまりの地とされる神倉神社まで、徒歩でおよそ5分。古道歩きの拠点としてお使いいただけます。",
+        meta: "徒歩約5分"
+      },
+      {
+        num: "02",
+        title: "ひのきの床板",
+        body: "床を全面ヒノキに張り替えました。素足でも过ごしやすく、足音が柔らかに响きます。",
+        meta: "全面張替済"
+      },
+      {
+        num: "03",
+        title: "1日1組の貸切",
+        body: "1室まるごとをご予約のお客様だけでご利用いただけます。最大5〜6名様までご対応可能です。",
+        meta: "5〜6名様"
+      }
+    ],
+    nearby: {
+      featureTitle: "神倉神社",
+      featureLabel: "ご紹介 · 神倉神社",
+      featureBody: "巨石「ゴトビキ岩」を御神体とする神社で、熊野信仰のはじまりの地とされています。538段の石段を登った先には、新宮の街と熊野灘を一望する眺望が広がります。",
+      featureDist: "徒歩 約5分",
+      nagiTitle: "なぎの湯",
+      nagiLabel: "お風呂 · 市民の銜湯",
+      nagiBody: "なぎの湯は、新宮市の公衆浴場です。素泊まりの夜は、歩いて地元の銜湯へ。富士山の壁絵がある、昭和の嬉しさのあるお風呂です。",
+      nagiDist: "徒歩 約15分",
+      nagiHours: "16:00〜21:00（11、3月は 15:30〜20:30）",
+      nagiClosed: "日曜・1/1・1/3・1/4休",
+      nagiPrice: "大人 400円 / 中人 140円 / 小人 80円",
+      cards: [
+        { src: "web/nearby/restaurant-yokaya.jpg",   name: "陽香屋",          dist: "徒歩2分",  desc: "ラーメン" },
+        { src: "web/nearby/restaurant-matsusaka.jpg", name: "ビフテキ 松坂",     dist: "徒歩10分", desc: "ステーキ・ビフテキ" },
+        { src: "web/nearby/restaurant-tanukiya.jpg", name: "たぬき屋",         dist: "徒歩5分",  desc: "そば・うどん" },
+        { src: "web/nearby/restaurant-manten.jpg",   name: "浪花っ子まんてん",  dist: "徒歩6分",  desc: "定食・中華" },
+        { src: "web/nearby/familymart.jpg",          name: "ファミリーマート", dist: "徒歩3分",  desc: "コンビニ（24時間）" },
+        { src: "web/nearby/shop-organic-marche.jpg", name: "Organic Marche",  dist: "徒歩8分",  desc: "オーガニック食品店" },
+        { src: "web/nearby/shop-liquor.jpg",         name: "酒店",             dist: "徒歩4分",  desc: "酒類" },
+        { src: "web/nearby/shop-kumaheiyo.jpg",      name: "熊平洋",           dist: "徒歩7分",  desc: "お土産・生鮮" },
+        { src: "web/nearby/nachi-falls.jpg",         name: "那智の滝",         dist: "車で約50分", desc: "観光スポット" }
+      ]
+    },
+    access: {
+      pin: ["熊野古道KURA", "和歌山県新宮市千穂1-8-5"],
+      rows: [
+        {
+          label: "電車", letter: "Train",
+          head: "JR紀勢本線「新宮駅」より",
+          body: "駅から徒歩約15分（約1.2km）、またはバスで約6分です。"
+        },
+        {
+          label: "バス", letter: "Bus",
+          head: "熊野御坊南海バス「神倉神社前」",
+          body: "宿のすぐ近くにバス停があります。運賃は200〜300円程度です。",
+          table: true
+        },
+        {
+          label: "車",   letter: "Car",
+          head: "新宮南ICより車で約15分",
+          body: "敷地内に駐車場2台分のスペースがございます。"
+        }
+      ],
+      busTableHead: ["新宮駅 発", "神倉神社前 発"]
+    },
+    book: {
+      channelTitle: "そのままご予約",
+      channelSub: "Airbnbよりお手続きいただけます",
+      priceUnit: "素泊まり / 1室1泊",
+      cta: "Airbnbで予約する",
+      notes: ["チェックイン 16:00 〜 / チェックアウト 10:00", "お電話でも承ります：090ー1484ー0536（代表森本）", "旅館業（簡易宿所）申請中・許可後より受付開始"],
+      formTitle: "直接のお問い合わせ",
+      formSub: "ご質問・ご予約のご相談はこちらから。",
+      fields: {
+        name: "お名前", email: "メールアドレス", ci: "ご到着日", co: "ご出発日",
+        guests: "ご人数", msg: "ご質問・ご要望"
+      },
+      msgPlaceholder: "ご到着の時刻、巡礼のご予定、ご要望など、自由にお書きください。",
+      submit: "お問い合わせを送る", sent: "✓ 送信されました"
+    },
+    otou: {
+      eyebrow: "特設ページ",
+      title: "御燈祭",
+      sub: "宿の目の前、神倉神社で行われる火祭り。毎年二月六日の夜。",
+      cta: "御燈祭 特設ページへ",
+      date: "2 / 6 · 毎年"
+    },
+    kinegadani: {
+      eyebrow: "特設ページ",
+      title: "貴祷谷社",
+      sub: "神倉を降りた熊野の神が、のちに移ったと伝わる古社。静かな森のなかへ。",
+      cta: "貴祷谷社 特設ページへ",
+      date: "三重・紀宝町"
+    },
+    footer: {
+      location: "所在地",
+      sitemap: "サイトマップ",
+      contact: "ご連絡先",
+      licNote: "旅館業（簡易宿所）申請中",
+      cred: "© 2026 熊野古道KURA",
+      tagline: "新宮にて、ていねいに。"
+    }
+  },
+  en: {
+    nav: [
+      { id: "room",    label: "Room" },
+      { id: "concept", label: "Philosophy" },
+      { id: "usp",     label: "Why Stay" },
+      { id: "nearby",  label: "Neighborhood" },
+      { id: "otou",    label: "Fire Festival", overlay: "otou" },
+      { id: "kinegadani", label: "Kinegadani-sha", overlay: "kinegadani" },
+      { id: "access",  label: "Access" },
+      { id: "book",    label: "Reserve" },
+    ],
+    reserve: "Reserve",
+    hero: {
+      eyebrow: "Wakayama · Shingū · Kamikura",
+      title1: "A quiet stay,",
+      title2: "at the foot of Kamikura.",
+      sub: "A one-room guesthouse with hinoki-wood floors, for those walking the Kumano Kodō.",
+      priceLbl: "Room only · Per night",
+      scroll: "Scroll"
+    },
+    sectionHead: {
+      room: {
+        index: "01 / Room",
+        title: "The Room",
+        titleEn: "客室のご案内",
+        lede: "One party per day. A calm room with newly-laid hinoki-wood floors."
+      },
+      concept: {
+        index: "02 / Philosophy",
+        title: "Our Philosophy",
+        titleEn: "宿のコンセプト",
+        lede: "We prize cleanliness and comfort over display."
+      },
+      usp: {
+        index: "03 / Why Stay",
+        title: "Three Reasons to Stay",
+        titleEn: "当宿の特徴",
+        lede: "Location, craft, and exclusivity — three simple promises."
+      },
+      nearby: {
+        index: "04 / Neighborhood",
+        title: "Around the Inn",
+        titleEn: "周辺のご案内",
+        lede: "Kamikura Shrine, restaurants, and shops — all within walking distance."
+      },
+      access: {
+        index: "05 / Access",
+        title: "Getting Here",
+        titleEn: "アクセス",
+        lede: "1-8-5 Senbo, Shingū, Wakayama 647-0044, Japan"
+      },
+      book: {
+        index: "06 / Reserve",
+        title: "Reserve",
+        titleEn: "ご予約",
+        lede: "Reserve via Airbnb, or send us a direct enquiry."
+      }
+    },
+    room: {
+      title: "The whole room is yours.",
+      lede: "An apartment renovated into a single guesthouse room. Newly-laid hinoki floors throughout, kept calm and uncommonly clean.",
+      body: [
+        "One party per day, up to five or six guests.",
+        "Suited to families, friends, or pilgrim groups. No shared spaces — the whole space belongs to your party."
+      ],
+      stats: [
+        { num: "1",      unit: "room",  lbl: "One party / day" },
+        { num: "5–6",    unit: "guests", lbl: "Maximum" },
+        { num: "¥9,000", unit: "~",     lbl: "Room only" }
+      ],
+      caption: "Room overview"
+    },
+    concept: {
+      quote: ["Uncommonly clean,", "but never showy."],
+      attrib: "— Misa Morimoto, host",
+      body: [
+        "Among many guesthouses, ours is an apartment carefully renovated into a single room.",
+        "We re-laid the floors in hinoki, reviewed every fixture, and made cleanliness our first priority.",
+        "There are no flourishes. Just a room where, on opening the door, a guest might quietly think — this is a good place to stay."
+      ]
+    },
+    usp: [
+      {
+        num: "01",
+        title: "5 minutes to Kamikura Shrine",
+        body: "About a five-minute walk to Kamikura Shrine, said to be the starting point of the Kumano Kodō. A natural base for the pilgrimage.",
+        meta: "≈ 5 min walk"
+      },
+      {
+        num: "02",
+        title: "Hinoki wood floors",
+        body: "All floors have been re-laid in hinoki. Pleasant underfoot, even barefoot.",
+        meta: "100% renewed"
+      },
+      {
+        num: "03",
+        title: "One party per day",
+        body: "The whole room is yours alone — up to five or six guests per booking, no shared spaces, no compromise.",
+        meta: "Up to 6 guests"
+      }
+    ],
+    nearby: {
+      featureTitle: "Kamikura Shrine",
+      featureLabel: "Featured · Kamikura",
+      featureBody: "The shrine takes a great rock — Gotobiki-iwa — as its sacred body, and is considered the birthplace of Kumano faith. After 538 stone steps, the path opens onto a sweeping view of Shingū and the Kumano Sea.",
+      featureDist: "5 minutes on foot",
+      nagiTitle: "Nagi-no-yu",
+      nagiLabel: "Bath · Public sentō",
+      nagiBody: "Nagi-no-yu is Shingū's public bathhouse. After a night without dinner at the inn, walk over for a soak — an old-style sentō with a Mt. Fuji wall painting.",
+      nagiDist: "15 min walk",
+      nagiHours: "16:00–21:00 (Nov–Mar 15:30–20:30)",
+      nagiClosed: "Closed Sundays · Jan 1, 3, 4",
+      nagiPrice: "Adults ¥400 / Ages 6–12 ¥140 / under 6 ¥80",
+      cards: [
+        { src: "web/nearby/restaurant-yokaya.jpg",   name: "Yōkaya",          dist: "2 min walk",  desc: "Ramen" },
+        { src: "web/nearby/restaurant-matsusaka.jpg", name: "Matsusaka",        dist: "10 min walk", desc: "Steak / Bifteck" },
+        { src: "web/nearby/restaurant-tanukiya.jpg", name: "Tanukiya",         dist: "5 min walk",  desc: "Soba & Udon" },
+        { src: "web/nearby/restaurant-manten.jpg",   name: "Manten",            dist: "6 min walk",  desc: "Set meals" },
+        { src: "web/nearby/familymart.jpg",          name: "FamilyMart",        dist: "3 min walk",  desc: "Convenience (24h)" },
+        { src: "web/nearby/shop-organic-marche.jpg", name: "Organic Marche",    dist: "8 min walk",  desc: "Organic grocer" },
+        { src: "web/nearby/shop-liquor.jpg",         name: "Liquor Shop",       dist: "4 min walk",  desc: "Sake & spirits" },
+        { src: "web/nearby/shop-kumaheiyo.jpg",      name: "Kumaheiyō",         dist: "7 min walk",  desc: "Souvenirs & produce" },
+        { src: "web/nearby/nachi-falls.jpg",         name: "Nachi Falls",       dist: "50 min by car", desc: "Sightseeing" }
+      ]
+    },
+    access: {
+      pin: ["Kumano Kodō KURA", "1-8-5 Senbo, Shingū"],
+      rows: [
+        {
+          label: "Train", letter: "Train",
+          head: "From Shingū Station (JR Kisei Line)",
+          body: "About 15 minutes on foot from the station (1.2 km), or roughly 6 minutes by bus."
+        },
+        {
+          label: "Bus", letter: "Bus",
+          head: "Kamikura-jinja-mae stop (Kumano Goboh Nankai Bus)",
+          body: "The bus stop is right beside the inn. Fares are around ¥200–300.",
+          table: true
+        },
+        {
+          label: "Car",   letter: "Car",
+          head: "About 15 min from Shingū-Minami IC",
+          body: "Two on-site parking spaces are available."
+        }
+      ],
+      busTableHead: ["From Shingū Stn.", "From Kamikura Stop"]
+    },
+    book: {
+      channelTitle: "Reserve directly",
+      channelSub: "Book your stay via Airbnb",
+      priceUnit: "Room only / per night",
+      cta: "Reserve on Airbnb",
+      notes: ["Check-in 16:00 / Check-out 10:00", "Call us at +81 90-1484-0536 (Misa Morimoto)", "License pending — bookings open after issue"],
+      formTitle: "Send a direct enquiry",
+      formSub: "Questions and booking requests welcome.",
+      fields: {
+        name: "Name", email: "Email", ci: "Check-in", co: "Check-out",
+        guests: "Guests", msg: "Notes / Requests"
+      },
+      msgPlaceholder: "Arrival time, pilgrimage plans, or anything else we should know.",
+      submit: "Send enquiry", sent: "✓ Sent"
+    },
+    otou: {
+      eyebrow: "Special page",
+      title: "Otō Matsuri Fire Festival",
+      sub: "A 1,400-year-old fire festival on the steps of Kamikura Shrine — right in front of the inn. Held every February 6, at night.",
+      cta: "Open the special page",
+      date: "Feb 6 · annually"
+    },
+    kinegadani: {
+      eyebrow: "Special page",
+      title: "Kinegadani Shrine",
+      sub: "Where the Kumano deities are said to have moved after first descending on Kamikura. An ancient ritual site, in a quiet forest.",
+      cta: "Open the special page",
+      date: "Kihō, Mie"
+    },
+    footer: {
+      location: "Location",
+      sitemap: "Sitemap",
+      contact: "Contact",
+      licNote: "License pending",
+      cred: "© 2026 Kumano Kodō KURA",
+      tagline: "Made quietly, in Shingū."
+    }
+  }
+};
+
+const BUS_FROM = ["7:16","8:46","10:56","12:16","13:31","15:01","16:01","17:11","18:21"];
+const BUS_TO   = ["7:45","8:17","9:30","11:07","13:07","14:17","15:37","17:07","18:27"];
+
+const ROOM_IMAGES = [
+  "web/interior/room-overview.jpg",
+  "web/interior/room-living-1.jpg",
+  "web/interior/room-living-2.jpg",
+  "web/interior/room-bedroom.jpg",
+  "web/interior/room-kitchen.jpg",
+  "web/interior/room-washroom.jpg",
+  "web/interior/room-toilet.jpg",
+];
+
+/* ── helper to render JA text with phrase wrap, EN as plain ── */
+function L({ lang, children }) {
+  if (lang === "ja") return <JaP>{children}</JaP>;
+  return <>{children}</>;
+}
+
+/* ── Logo mark (uses transparent-bg PNG of just the icon) ─── */
+function LogoMark({ size = 30 }) {
+  return (
+    <img
+      src="logo/icon-only.png"
+      alt=""
+      aria-hidden="true"
+      style={{
+        height: size,
+        width: "auto",
+        objectFit: "contain",
+        display: "block"
+      }}
+    />
+  );
+}
+
+/* ── Full logo composition (text + icon — used in concept) ─ */
+function FullLogo({ color = "var(--moss)" }) {
+  return (
+    <svg viewBox="0 0 320 380" width="100%" aria-label="熊野古道KURA" style={{ display: "block" }}>
+      {/* 熊野古道 */}
+      <text x="160" y="52" textAnchor="middle" fontFamily='"Shippori Mincho", "Noto Serif JP", serif'
+            fontWeight="500" fontSize="22" letterSpacing="14" fill={color}>
+        熊 野 古 道
+      </text>
+      {/* horizontal divider */}
+      <line x1="134" y1="74" x2="186" y2="74" stroke={color} strokeWidth="1.2" />
+      {/* KURA */}
+      <text x="160" y="166" textAnchor="middle" fontFamily='"Cormorant Garamond", Georgia, serif'
+            fontWeight="400" fontSize="76" letterSpacing="10" fill={color}>
+        KURA
+      </text>
+      {/* Icon */}
+      <g transform="translate(74, 220)" fill="none" stroke={color} strokeWidth="2.5"
+         strokeLinecap="round" strokeLinejoin="round">
+        <path d="M22 96 L62 32 L84 60 L102 38 L138 96" />
+        <path d="M2 76 L40 76" />
+        <path d="M4 84 L38 84" />
+        <path d="M12 84 L12 116" />
+        <path d="M30 84 L30 116" />
+        <path d="M34 116 C 54 114, 64 104, 80 106 S 106 122, 138 116" />
+        <path d="M140 110 L148 96 L156 110 Z M142 104 L148 96 L154 104 M148 110 L148 124" />
+        <path d="M156 116 L162 104 L168 116 Z M158 110 L162 104 L166 110 M162 116 L162 128" />
+      </g>
+    </svg>
+  );
+}
+
+/* ── Header ───────────────────────────────────────────────── */
+function Header({ lang, setLang, onOpenSpecial, onOpenMenu }) {
+  const [scrolled, setScrolled] = useState(false);
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 80);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+  const c = C[lang];
+  return (
+    <header className={"k-header" + (scrolled ? " is-scrolled" : "")}>
+      <a href="#top" className="k-header__mark">
+        <LogoMark />
+        <div>
+          <div>KURA</div>
+          <div className="ja">熊野古道</div>
+        </div>
+      </a>
+      <nav className="k-header__nav">
+        {c.nav.map(n => (
+          n.overlay
+            ? <button key={n.id} type="button" onClick={() => onOpenSpecial(n.overlay)} className="k-header__nav-otou">{n.label}</button>
+            : <a key={n.id} href={"#" + n.id}>{n.label}</a>
+        ))}
+      </nav>
+      <div className="k-header__right">
+        <div className="k-langtoggle">
+          <button onClick={() => setLang("ja")} className={lang === "ja" ? "is-active" : ""}>JA</button>
+          <span>/</span>
+          <button onClick={() => setLang("en")} className={lang === "en" ? "is-active" : ""}>EN</button>
+        </div>
+        <a href="#book" className="k-cta-pill">{c.reserve}</a>
+        <button className="k-header__burger" aria-label="menu" onClick={onOpenMenu}><span></span></button>
+      </div>
+    </header>
+  );
+}
+
+/* ── Hero ─────────────────────────────────────────────────── */
+function Hero({ layout = "fullbleed", lang }) {
+  const c = C[lang].hero;
+  const line1 = c.title1;
+  const line2 = c.title2;
+  // build char list with split marker
+  const allChars = useMemo(() => [...Array.from(line1), "\n", ...Array.from(line2)], [line1, line2]);
+  return (
+    <section className="k-hero" data-hero={layout} id="top">
+      <div className="k-hero__media">
+        <img src="web/kamikura-shrine/view-1.jpg" alt="" />
+      </div>
+      <div className="k-hero__scrim"></div>
+      {lang === "ja" && <div className="k-hero__vertical">熊野古道、神倉</div>}
+
+      <div className="k-hero__shell">
+        <div className="k-hero__topmeta">
+          <span>Kumano Kodō KURA · Wakayama · Shingū</span>
+          <span>Est. 2026 · 1·8·5 Senbo</span>
+        </div>
+
+        <div className="k-hero__center">
+          <div>
+            <div className="k-hero__eyebrow"><span className="rule"></span> {c.eyebrow}</div>
+            <h1 className="k-hero__title">
+              {allChars.map((ch, i) => (
+                ch === "\n"
+                  ? <br key={"br" + i} />
+                  : <span className="ch" key={i} style={{ animationDelay: (0.4 + i * 0.05) + "s" }}>
+                      {ch === " " ? "\u00A0" : ch}
+                    </span>
+              ))}
+            </h1>
+            <p className="k-hero__sub"><L lang={lang}>{c.sub}</L></p>
+          </div>
+        </div>
+
+        <div className="k-hero__bottom">
+          <div className="k-hero__scroll">
+            <span>{c.scroll}</span>
+            <span className="line"></span>
+          </div>
+          <div className="k-hero__price">
+            <span className="num"><small>¥</small>9,000<small>〜</small></span>
+            <span className="lbl">{c.priceLbl}</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ── Section head ─────────────────────────────────────────── */
+function SecHead({ data, lang }) {
+  return (
+    <div className="k-sec__head reveal">
+      <div>
+        <div className="k-sec__index">{data.index}</div>
+        <h2 className="k-sec__title">
+          <L lang={lang}>{data.title}</L>
+          <em>{data.titleEn}</em>
+        </h2>
+      </div>
+      <p className="k-sec__lede"><L lang={lang}>{data.lede}</L></p>
+    </div>
+  );
+}
+
+/* ── Room ─────────────────────────────────────────────────── */
+function RoomSection({ lang, layout = "strip", onOpen }) {
+  const c = C[lang];
+  const r = c.room;
+  return (
+    <section className="k-sec k-room" id="room" data-rooms={layout}>
+      <div className="k-sec__inner">
+        <SecHead data={c.sectionHead.room} lang={lang} />
+
+        <div className="k-room__lead">
+          <div className="k-room__copy reveal">
+            <div>
+              <h3><L lang={lang}>{r.title}</L></h3>
+              <p><L lang={lang}>{r.lede}</L></p>
+              {r.body.map((p, i) => <p key={i}><L lang={lang}>{p}</L></p>)}
+            </div>
+            <div className="k-room__stats">
+              {r.stats.map((s, i) => (
+                <div className="k-room__stat" key={i}>
+                  <div className="num">{s.num}<small>{s.unit}</small></div>
+                  <span className="lbl">{s.lbl}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+          <figure className="k-room__hero reveal" data-delay="200" onClick={() => onOpen(0)}>
+            <img src={ROOM_IMAGES[0]} alt="" />
+            <figcaption>{r.caption}</figcaption>
+          </figure>
+        </div>
+
+        <div className="k-room__strip">
+          {ROOM_IMAGES.slice(1).map((src, i) => (
+            <button key={i} onClick={() => onOpen(i + 1)} aria-label={src}>
+              <img src={src} alt="" loading="lazy" />
+            </button>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ── Lightbox ────────────────────────────────────────────── */
+function Lightbox({ open, index, onClose, onPrev, onNext }) {
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e) => {
+      if (e.key === "Escape") onClose();
+      if (e.key === "ArrowLeft") onPrev();
+      if (e.key === "ArrowRight") onNext();
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [open, onClose, onPrev, onNext]);
+  return (
+    <div className={"k-lightbox" + (open ? " is-open" : "")} onClick={onClose}>
+      <button className="k-lightbox__close" onClick={onClose}>Close</button>
+      <button className="k-lightbox__nav prev" onClick={(e) => { e.stopPropagation(); onPrev(); }}>Prev</button>
+      <button className="k-lightbox__nav next" onClick={(e) => { e.stopPropagation(); onNext(); }}>Next</button>
+      {open && <img src={ROOM_IMAGES[index]} alt="" onClick={(e) => e.stopPropagation()} />}
+    </div>
+  );
+}
+
+/* ── Concept ──────────────────────────────────────────────── */
+function ConceptSection({ lang }) {
+  const c = C[lang];
+  const k = c.concept;
+  return (
+    <section className="k-sec k-concept" id="concept">
+      <div className="k-sec__inner">
+        <SecHead data={c.sectionHead.concept} lang={lang} />
+        <div className="k-concept__grid">
+          <div className="k-concept__logo reveal">
+            <img src="logo/logo-transparent.png" alt="熊野古道KURA" />
+          </div>
+          <div className="k-concept__body reveal" data-delay="100">
+            <blockquote className="k-concept__quote">
+              <L lang={lang}>{k.quote[0]}</L>
+              <br />
+              <L lang={lang}>{k.quote[1]}</L>
+            </blockquote>
+            <div className="k-concept__attrib">{k.attrib}</div>
+            <div className="k-concept__prose">
+              {k.body.map((p, i) => <p key={i}><L lang={lang}>{p}</L></p>)}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ── USP ──────────────────────────────────────────────────── */
+function UspSection({ lang }) {
+  const c = C[lang];
+  return (
+    <section className="k-sec" id="usp">
+      <div className="k-sec__inner">
+        <SecHead data={c.sectionHead.usp} lang={lang} />
+        <div className="k-usp__grid">
+          {c.usp.map((u, i) => (
+            <div className="k-usp__col reveal" key={i} data-delay={(i * 100).toString()}>
+              <div className="k-usp__num">{u.num}</div>
+              <h4><L lang={lang}>{u.title}</L></h4>
+              <p><L lang={lang}>{u.body}</L></p>
+              <div className="k-usp__meta">
+                <span className="num-em">{u.meta}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ── Nearby ───────────────────────────────────────────────── */
+function NearbySection({ lang }) {
+  const c = C[lang];
+  const n = c.nearby;
+  return (
+    <section className="k-sec" id="nearby">
+      <div className="k-sec__inner">
+        <SecHead data={c.sectionHead.nearby} lang={lang} />
+
+        <div className="k-nearby__feature reveal">
+          <img src="web/kamikura-shrine/main-hall.jpg" alt="" />
+          <div className="k-nearby__feature__copy">
+            <div className="label">{n.featureLabel}</div>
+            <h3><L lang={lang}>{n.featureTitle}</L></h3>
+            <p><L lang={lang}>{n.featureBody}</L></p>
+            <div className="distance">{n.featureDist}</div>
+          </div>
+        </div>
+
+        <div className="k-nearby__feature k-nearby__feature--right reveal">
+          <img src="web/nagi-no-yu/nagi-no-yu-bath.jpg" alt="" />
+          <div className="k-nearby__feature__copy">
+            <div className="label">{n.nagiLabel}</div>
+            <h3><L lang={lang}>{n.nagiTitle}</L></h3>
+            <p><L lang={lang}>{n.nagiBody}</L></p>
+            <ul className="k-nearby__feature__meta">
+              <li><span>{lang === "ja" ? "営業" : "Hours"}</span>{n.nagiHours}</li>
+              <li><span>{lang === "ja" ? "定休" : "Closed"}</span>{n.nagiClosed}</li>
+              <li><span>{lang === "ja" ? "料金" : "Fee"}</span>{n.nagiPrice}</li>
+            </ul>
+            <div className="distance">{n.nagiDist}</div>
+          </div>
+        </div>
+
+        <div className="k-nearby__grid">
+          {n.cards.map((card, i) => (
+            <div className="k-nearby__card reveal" key={i} data-delay={((i % 3) * 100).toString()}>
+              <div className="k-nearby__card__media">
+                <img src={card.src} alt="" loading="lazy" />
+              </div>
+              <div className="k-nearby__card__row">
+                <div className="k-nearby__card__name">{card.name}</div>
+                <div className="k-nearby__card__dist">{card.dist}</div>
+              </div>
+              <div className="k-nearby__card__desc"><L lang={lang}>{card.desc}</L></div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ── Access ───────────────────────────────────────────────── */
+function AccessSection({ lang }) {
+  const c = C[lang];
+  const a = c.access;
+  return (
+    <section className="k-sec k-access" id="access">
+      <div className="k-sec__inner">
+        <SecHead data={c.sectionHead.access} lang={lang} />
+        <div className="k-access__grid">
+          <div className="k-access__map reveal">
+            <iframe
+              src="https://maps.google.com/maps?q=%E5%92%8C%E6%AD%8C%E5%B1%B1%E7%9C%8C%E6%96%B0%E5%AE%AE%E5%B8%82%E5%8D%83%E7%A9%821-8-5&t=&z=15&ie=UTF8&iwloc=&output=embed"
+              loading="lazy" title="map"></iframe>
+            <div className="k-access__map__pin">
+              {a.pin[0]}<br/>
+              <span className="en">{a.pin[1]}</span>
+            </div>
+          </div>
+          <div className="k-access__panel reveal" data-delay="100">
+            {a.rows.map((row, i) => (
+              <div className="k-access__row" key={i}>
+                <div className="k-access__row__icon">{row.letter}<br/><span style={{ fontFamily: "var(--mincho)", fontSize: 11, letterSpacing: ".3em", color: "var(--ink-soft)" }}>{row.label}</span></div>
+                <div>
+                  <h5><L lang={lang}>{row.head}</L></h5>
+                  <p><L lang={lang}>{row.body}</L></p>
+                  {row.table && (
+                    <table className="k-bus-table">
+                      <thead>
+                        <tr><th>{a.busTableHead[0]}</th><th>{a.busTableHead[1]}</th></tr>
+                      </thead>
+                      <tbody>
+                        {BUS_FROM.map((t, j) => (
+                          <tr key={j}><td>{t}</td><td>{BUS_TO[j]}</td></tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ── Booking ──────────────────────────────────────────────── */
+function BookingSection({ lang }) {
+  const [sent, setSent] = useState(false);
+  const c = C[lang];
+  const b = c.book;
+  return (
+    <section className="k-sec k-book" id="book">
+      <div className="k-sec__inner">
+        <SecHead data={c.sectionHead.book} lang={lang} />
+        <div className="k-book__grid">
+          <div className="k-book__channel reveal">
+            <h4>{b.channelTitle}</h4>
+            <div className="en">{b.channelSub}</div>
+            <div className="k-book__price">
+              <span className="num"><span className="yen">¥</span>9,000<span style={{ fontSize: 22, opacity: .7 }}>〜</span></span>
+              <span className="lbl">{b.priceUnit}</span>
+            </div>
+            <a className="k-book__cta" href="#" target="_blank" rel="noreferrer">{b.cta}</a>
+            <div className="k-book__notes">
+              {b.notes.map((line, i) => <div key={i}>{line}</div>)}
+            </div>
+          </div>
+
+          <form className="k-form reveal" data-delay="100" onSubmit={(e) => { e.preventDefault(); setSent(true); }}>
+            <h4>{b.formTitle}</h4>
+            <div className="en">{b.formSub}</div>
+
+            <div className="row">
+              <div><label>{b.fields.name}</label><input required name="name" /></div>
+              <div><label>{b.fields.email}</label><input required type="email" name="email" /></div>
+            </div>
+            <div className="row">
+              <div><label>{b.fields.ci}</label><input type="date" name="ci" /></div>
+              <div><label>{b.fields.co}</label><input type="date" name="co" /></div>
+            </div>
+            <div>
+              <label>{b.fields.guests}</label>
+              <select name="guests">
+                {[1,2,3,4,5,6].map(n => <option key={n}>{lang === "ja" ? `${n}名` : `${n} ${n === 1 ? "guest" : "guests"}`}</option>)}
+              </select>
+            </div>
+            <div>
+              <label>{b.fields.msg}</label>
+              <textarea name="msg" placeholder={b.msgPlaceholder}></textarea>
+            </div>
+            <button type="submit">{sent ? b.sent : b.submit}</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ── Footer ───────────────────────────────────────────────── */
+/* ── Specials section — both 御燈祭 and 貴祢谷社 ────────── */
+function SpecialsSection({ lang, onOpenSpecial }) {
+  const o = C[lang].otou;
+  const k = C[lang].kinegadani;
+  const items = [
+    { kind: "otou",       data: o, img: "web/festival/otou-matsuri.jpg",         tone: "fire"   },
+    { kind: "kinegadani", data: k, img: "web/kinegadani/kinegadani-shrine.jpg", tone: "forest" }
+  ];
+  return (
+    <section className="k-specials" aria-label={lang === "ja" ? "特設ページ" : "Special pages"}>
+      <div className="k-specials__head reveal">
+        <div className="k-specials__eyebrow">
+          <span className="rule"></span> {lang === "ja" ? "熊野めぐり" : "Kumano sites"}
+        </div>
+        <h2 className="k-specials__title">
+          <L lang={lang}>{lang === "ja" ? "熊野信仰の、はじまりへ。" : "To the origin of the Kumano faith."}</L>
+        </h2>
+        <p className="k-specials__lede">
+          <L lang={lang}>{lang === "ja"
+            ? "KURAの目の前で行われる火祭りと、神々がのちに移ったと伝わる古社。あわせてご紹介します。"
+            : "The fire festival at our doorstep, and the old shrine where the deities are said to have moved later. Both, side by side."}</L>
+        </p>
+      </div>
+
+      <div className="k-specials__grid">
+        {items.map((it, i) => (
+          <button key={it.kind} className="k-specials__card reveal" data-tone={it.tone} type="button"
+                  onClick={() => onOpenSpecial(it.kind)} style={{ transitionDelay: (i * 0.12) + "s" }}>
+            <div className="k-specials__media">
+              <img src={it.img} alt="" loading="lazy" />
+            </div>
+            <div className="k-specials__copy">
+              <div className="k-specials__card-eyebrow">
+                <span className="rule"></span> {it.data.eyebrow}
+              </div>
+              <h3 className="k-specials__card-title"><L lang={lang}>{it.data.title}</L></h3>
+              <p className="k-specials__card-sub"><L lang={lang}>{it.data.sub}</L></p>
+              <div className="k-specials__card-row">
+                <span className="k-specials__card-date">{it.data.date}</span>
+                <span className="k-specials__card-cta">{it.data.cta} <span className="arrow">→</span></span>
+              </div>
+            </div>
+          </button>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+/* ── Otō Matsuri special-page banner ─────────────────────── */
+function OtouBanner({ lang, onOpen }) {
+  const o = C[lang].otou;
+  return (
+    <section className="k-otou-banner" aria-label={o.title}>
+      <button type="button" className="k-otou-banner__inner reveal" onClick={onOpen}>
+        <div className="k-otou-banner__media">
+          <img src="web/festival/otou-matsuri.jpg" alt="" />
+        </div>
+        <div className="k-otou-banner__copy">
+          <div className="k-otou-banner__eyebrow">
+            <span className="rule"></span> {o.eyebrow}
+          </div>
+          <h3 className="k-otou-banner__title"><L lang={lang}>{o.title}</L></h3>
+          <p className="k-otou-banner__sub"><L lang={lang}>{o.sub}</L></p>
+          <div className="k-otou-banner__row">
+            <span className="k-otou-banner__date">{o.date}</span>
+            <span className="k-otou-banner__cta">{o.cta} <span className="arrow">→</span></span>
+          </div>
+        </div>
+      </button>
+    </section>
+  );
+}
+
+function Footer({ lang }) {
+  const c = C[lang];
+  const f = c.footer;
+  return (
+    <footer className="k-footer">
+      <div className="k-footer__top">
+        <div className="k-footer__mark">
+          <LogoMark size={56} color="var(--moss)" />
+          <strong>KURA</strong>
+          {lang === "ja" ? "熊野古道" : "Kumano Kodō"}<br/>
+          {lang === "ja" ? "和歌山 · 新宮" : "Shingū · Wakayama"}
+        </div>
+        <div>
+          <h6>{f.location}</h6>
+          <ul>
+            <li>〒647-0044</li>
+            <li>{lang === "ja" ? "和歌山県新宮市" : "Shingū, Wakayama"}</li>
+            <li>{lang === "ja" ? "千穂 1-8-5" : "1-8-5 Senbo"}</li>
+          </ul>
+        </div>
+        <div>
+          <h6>{f.sitemap}</h6>
+          <ul>
+            {c.nav.map(n => <li key={n.id}><a href={n.external ? n.external : ("#" + n.id)}>{n.label}</a></li>)}
+          </ul>
+        </div>
+        <div>
+          <h6>{f.contact}</h6>
+          <ul>
+            <li>{lang === "ja" ? "代表 " : "Host · "}<strong>{lang === "ja" ? "森本 みさ" : "Misa Morimoto"}</strong></li>
+            <li><a href="tel:+819014840536">090 – 1484 – 0536</a></li>
+            <li style={{ opacity: .55, marginTop: 12, fontSize: 11, letterSpacing: ".22em", fontFamily: "var(--serif-en)", textTransform: "uppercase" }}>{f.licNote}</li>
+          </ul>
+        </div>
+      </div>
+      <div className="k-footer__bottom">
+        <span>{f.cred}</span>
+        <span>{f.tagline}</span>
+      </div>
+    </footer>
+  );
+}
+
+/* ── Reveal observer ──────────────────────────────────────── */
+/* Mobile menu drawer */
+function MobileMenu({ open, lang, setLang, onClose, onOpenSpecial }) {
+  const c = C[lang];
+  React.useEffect(() => {
+    if (!open) return;
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    const onKey = (e) => { if (e.key === "Escape") onClose(); };
+    window.addEventListener("keydown", onKey);
+    return () => {
+      document.body.style.overflow = prev;
+      window.removeEventListener("keydown", onKey);
+    };
+  }, [open, onClose]);
+  return (
+    <div className={"k-mobile-menu" + (open ? " is-open" : "")} aria-hidden={!open}>
+      <div className="k-mobile-menu__veil" onClick={onClose}></div>
+      <aside className="k-mobile-menu__panel" role="dialog" aria-modal="true">
+        <div className="k-mobile-menu__top">
+          <div className="k-mobile-menu__mark">
+            <LogoMark size={24} />
+            <span>KURA</span>
+          </div>
+          <button className="k-mobile-menu__close" onClick={onClose} aria-label="close">
+            <span></span><span></span>
+          </button>
+        </div>
+        <nav className="k-mobile-menu__nav">
+          {c.nav.map((n, i) => (
+            n.overlay
+              ? <button key={n.id} type="button" onClick={() => { onClose(); setTimeout(() => onOpenSpecial(n.overlay), 320); }} style={{ animationDelay: (0.15 + i * 0.05) + "s" }}>
+                  <span className="num">{String(i + 1).padStart(2, "0")}</span>
+                  <span>{n.label}</span>
+                </button>
+              : <a key={n.id} href={"#" + n.id} onClick={onClose} style={{ animationDelay: (0.15 + i * 0.05) + "s" }}>
+                  <span className="num">{String(i + 1).padStart(2, "0")}</span>
+                  <span>{n.label}</span>
+                </a>
+          ))}
+        </nav>
+        <div className="k-mobile-menu__bottom">
+          <div className="k-langtoggle">
+            <button onClick={() => setLang("ja")} className={lang === "ja" ? "is-active" : ""}>JA</button>
+            <span>/</span>
+            <button onClick={() => setLang("en")} className={lang === "en" ? "is-active" : ""}>EN</button>
+          </div>
+          <a href="#book" onClick={onClose} className="k-cta-pill">{c.reserve}</a>
+        </div>
+      </aside>
+    </div>
+  );
+}
+
+function useReveal() {
+  useEffect(() => {
+    const els = document.querySelectorAll(".reveal");
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add("is-in"); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.12, rootMargin: "0px 0px -60px 0px" });
+    els.forEach(el => io.observe(el));
+    return () => io.disconnect();
+  });
+}
+
+/* ── Tweaks defaults ──────────────────────────────────────── */
+const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+  "theme": "moss",
+  "font": "mincho",
+  "hero": "fullbleed",
+  "rooms": "strip",
+  "density": "comfortable",
+  "mode": "light"
+}/*EDITMODE-END*/;
+
+/* ── App ──────────────────────────────────────────────────── */
+function App() {
+  const [t, setTweak] = useTweaks(TWEAK_DEFAULTS);
+  const [lang, setLang] = useState("ja");
+  const [lbOpen, setLbOpen] = useState(false);
+  const [lbIndex, setLbIndex] = useState(0);
+  const [specialOpen, setSpecialOpen] = useState(null); // null | "otou" | "kinegadani"
+  const [menuOpen, setMenuOpen] = useState(false);
+  const closeSpecial = () => setSpecialOpen(null);
+  const openSpecial = (kind) => setSpecialOpen(kind);
+
+  useReveal();
+
+  useEffect(() => {
+    const b = document.body;
+    b.classList.add("kura-sei");
+    b.dataset.theme = t.theme;
+    b.dataset.font = t.font;
+    b.dataset.density = t.density;
+    b.dataset.mode = t.mode;
+    b.dataset.lang = lang;
+  }, [t, lang]);
+
+  const openLB = (i) => { setLbIndex(i); setLbOpen(true); };
+  const closeLB = () => setLbOpen(false);
+  const prev = () => setLbIndex((i) => (i - 1 + ROOM_IMAGES.length) % ROOM_IMAGES.length);
+  const next = () => setLbIndex((i) => (i + 1) % ROOM_IMAGES.length);
+
+  return (
+    <>
+      <Header lang={lang} setLang={setLang}
+              onOpenSpecial={openSpecial}
+              onOpenMenu={() => setMenuOpen(true)} />
+      <Hero layout={t.hero} lang={lang} />
+      <RoomSection lang={lang} layout={t.rooms} onOpen={openLB} />
+      <ConceptSection lang={lang} />
+      <UspSection lang={lang} />
+      <NearbySection lang={lang} />
+      <SpecialsSection lang={lang} onOpenSpecial={openSpecial} />
+      <AccessSection lang={lang} />
+      <BookingSection lang={lang} />
+      <Footer lang={lang} />
+      <Lightbox open={lbOpen} index={lbIndex} onClose={closeLB} onPrev={prev} onNext={next} />
+      <MobileMenu open={menuOpen} lang={lang} setLang={setLang}
+                  onClose={() => setMenuOpen(false)}
+                  onOpenSpecial={openSpecial} />
+      {window.FestivalOverlay && React.createElement(window.FestivalOverlay, {
+        open: specialOpen === "otou", lang, onClose: closeSpecial
+      }, window.FestivalContent && React.createElement(window.FestivalContent, { lang, onClose: closeSpecial }))}
+      {window.FestivalOverlay && React.createElement(window.FestivalOverlay, {
+        open: specialOpen === "kinegadani", lang, onClose: closeSpecial
+      }, window.KinegadaniContent && React.createElement(window.KinegadaniContent, { lang, onClose: closeSpecial }))}
+
+      <TweaksPanel title="Tweaks · 設定">
+        <TweakSection label="Theme · 配色">
+          <TweakSelect label="Color" value={t.theme} onChange={(v) => setTweak("theme", v)}
+            options={[
+              { value: "moss", label: "苔色 (default)" },
+              { value: "vermillion", label: "朱寄り" },
+              { value: "ink", label: "墨" },
+              { value: "hinoki", label: "桧" }
+            ]} />
+          <TweakRadio label="Mode" value={t.mode} onChange={(v) => setTweak("mode", v)}
+            options={[{ value: "light", label: "Light" }, { value: "dark", label: "Dark" }]} />
+        </TweakSection>
+
+        <TweakSection label="Type · 書体">
+          <TweakRadio label="Font" value={t.font} onChange={(v) => setTweak("font", v)}
+            options={[{ value: "mincho", label: "明朝" }, { value: "gothic", label: "ゴシック" }]} />
+        </TweakSection>
+
+        <TweakSection label="Hero · 表紙">
+          <TweakSelect label="Layout" value={t.hero} onChange={(v) => setTweak("hero", v)}
+            options={[
+              { value: "fullbleed", label: "Full-bleed · 全面" },
+              { value: "split", label: "Split · 二分" },
+              { value: "stack", label: "Stack · 上下" }
+            ]} />
+        </TweakSection>
+
+        <TweakSection label="Room · 客室">
+          <TweakRadio label="Layout" value={t.rooms} onChange={(v) => setTweak("rooms", v)}
+            options={[
+              { value: "strip", label: "Strip" },
+              { value: "grid", label: "Grid" },
+              { value: "stack", label: "Stack" }
+            ]} />
+        </TweakSection>
+
+        <TweakSection label="Density · 余白">
+          <TweakRadio label="Space" value={t.density} onChange={(v) => setTweak("density", v)}
+            options={[
+              { value: "compact", label: "密" },
+              { value: "comfortable", label: "標準" },
+              { value: "generous", label: "ゆとり" }
+            ]} />
+        </TweakSection>
+      </TweaksPanel>
+    </>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById("root")).render(<App />);

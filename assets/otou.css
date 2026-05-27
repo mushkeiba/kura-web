@@ -1,0 +1,520 @@
+/* ─────────────────────────────────────────────────────────────
+   Otō Matsuri special page — sei.css の上に薄く差分追加
+   ───────────────────────────────────────────────────────────── */
+
+body.kura-otou {
+  background: var(--paper);
+  color: var(--ink);
+  --gutter: clamp(20px, 4vw, 64px);
+  --maxw: 1200px;
+  --sec-pad: clamp(96px, 14vh, 180px);
+}
+
+/* ── Hero ── */
+.otou-hero {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  background: #0a0805;
+  color: var(--paper);
+}
+.otou-hero__img {
+  position: absolute; inset: 0;
+}
+.otou-hero__img img {
+  width: 100%; height: 100%; object-fit: cover;
+  transform: scale(1.05);
+  animation: otouKB 22s var(--ease-out) infinite alternate;
+}
+@keyframes otouKB {
+  0%   { transform: scale(1.05) translate3d(0, 0, 0); }
+  100% { transform: scale(1.16) translate3d(-1%, -2%, 0); }
+}
+.otou-hero__scrim {
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(180deg, rgba(10,8,5,.5) 0%, rgba(10,8,5,.0) 25%, rgba(10,8,5,.25) 55%, rgba(10,8,5,.85) 100%),
+    linear-gradient(90deg, rgba(10,8,5,.55) 0%, rgba(10,8,5,0) 50%);
+}
+
+/* Forest hero variant — kinegadani (bright photo, green-tinted dark scrim) */
+.otou-hero--forest { background: #0d1109; }
+.otou-hero--forest .otou-hero__scrim {
+  background:
+    linear-gradient(180deg, rgba(13,17,9,.55) 0%, rgba(13,17,9,.1) 30%, rgba(13,17,9,.4) 60%, rgba(13,17,9,.92) 100%),
+    linear-gradient(90deg, rgba(13,17,9,.6) 0%, rgba(13,17,9,0) 55%);
+}
+.otou-hero--forest .otou-hero__eyebrow .vm { color: #B5C7A8; }
+.otou-hero--forest .otou-hero__date strong { color: #B5C7A8; }
+.otou-hero--forest .otou-hero__eyebrow .rule { background: #B5C7A8; }
+.otou-hero__shell {
+  position: relative; z-index: 2;
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  padding: 100px var(--gutter) 80px;
+  max-width: var(--maxw);
+  margin: 0 auto;
+}
+.otou-hero__topmeta {
+  display: flex; justify-content: space-between;
+  font-family: var(--serif-en);
+  font-size: 11px;
+  letter-spacing: .32em;
+  text-transform: uppercase;
+  opacity: .82;
+}
+.otou-hero__topmeta a { transition: opacity .3s; }
+.otou-hero__topmeta a:hover { opacity: .6; }
+
+.otou-hero__center {
+  display: flex; align-items: flex-end;
+  padding-bottom: clamp(60px, 12vh, 140px);
+  max-width: 880px;
+}
+.otou-hero__eyebrow {
+  display: flex; align-items: center; gap: 14px;
+  font-family: var(--serif-en);
+  font-size: 12px;
+  letter-spacing: .36em;
+  text-transform: uppercase;
+  opacity: .9;
+  margin-bottom: 28px;
+}
+.otou-hero__eyebrow .rule {
+  display: inline-block; width: 56px; height: 1px;
+  background: #C97043; opacity: 1;
+}
+.otou-hero__eyebrow .vm { color: #E8896A; }
+
+.otou-hero__title {
+  font-family: var(--mincho);
+  font-weight: 500;
+  font-size: clamp(46px, 7vw, 104px);
+  line-height: 1.18;
+  letter-spacing: .06em;
+  margin: 0;
+}
+.otou-hero__title .small {
+  display: block;
+  margin-top: 18px;
+  font-size: clamp(16px, 1.6vw, 22px);
+  letter-spacing: .3em;
+  font-weight: 400;
+  font-family: var(--serif-en);
+  font-style: italic;
+  opacity: .82;
+}
+.otou-hero__sub {
+  font-family: var(--serif-ja);
+  font-size: clamp(15px, 1.4vw, 18px);
+  letter-spacing: .12em;
+  margin-top: 28px;
+  max-width: 560px;
+  line-height: 1.95;
+  opacity: .92;
+}
+
+.otou-hero__bottom {
+  display: flex; justify-content: space-between; align-items: end;
+  gap: 24px;
+  font-family: var(--serif-en);
+  font-size: 11px;
+  letter-spacing: .3em;
+  text-transform: uppercase;
+}
+.otou-hero__date {
+  font-family: var(--mincho);
+  text-transform: none;
+  letter-spacing: .14em;
+  font-size: 14px;
+}
+.otou-hero__date strong {
+  display: block;
+  font-family: var(--serif-en);
+  font-size: 28px;
+  font-weight: 300;
+  font-style: italic;
+  letter-spacing: .04em;
+  margin-bottom: 4px;
+  color: #E8896A;
+}
+
+/* ── Sections ── */
+.otou-sec {
+  padding: var(--sec-pad) var(--gutter);
+}
+.otou-sec--paper-deep { background: var(--paper-deep); }
+.otou-sec--ink { background: var(--ink); color: var(--paper); }
+.otou-sec__inner {
+  max-width: var(--maxw);
+  margin: 0 auto;
+}
+
+.otou-prose {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: clamp(30px, 5vw, 80px);
+  align-items: start;
+  padding: clamp(60px, 8vw, 100px) 0;
+  border-top: 1px solid var(--hairline);
+}
+.otou-prose:last-of-type { border-bottom: 1px solid var(--hairline); }
+.otou-prose__index {
+  font-family: var(--serif-en);
+  font-size: 11px;
+  letter-spacing: .36em;
+  text-transform: uppercase;
+  color: var(--moss);
+}
+.otou-prose__index .num {
+  display: block;
+  font-size: 24px;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: .04em;
+  text-transform: none;
+  color: var(--ink);
+  margin-bottom: 14px;
+}
+.otou-prose__body h3 {
+  font-family: var(--mincho);
+  font-weight: 500;
+  font-size: clamp(28px, 3.4vw, 44px);
+  line-height: 1.4;
+  letter-spacing: .04em;
+  margin: 0 0 28px;
+}
+.otou-prose__body p {
+  font-size: 16px;
+  line-height: 2;
+  letter-spacing: .04em;
+  color: var(--ink);
+  margin: 0 0 16px;
+  max-width: 60ch;
+}
+.otou-prose__body p.muted { color: var(--ink-soft); }
+
+.otou-prose__pull {
+  margin-top: 28px;
+  padding: 24px 28px;
+  border-left: 3px solid var(--vermillion);
+  background: var(--paper-soft);
+  font-family: var(--mincho);
+  font-size: 15px;
+  line-height: 1.95;
+  letter-spacing: .04em;
+}
+.otou-sec--paper-deep .otou-prose__pull { background: rgba(244,239,232,.5); }
+.otou-sec--ink .otou-prose__pull { background: rgba(244,239,232,.06); border-left-color: #E8896A; }
+
+/* ── KURA from section (positioning) ── */
+.otou-position {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(40px, 6vw, 100px);
+  align-items: center;
+}
+.otou-position__media {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 4/5;
+  background: var(--ink);
+}
+.otou-position__media img {
+  width: 100%; height: 100%; object-fit: cover;
+}
+.otou-position__copy h3 {
+  font-family: var(--mincho);
+  font-weight: 500;
+  font-size: clamp(30px, 3.8vw, 50px);
+  line-height: 1.4;
+  letter-spacing: .04em;
+  margin: 0 0 32px;
+}
+.otou-position__copy p {
+  font-size: 16px;
+  line-height: 2;
+  margin: 0 0 16px;
+}
+.otou-position__cta {
+  display: inline-flex; align-items: center; gap: 14px;
+  margin-top: 32px;
+  padding: 18px 32px;
+  background: var(--moss);
+  color: var(--paper);
+  font-family: var(--mincho);
+  font-size: 14px;
+  letter-spacing: .2em;
+  transition: background .4s, transform .4s var(--ease-out);
+}
+.otou-position__cta:hover { background: var(--moss-deep); transform: translateY(-2px); }
+.otou-position__cta::after { content: "→"; font-family: var(--serif-en); }
+.otou-position__cta .en {
+  font-family: var(--serif-en);
+  font-style: italic;
+  font-size: 12px;
+  opacity: .75;
+  letter-spacing: .14em;
+  margin-left: 10px;
+  text-transform: none;
+}
+
+/* ── Practical info grid ── */
+.otou-info {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  border: 1px solid var(--hairline);
+  background: var(--paper-soft);
+}
+.otou-info__cell {
+  padding: clamp(28px, 3vw, 44px);
+  border-right: 1px solid var(--hairline);
+}
+.otou-info__cell:last-child { border-right: none; }
+.otou-info__cell h5 {
+  font-family: var(--serif-en);
+  font-size: 11px;
+  letter-spacing: .36em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin: 0 0 14px;
+  font-weight: 500;
+}
+.otou-info__cell .val {
+  font-family: var(--mincho);
+  font-size: clamp(18px, 1.8vw, 24px);
+  font-weight: 500;
+  line-height: 1.55;
+  letter-spacing: .04em;
+}
+.otou-info__cell .val em {
+  display: block;
+  margin-top: 6px;
+  font-style: normal;
+  font-family: var(--serif-en);
+  font-size: 12px;
+  letter-spacing: .14em;
+  color: var(--ink-soft);
+}
+
+/* ── Heritage / numbers band ── */
+.otou-band {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  margin-top: clamp(40px, 6vw, 80px);
+  border-top: 1px solid rgba(244,239,232,.16);
+  border-bottom: 1px solid rgba(244,239,232,.16);
+}
+.otou-band__cell {
+  padding: clamp(32px, 4vw, 48px) clamp(20px, 2.4vw, 36px);
+  border-right: 1px solid rgba(244,239,232,.16);
+}
+.otou-band__cell:last-child { border-right: none; }
+.otou-band__num {
+  font-family: var(--serif-en);
+  font-size: clamp(36px, 4.5vw, 60px);
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1;
+  color: #E8896A;
+  margin-bottom: 14px;
+  letter-spacing: .04em;
+}
+.otou-band__lbl {
+  font-family: var(--mincho);
+  font-size: 13px;
+  letter-spacing: .14em;
+  opacity: .85;
+  line-height: 1.7;
+}
+
+/* ── Sources / footer ── */
+.otou-foot {
+  padding: clamp(60px, 8vw, 100px) var(--gutter) clamp(40px, 4vw, 60px);
+  background: var(--paper-deep);
+  border-top: 1px solid var(--hairline);
+}
+.otou-foot__inner {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: clamp(30px, 5vw, 80px);
+}
+.otou-foot h6 {
+  font-family: var(--serif-en);
+  font-size: 11px;
+  letter-spacing: .32em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin: 0 0 16px;
+  font-weight: 500;
+}
+.otou-foot ul {
+  list-style: none; margin: 0; padding: 0;
+  display: flex; flex-direction: column; gap: 8px;
+}
+.otou-foot ul a {
+  font-family: var(--mincho);
+  font-size: 13px;
+  letter-spacing: .04em;
+  color: var(--moss);
+  border-bottom: 1px solid transparent;
+  transition: border-color .3s;
+}
+.otou-foot ul a:hover { border-bottom-color: var(--moss); }
+.otou-foot__back {
+  font-family: var(--serif-en);
+  font-size: 12px;
+  letter-spacing: .26em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  display: inline-flex; align-items: center; gap: 12px;
+}
+.otou-foot__back::before { content: "←"; font-style: italic; }
+
+/* ── Reveal ── */
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity 1.1s var(--ease-out), transform 1.1s var(--ease-out); }
+.reveal.is-in { opacity: 1; transform: translateY(0); }
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  body.kura-otou { --gutter: 22px; }
+  .otou-hero__title { font-size: clamp(40px, 11vw, 64px); }
+  .otou-hero__shell { padding: 80px var(--gutter) 60px; }
+  .otou-hero__topmeta { flex-direction: column; align-items: flex-start; gap: 6px; font-size: 9px; }
+  .otou-hero__center { padding-bottom: 56px; }
+  .otou-prose { grid-template-columns: 1fr; gap: 18px; padding: clamp(40px, 8vw, 70px) 0; }
+  .otou-prose__index { display: flex; gap: 14px; align-items: baseline; }
+  .otou-prose__index .num { display: inline; margin: 0; font-size: 22px; }
+  .otou-prose__body h3 { font-size: clamp(24px, 6.4vw, 34px); }
+  .otou-position { grid-template-columns: 1fr; gap: 30px; }
+  .otou-info, .otou-band { grid-template-columns: 1fr 1fr; }
+  .otou-info__cell, .otou-band__cell {
+    border-right: 1px solid var(--hairline);
+    border-bottom: 1px solid var(--hairline);
+  }
+  .otou-info__cell:nth-child(2n), .otou-band__cell:nth-child(2n) { border-right: none; }
+  .otou-band__cell { border-right-color: rgba(244,239,232,.16); border-bottom-color: rgba(244,239,232,.16); }
+  .otou-band__cell:nth-child(2n) { border-right: none; }
+  .otou-band__num { font-size: clamp(32px, 8vw, 44px); }
+  .otou-foot__inner { grid-template-columns: 1fr; gap: 30px; }
+}
+
+/* ── Vertical timeline (kinegadani) ── */
+.otou-timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+.otou-timeline::before {
+  content: "";
+  position: absolute;
+  left: 132px;
+  top: 12px;
+  bottom: 12px;
+  width: 1px;
+  background: rgba(244, 239, 232, 0.2);
+}
+.otou-timeline__item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 132px 28px 1fr;
+  align-items: start;
+  gap: 0;
+  padding: clamp(20px, 2.6vw, 32px) 0;
+}
+.otou-timeline__item + .otou-timeline__item {
+  border-top: 1px solid rgba(244, 239, 232, 0.08);
+}
+.otou-timeline__year {
+  font-family: var(--serif-en);
+  font-size: 13px;
+  font-style: italic;
+  letter-spacing: .14em;
+  color: rgba(244, 239, 232, 0.62);
+  padding-top: 4px;
+}
+.otou-timeline__node {
+  position: relative;
+  width: 28px;
+  height: 28px;
+  display: flex; align-items: flex-start; justify-content: center;
+  padding-top: 7px;
+}
+.otou-timeline__node::before {
+  content: "";
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: rgba(244, 239, 232, 0.35);
+  border: 1px solid rgba(244, 239, 232, 0.55);
+  transition: transform .5s var(--ease-out);
+}
+.otou-timeline__item.is-here .otou-timeline__node::before {
+  background: #B5C7A8;
+  border-color: #B5C7A8;
+  transform: scale(1.6);
+  box-shadow: 0 0 0 6px rgba(181, 199, 168, 0.12);
+}
+.otou-timeline__item.is-now .otou-timeline__node::before {
+  background: var(--paper);
+  border-color: var(--paper);
+}
+.otou-timeline__body {
+  padding-left: clamp(16px, 2vw, 28px);
+}
+.otou-timeline__body h4 {
+  font-family: var(--mincho);
+  font-size: clamp(18px, 1.8vw, 22px);
+  font-weight: 500;
+  margin: 0 0 8px;
+  letter-spacing: .04em;
+  color: var(--paper);
+}
+.otou-timeline__body p {
+  font-size: 14.5px;
+  line-height: 1.9;
+  color: rgba(244, 239, 232, 0.78);
+  margin: 0;
+  max-width: 56ch;
+}
+.otou-timeline__pin {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 4px 12px;
+  font-family: var(--mincho);
+  font-size: 12px;
+  letter-spacing: .14em;
+  color: #B5C7A8;
+  border: 1px solid #B5C7A8;
+  border-radius: 999px;
+}
+
+@media (max-width: 720px) {
+  .otou-timeline::before { left: 14px; }
+  .otou-timeline__item { grid-template-columns: 28px 1fr; gap: 0; padding: 18px 0; }
+  .otou-timeline__year {
+    grid-column: 1 / -1;
+    padding-left: 0;
+    margin-bottom: 8px;
+    font-size: 12px;
+  }
+  .otou-timeline__node { padding-top: 6px; }
+  .otou-timeline__body { padding-left: 14px; }
+  .otou-timeline__body h4 { font-size: 17px; }
+}
+  body.kura-otou { --gutter: 18px; --sec-pad: clamp(56px, 10vw, 88px); }
+  .otou-hero__title { font-size: clamp(36px, 12vw, 52px); }
+  .otou-hero__title .small { font-size: 13px; letter-spacing: .22em; }
+  .otou-hero__sub { font-size: 14px; }
+  .otou-hero__bottom { font-size: 9px; }
+  .otou-hero__date strong { font-size: 22px; }
+  .otou-info__cell, .otou-band__cell { padding: 22px 18px; }
+  .otou-info__cell .val { font-size: 16px; }
+  .otou-band__num { font-size: 32px; }
+  .otou-prose__pull { padding: 18px 20px; font-size: 14px; }
+}
