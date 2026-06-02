@@ -91,7 +91,7 @@ const C = {
       stats: [
         { num: "1",        unit: "室",   lbl: "1日1組" },
         { num: "5–6",      unit: "名",   lbl: "最大収容" },
-        { num: "¥9,000",   unit: "〜",   lbl: "素泊まり" }
+        { num: "¥10,000",  unit: "〜",   lbl: "素泊まり" }
       ],
       caption: "客室全景"
     },
@@ -140,13 +140,14 @@ const C = {
       nagiClosed: "日曜・1/1・1/3・1/4休",
       nagiPrice: "大人 400円 / 中人 140円 / 小人 80円",
       cards: [
-        { src: "web/nearby/restaurant-tanukiya.jpg", name: "たぬき屋",          dist: "徒歩2分",   desc: "うどん・そば・めはり寿司",  addr: "和歌山県新宮市千窂1-1-50",   tel: "0735-22-2978", hours: "11:00–20:00",        closed: "水曜休" },
-        { src: "web/nearby/restaurant-yokaya.jpg",   name: "陽香屋",          dist: "徒歩2分",   desc: "ラーメン・深夜2時まで",   addr: "和歌山県新宮市千窂2-4-17",   tel: "0735-21-7920", hours: "11:30–13:30 / 17:30–2:00", closed: "月曜休" },
+        { src: "web/nearby/restaurant-tanukiya.jpg", name: "たぬき屋",          dist: "徒歩2分",   desc: "うどん・そば・めはり寿司",  addr: "和歌山県新宮市千穂1-1-50",   tel: "0735-22-2978", hours: "11:00–20:00",        closed: "水曜休" },
+        { src: "web/nearby/restaurant-yokaya.jpg",   name: "陽香屋",          dist: "徒歩2分",   desc: "ラーメン・深夜2時まで",   addr: "和歌山県新宮市千穂2-4-17",   tel: "0735-21-7920", hours: "11:30–13:30 / 17:30–2:00", closed: "月曜休" },
         { src: "web/nearby/restaurant-matsusaka.jpg", name: "ビフテキ松坂",     dist: "徒歩10分",  desc: "ステーキ・夜のみ",      addr: "和歌山県新宮市大橋通4-1-13", tel: "0735-22-9468", hours: "17:00–21:00",        closed: "—" },
         { src: "web/nearby/restaurant-manten.jpg",   name: "まんてん",           dist: "徒歩12分",  desc: "お好み焼き・鉄板焼き",       addr: "和歌山県新宮市新宮542-1",      tel: "0735-23-9277", hours: "—",                    closed: "日曜休" },
-        { src: "web/nearby/familymart.jpg",          name: "ファミリーマート 千窂三丁目店", dist: "徒歩3分", desc: "コンビニ、24時間",     addr: "和歌山県新宮市千窂3丁目",      tel: "—",            hours: "24時間",             closed: "—" },
-        { src: "web/nearby/shop-organic-marche.jpg", name: "自然食品 コケコッコ",  dist: "徒歩3分",   desc: "無農薬野菜・天然酵母パン", addr: "和歌山県新宮市千窂1-1-45",   tel: "0735-23-0423", hours: "—",                    closed: "—" },
-        { src: "web/nearby/shop-liquor.jpg",         name: "堀酒店",            dist: "徒歩4分",   desc: "酒店・地酒",            addr: "和歌山県新宮市千窂1-8-13",   tel: "0735-22-5353", hours: "～19:00",              closed: "—" },
+        { src: "web/nearby/naka-kori.jpg",           name: "仲氷店",            dist: "徒歩7分",   desc: "かき氷・年中無休",          addr: "和歌山県新宮市仲之町2-2-21",  tel: "—",            hours: "日中",                closed: "年中無休" },
+        { src: "web/nearby/familymart.jpg",          name: "ファミリーマート 千穂三丁目店", dist: "徒歩3分", desc: "コンビニ、24時間",     addr: "和歌山県新宮市千穂3丁目",      tel: "—",            hours: "24時間",             closed: "—" },
+        { src: "web/nearby/shop-organic-marche.jpg", name: "自然食品 コケコッコ",  dist: "徒歩3分",   desc: "無農薬野菜・天然酵母パン", addr: "和歌山県新宮市千穂1-1-45",   tel: "0735-23-0423", hours: "—",                    closed: "—" },
+        { src: "web/nearby/shop-liquor.jpg",         name: "堀酒店",            dist: "徒歩4分",   desc: "酒店・地酒",            addr: "和歌山県新宮市千穂1-8-13",   tel: "0735-22-5353", hours: "～19:00",              closed: "—" },
         { src: "web/nearby/nachi-falls.jpg",         name: "那智の滝",          dist: "車で約30分", desc: "熊野三山・名瀑",          addr: "和歌山県那智勝浦町那智山",    tel: "—",            hours: "—",                    closed: "—" }
       ]
     },
@@ -166,8 +167,8 @@ const C = {
         },
         {
           label: "車",   letter: "Car",
-          head: "新宮南ICより車で約15分",
-          body: "敷地内に駐車場2台分のスペースがございます。"
+          head: "お車でお越しの方",
+          body: "新宮南インターチェンジより約5分。東京方面からは熊野大迫インターチェンジより約35分。駐車場は基本1台、それ以上は要ご相談です。"
         }
       ],
       busTableHead: ["新宮駅 発", "神倉神社前 発"]
@@ -177,7 +178,7 @@ const C = {
       channelSub: "Airbnbよりお手続きいただけます",
       priceUnit: "素泊まり / 1室1泊",
       cta: "Airbnbで予約する",
-      notes: ["チェックイン 16:00 〜 / チェックアウト 10:00", "お電話でも承ります：090ー1484ー0536", "旅館業（簡易宿所）申請中・許可後より受付開始"],
+      notes: ["チェックイン 16:00 〜 / チェックアウト 10:00", "お電話でも承ります：090ー1484ー0536"],
       formTitle: "直接のお問い合わせ",
       formSub: "ご質問・ご予約のご相談はこちらから。",
       fields: {
@@ -205,9 +206,8 @@ const C = {
       location: "所在地",
       sitemap: "サイトマップ",
       contact: "ご連絡先",
-      licNote: "旅館業（簡易宿所）申請中",
       cred: "© 2026 熊野古道KURA",
-      tagline: "新宮にて、ていねいに。"
+      tagline: "新宮にて。"
     }
   },
   en: {
@@ -278,7 +278,7 @@ const C = {
       stats: [
         { num: "1",      unit: "room",  lbl: "One party / day" },
         { num: "5–6",    unit: "guests", lbl: "Maximum" },
-        { num: "¥9,000", unit: "~",     lbl: "Room only" }
+        { num: "¥10,000", unit: "~",    lbl: "Room only" }
       ],
       caption: "Room overview"
     },
@@ -330,6 +330,7 @@ const C = {
         { src: "web/nearby/restaurant-tanukiya.jpg", name: "Tanukiya",         dist: "2 min walk",  desc: "Udon, soba, mehari-zushi", addr: "1-1-50 Senbo, Shingū",        tel: "0735-22-2978", hours: "11:00–20:00",        closed: "Wed" },
         { src: "web/nearby/restaurant-yokaya.jpg",   name: "Yōkaya",          dist: "2 min walk",  desc: "Ramen, until 2 am",       addr: "2-4-17 Senbo, Shingū",        tel: "0735-21-7920", hours: "11:30–13:30 / 17:30–2:00", closed: "Mon" },
         { src: "web/nearby/restaurant-matsusaka.jpg", name: "Matsusaka",       dist: "10 min walk", desc: "Steak, dinner only",      addr: "4-1-13 Ōhashi-dōri, Shingū", tel: "0735-22-9468", hours: "17:00–21:00",        closed: "—" },
+        { src: "web/nearby/naka-kori.jpg",           name: "Naka-kōri-ten",     dist: "7 min walk",  desc: "Shaved ice, open year-round", addr: "2-2-21 Nakanochō, Shingū",   tel: "—",            hours: "Daytime",            closed: "Open daily" },
         { src: "web/nearby/restaurant-manten.jpg",   name: "Manten",           dist: "12 min walk", desc: "Okonomiyaki",             addr: "542-1 Shingū, Shingū",       tel: "0735-23-9277", hours: "—",                    closed: "Sun" },
         { src: "web/nearby/familymart.jpg",          name: "FamilyMart Senbo 3-chome", dist: "3 min walk", desc: "Convenience, 24h",  addr: "Senbo 3-chōme, Shingū",       tel: "—",            hours: "24h",                  closed: "—" },
         { src: "web/nearby/shop-organic-marche.jpg", name: "Cocekokko",        dist: "3 min walk",  desc: "Organic produce & bakery", addr: "1-1-45 Senbo, Shingū",       tel: "0735-23-0423", hours: "—",                    closed: "—" },
@@ -353,8 +354,8 @@ const C = {
         },
         {
           label: "Car",   letter: "Car",
-          head: "About 15 min from Shingū-Minami IC",
-          body: "Two on-site parking spaces are available."
+          head: "Arriving by car",
+          body: "About 5 min from Shingū-Minami IC; about 35 min from Kumano-Ōsako IC (from the Tokyo direction). One on-site parking space; please ask in advance for two or more cars."
         }
       ],
       busTableHead: ["From Shingū Stn.", "From Kamikura Stop"]
@@ -364,7 +365,7 @@ const C = {
       channelSub: "Book your stay via Airbnb",
       priceUnit: "Room only / per night",
       cta: "Reserve on Airbnb",
-      notes: ["Check-in 16:00 / Check-out 10:00", "Call us at +81 90-1484-0536", "License pending — bookings open after issue"],
+      notes: ["Check-in 16:00 / Check-out 10:00", "Call us at +81 90-1484-0536"],
       formTitle: "Send a direct enquiry",
       formSub: "Questions and booking requests welcome.",
       fields: {
@@ -392,9 +393,8 @@ const C = {
       location: "Location",
       sitemap: "Sitemap",
       contact: "Contact",
-      licNote: "License pending",
       cred: "© 2026 Kumano Kodō KURA",
-      tagline: "Made quietly, in Shingū."
+      tagline: "Shingū, Japan."
     }
   }
 };
@@ -525,7 +525,7 @@ function Hero({ layout = "fullbleed", lang }) {
       <div className="k-hero__shell">
         <div className="k-hero__topmeta">
           <span>Kumano Kodō KURA · Wakayama · Shingū</span>
-          <span>Est. 2026 · 1·8·5 Senbo</span>
+          <span>1·8·5 Senbo, Shingū</span>
         </div>
 
         <div className="k-hero__center">
@@ -603,7 +603,7 @@ function RoomSection({ lang, layout = "strip", onOpen }) {
               </div>
               <div className="ed-meta__row">
                 <span className="ed-meta__lbl">{lang === "ja" ? "素泊まり" : "Room only"}</span>
-                <span className="ed-meta__val"><span className="price">¥9,000</span>〜</span>
+                <span className="ed-meta__val"><span className="price">¥10,000</span>〜</span>
               </div>
               <div className="ed-meta__row">
                 <span className="ed-meta__lbl">{lang === "ja" ? "床材" : "Floors"}</span>
@@ -735,7 +735,7 @@ function HayatamaBlock({ lang, onOpenSpecial }) {
           <p className="ed-head__lede">{ja ? "熊野三山の一社、世界遺産。" : "Three-Mountain Shrine · World Heritage"}</p>
         </div>
         <div className="ed-media reveal" onClick={() => onOpenSpecial("hayatama")} style={{ cursor: "pointer" }}>
-          <img src="web/hayatama/hayatama-gate.jpg" alt="" />
+          <img src="web/hayatama/hayatama-torii-gate.jpg" alt="" style={{ objectPosition: "center 30%" }} />
         </div>
         <div className="ed-body reveal">
           <div className="ed-body__copy">
@@ -851,11 +851,18 @@ function KinegadaniBlock({ lang, onOpenSpecial }) {
 function ShopsBlock({ lang }) {
   const cards = C[lang].nearby.cards;
   const [hovered, setHovered] = useState(null);
+  const [autoIdx, setAutoIdx] = useState(0);
   const [modalIdx, setModalIdx] = useState(null);
-  const isMobile = typeof window !== "undefined" && window.matchMedia("(max-width: 720px)").matches;
+
+  // Auto slideshow when nothing is hovered
+  useEffect(() => {
+    if (hovered != null) return;
+    const t = setInterval(() => setAutoIdx(i => (i + 1) % cards.length), 3000);
+    return () => clearInterval(t);
+  }, [hovered, cards.length]);
 
   const handleClick = (i) => { setModalIdx(i); };
-  const active = hovered != null ? cards[hovered] : null;
+  const shownIdx = hovered != null ? hovered : autoIdx;
   const modal = modalIdx != null ? cards[modalIdx] : null;
 
   return (
@@ -885,9 +892,9 @@ function ShopsBlock({ lang }) {
               </li>
             ))}
           </ul>
-          <div className={"ed-shops__preview" + (active ? " is-visible" : "")}>
+          <div className="ed-shops__preview is-visible">
             {cards.map((card, i) => (
-              <div key={i} className={"ed-shops__preview-card" + (hovered === i ? " is-on" : "")}>
+              <div key={i} className={"ed-shops__preview-card" + (shownIdx === i ? " is-on" : "")}>
                 <div className="ed-shops__preview-media">
                   <img src={card.src} alt="" loading="lazy" />
                 </div>
@@ -897,9 +904,6 @@ function ShopsBlock({ lang }) {
                 </div>
               </div>
             ))}
-            <div className="ed-shops__preview-idle">
-              {lang === "ja" ? "店名にふれると\n写真が表示されます" : "Hover a name\nto preview"}
-            </div>
           </div>
         </div>
       </div>
@@ -989,7 +993,7 @@ function AccessSection({ lang }) {
           <div className="ed-body__aside">
             <div className="ed-meta">
               <div className="ed-meta__row"><span className="ed-meta__lbl">{lang === "ja" ? "住所" : "Address"}</span><span className="ed-meta__val">{a.pin[1]}</span></div>
-              <div className="ed-meta__row"><span className="ed-meta__lbl">{lang === "ja" ? "駐車場" : "Parking"}</span><span className="ed-meta__val">{lang === "ja" ? "2台分" : "2 spaces"}</span></div>
+              <div className="ed-meta__row"><span className="ed-meta__lbl">{lang === "ja" ? "駐車場" : "Parking"}</span><span className="ed-meta__val">{lang === "ja" ? "1台（要相談）" : "1 car (ask for more)"}</span></div>
               <div className="ed-meta__row"><span className="ed-meta__lbl">{lang === "ja" ? "最寄駅" : "Station"}</span><span className="ed-meta__val">{lang === "ja" ? "JR新宮駅" : "Shingū (JR)"}</span></div>
             </div>
           </div>
@@ -1013,7 +1017,7 @@ function BookingSection({ lang }) {
             <h4>{b.channelTitle}</h4>
             <div className="en">{b.channelSub}</div>
             <div className="k-book__price">
-              <span className="num"><span className="yen">¥</span>9,000<span style={{ fontSize: 22, opacity: .7 }}>〜</span></span>
+              <span className="num"><span className="yen">¥</span>10,000<span style={{ fontSize: 22, opacity: .7 }}>〜</span></span>
               <span className="lbl">{b.priceUnit}</span>
             </div>
             <a className="k-book__cta" href="#" target="_blank" rel="noreferrer">{b.cta}</a>
@@ -1178,7 +1182,6 @@ function Footer({ lang }) {
           <h6>{f.contact}</h6>
           <ul>
             <li><a href="tel:+819014840536">090 – 1484 – 0536</a></li>
-            <li style={{ opacity: .55, marginTop: 12, fontSize: 11, letterSpacing: ".22em", fontFamily: "var(--serif-en)", textTransform: "uppercase" }}>{f.licNote}</li>
           </ul>
         </div>
       </div>

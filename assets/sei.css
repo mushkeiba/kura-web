@@ -2065,6 +2065,36 @@ body.kura-sei[data-mode="dark"] .k-intro__mark img {
 }
 .ed-media:hover img { transform: scale(1.06); }
 
+/* Contain media — show full subject (no crop) on a tonal backdrop */
+.ed-media--contain { background: #1a0f0a; aspect-ratio: 16/10; }
+.ed-media--contain img { object-fit: contain; }
+.ed-media--contain:hover img { transform: none; }
+
+/* Portrait media — taller frame that fills with a portrait photo, no bars */
+.ed-media--portrait { aspect-ratio: 3/4; max-height: 80vh; }
+
+/* Blur-fill — keep 16/10 but show the full (pulled-back) photo; blurred copy fills the sides */
+.ed-media--blurfill {
+  aspect-ratio: 16/10;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+.ed-media--blurfill::before {
+  content: "";
+  position: absolute; inset: 0;
+  backdrop-filter: blur(28px) brightness(.82);
+  -webkit-backdrop-filter: blur(28px) brightness(.82);
+}
+.ed-media--blurfill img {
+  position: relative;
+  z-index: 1;
+  width: 100%; height: 100%;
+  object-fit: contain;
+  transform: none;
+}
+.ed-media--blurfill:hover img { transform: none; }
+
 /* Tall media — for portrait-ish subjects (torii) so less is cropped */
 .ed-media--tall { aspect-ratio: 3/4; max-height: 78vh; }
 @media (max-width: 720px) { .ed-media--tall { aspect-ratio: 3/4; } }
@@ -2226,6 +2256,7 @@ body.kura-sei[data-mode="dark"] .ed-media--sketch img {
   position: sticky;
   top: 100px;
   width: 100%;
+  aspect-ratio: 4/5;
   pointer-events: none;
 }
 .ed-shops__preview-idle {

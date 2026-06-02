@@ -555,7 +555,7 @@ function HayatamaContent({ lang, onClose }) {
       {/* HERO */}
       <section className="otou-hero otou-hero--vermillion">
         <div className="otou-hero__img">
-          <img src="web/hayatama/hayatama-gate.jpg" alt="" />
+          <img src="web/hayatama/hayatama-torii-gate.jpg" alt="" />
         </div>
         <div className="otou-hero__scrim"></div>
 
