@@ -38,7 +38,7 @@ const C = {
     hero: {
       eyebrow: "和歌山県 新宮市 神倉",
       title1: "神倉山のふもと、",
-      title2: "ひとときの休息。",
+      title2: "ひとときの休憩。",
       sub: "熊野古道を歩く方のための、ひのきの床板が美しい一室貸しのゲストハウスです。",
       priceLbl: "素泊まり / 1室1泊",
       scroll: "下へ"
@@ -101,7 +101,7 @@ const C = {
       body: [
         "床材はヒノキを使用しました。寝具や水回りも、清潔に整えています。",
         "神倉山のふもとで、熊野古道を歩く方の拠点としてご利用いただけます。",
-        "熊野古道の名に恻じない宿を目指しております。"
+        "熊野古道の名に恥じない宿を目指しております。"
       ]
     },
     usp: [
@@ -177,7 +177,7 @@ const C = {
       channelSub: "Airbnbよりお手続きいただけます",
       priceUnit: "素泊まり / 1室1泊",
       cta: "Airbnbで予約する",
-      notes: ["チェックイン 16:00 〜 / チェックアウト 10:00", "お電話でも承ります：090ー1484ー0536（代表森本）", "旅館業（簡易宿所）申請中・許可後より受付開始"],
+      notes: ["チェックイン 16:00 〜 / チェックアウト 10:00", "お電話でも承ります：090ー1484ー0536", "旅館業（簡易宿所）申請中・許可後より受付開始"],
       formTitle: "直接のお問い合わせ",
       formSub: "ご質問・ご予約のご相談はこちらから。",
       fields: {
@@ -364,7 +364,7 @@ const C = {
       channelSub: "Book your stay via Airbnb",
       priceUnit: "Room only / per night",
       cta: "Reserve on Airbnb",
-      notes: ["Check-in 16:00 / Check-out 10:00", "Call us at +81 90-1484-0536 (Misa Morimoto)", "License pending — bookings open after issue"],
+      notes: ["Check-in 16:00 / Check-out 10:00", "Call us at +81 90-1484-0536", "License pending — bookings open after issue"],
       formTitle: "Send a direct enquiry",
       formSub: "Questions and booking requests welcome.",
       fields: {
@@ -1065,7 +1065,7 @@ function IntroSection({ lang }) {
         </div>
         <p className="k-intro__tag">
           {ja
-            ? "新宮、神倉山のふもと。ひとときの休息を、一日一組さまに。"
+            ? "新宮、神倉山のふもと。ひとときの休憩を、一日一組さまに。"
             : "At the foot of Mt. Kamikura, in Shingū. A quiet rest — one party per day."}
         </p>
         <div className="k-intro__rule"></div>
@@ -1177,7 +1177,6 @@ function Footer({ lang }) {
         <div>
           <h6>{f.contact}</h6>
           <ul>
-            <li>{lang === "ja" ? "代表 " : "Host · "}<strong>{lang === "ja" ? "森本 みさ" : "Misa Morimoto"}</strong></li>
             <li><a href="tel:+819014840536">090 – 1484 – 0536</a></li>
             <li style={{ opacity: .55, marginTop: 12, fontSize: 11, letterSpacing: ".22em", fontFamily: "var(--serif-en)", textTransform: "uppercase" }}>{f.licNote}</li>
           </ul>
