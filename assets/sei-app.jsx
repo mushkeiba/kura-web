@@ -37,9 +37,9 @@ const C = {
     reserve: "予約",
     hero: {
       eyebrow: "和歌山県 新宮市 神倉",
-      title1: "神倉のふもと、",
-      title2: "ひとときの静けさ。",
-      sub: "熊野古道を歩く方のための、ひのきの床板が美しい一室貸しの民宿です。",
+      title1: "神倉山のふもと、",
+      title2: "ひとときの休息。",
+      sub: "熊野古道を歩く方のための、ひのきの床板が美しい一室貸しのゲストハウスです。",
       priceLbl: "素泊まり / 1室1泊",
       scroll: "下へ"
     },
@@ -54,7 +54,7 @@ const C = {
         index: "02 / コンセプト",
         title: "宿のコンセプト",
         titleEn: "Our Philosophy",
-        lede: "派手さよりも、清潔さと心地よさを大切にしています。"
+        lede: "清潔で静かにくつろげる空間を。"
       },
       usp: {
         index: "03 / 特徴",
@@ -83,10 +83,10 @@ const C = {
     },
     room: {
       title: "ひと部屋まるごと、貸切で。",
-      lede: "アパートの一室をリフォームし、ひのきの床板を全面に張り直しました。清潔で落ち着いた空間に整えています。",
+      lede: "ひのきの床板を使用した、清潔で落ち着いた一室です。",
       body: [
         "1日1組さま限定、最大5〜6名様までご宿泊いただけます。",
-        "ご家族・ご友人・グループ旅行に。共用スペースはなく、ゆっくりとお過ごしいただけます。"
+        "ご家族・ご友人・グループ旅行に。ゆっくりとお過ごしいただけます。"
       ],
       stats: [
         { num: "1",        unit: "室",   lbl: "1日1組" },
@@ -96,12 +96,12 @@ const C = {
       caption: "客室全景"
     },
     concept: {
-      quote: ["きれいさで、群を抜く。", "しかし、—— さりげなく。"],
-      attrib: "—— 代表 森本　みさ",
+      quote: ["清潔で静かに", "くつろげる空間。"],
+      attrib: "",
       body: [
-        "数ある民宿のなかで、当宿はアパートの一室をリフォームしたものです。",
-        "ひのきの床板を張り直し、設備をひとつひとつ見直し、清潔さを何より大切に整えました。",
-        "派手な装飾はありません。それでも、戸を開けたときに「いい部屋だな」と感じていただける——そんな宿でありたいと考えています。"
+        "床材はヒノキを使用しました。寝具や水回りも、清潔に整えています。",
+        "神倉山のふもとで、熊野古道を歩く方の拠点としてご利用いただけます。",
+        "熊野古道の名に恻じない宿を目指しております。"
       ]
     },
     usp: [
@@ -110,7 +110,7 @@ const C = {
         title: "神倉神社まで徒歩約5分",
         body: "熊野古道のはじまりの地とされる神倉神社まで、徒歩でおよそ5分。古道歩きの拠点としてお使いいただけます。",
         meta: "徒歩約5分",
-        img: "web/kamikura-shrine/torii-entrance.jpg"
+        img: "web/kamikura-shrine/view-1.jpg"
       },
       {
         num: "02",
@@ -130,7 +130,7 @@ const C = {
     nearby: {
       featureTitle: "神倉神社",
       featureLabel: "ご紹介 · 神倉神社",
-      featureBody: "巨石「ゴトビキ岩」を御神体とする神社で、熊野信仰のはじまりの地とされています。538段の石段を登った先には、新宮の街と熊野灘を一望する眺望が広がります。",
+      featureBody: "神倉山のふもとから538段の石段を上った先に鎮座する古社です。ゴトビキ岩（巨岩）を御神体としてお祭りしています。熊野速玉大社の摂社で、熊野信仰の発祥地とされています。",
       featureDist: "徒歩 約5分",
       nagiTitle: "なぎの湯",
       nagiLabel: "お風呂 · 市民の銜湯",
@@ -197,7 +197,7 @@ const C = {
     kinegadani: {
       eyebrow: "特設ページ",
       title: "貴祷谷社",
-      sub: "神倉を降りた熊野の神が、のちに移ったと伝わる古社。静かな森のなかへ。",
+      sub: "神倉山を降りた熊野の神が、のちに移ったと伝わる古社。静かな森のなかへ。",
       cta: "貴祷谷社 特設ページへ",
       date: "三重・紀宝町"
     },
@@ -224,9 +224,9 @@ const C = {
     reserve: "Reserve",
     hero: {
       eyebrow: "Wakayama · Shingū · Kamikura",
-      title1: "A quiet stay,",
-      title2: "at the foot of Kamikura.",
-      sub: "A one-room guesthouse with hinoki-wood floors, for those walking the Kumano Kodō.",
+      title1: "A quiet rest,",
+      title2: "at the foot of Mt. Kamikura.",
+      sub: "A one-room guesthouse with hinoki cypress floors, for those walking the Kumano Kodō.",
       priceLbl: "Room only · Per night",
       scroll: "Scroll"
     },
@@ -270,10 +270,10 @@ const C = {
     },
     room: {
       title: "The whole room is yours.",
-      lede: "An apartment renovated into a single guesthouse room. Newly-laid hinoki floors throughout, kept calm and uncommonly clean.",
+      lede: "A clean, calm room with hinoki cypress floors.",
       body: [
         "One party per day, up to five or six guests.",
-        "Suited to families, friends, or pilgrim groups. No shared spaces — the whole space belongs to your party."
+        "Suited to families, friends, or groups. Settle in and take your time."
       ],
       stats: [
         { num: "1",      unit: "room",  lbl: "One party / day" },
@@ -283,12 +283,12 @@ const C = {
       caption: "Room overview"
     },
     concept: {
-      quote: ["Uncommonly clean,", "but never showy."],
-      attrib: "— Misa Morimoto, host",
+      quote: ["A clean, quiet", "place to rest."],
+      attrib: "",
       body: [
-        "Among many guesthouses, ours is an apartment carefully renovated into a single room.",
-        "We re-laid the floors in hinoki, reviewed every fixture, and made cleanliness our first priority.",
-        "There are no flourishes. Just a room where, on opening the door, a guest might quietly think — this is a good place to stay."
+        "The floors are laid in hinoki cypress. The bedding and washroom are kept clean and simple.",
+        "At the foot of Mt. Kamikura, the house serves as a base for those walking the Kumano Kodō.",
+        "We aim to be a guesthouse worthy of the name of the Kumano Kodō."
       ]
     },
     usp: [
@@ -297,7 +297,7 @@ const C = {
         title: "5 minutes to Kamikura Shrine",
         body: "About a five-minute walk to Kamikura Shrine, said to be the starting point of the Kumano Kodō. A natural base for the pilgrimage.",
         meta: "≈ 5 min walk",
-        img: "web/kamikura-shrine/torii-entrance.jpg"
+        img: "web/kamikura-shrine/view-1.jpg"
       },
       {
         num: "02",
@@ -317,7 +317,7 @@ const C = {
     nearby: {
       featureTitle: "Kamikura Shrine",
       featureLabel: "Featured · Kamikura",
-      featureBody: "The shrine takes a great rock — Gotobiki-iwa — as its sacred body, and is considered the birthplace of Kumano faith. After 538 stone steps, the path opens onto a sweeping view of Shingū and the Kumano Sea.",
+      featureBody: "An ancient shrine reached by 538 stone steps from the foot of Mt. Kamikura. It enshrines Gotobiki-iwa, a great rock, as its sacred body. A subordinate shrine of Kumano Hayatama-Taisha, it is regarded as the birthplace of Kumano faith.",
       featureDist: "5 minutes on foot",
       nagiTitle: "Nagi-no-yu",
       nagiLabel: "Bath · Public sentō",
@@ -404,12 +404,14 @@ const BUS_TO   = ["7:45","8:17","9:30","11:07","13:07","14:17","15:37","17:07","
 
 const ROOM_IMAGES = [
   { src: "web/interior/room-overview.jpg",  ja: "客室全景",      en: "Overview" },
-  { src: "web/interior/room-living-1.jpg",  ja: "リビング",      en: "Living" },
-  { src: "web/interior/room-living-2.jpg",  ja: "リビング・寝室", en: "Living & Bedroom" },
-  { src: "web/interior/room-bedroom.jpg",   ja: "寝室",          en: "Bedroom" },
+  { src: "web/interior/room-living-1.jpg",  ja: "居間",          en: "Living" },
+  { src: "web/interior/room-bedroom.jpg",   ja: "ヒノキの床",    en: "Hinoki floor" },
   { src: "web/interior/room-kitchen.jpg",   ja: "キッチン",      en: "Kitchen" },
   { src: "web/interior/room-washroom.jpg",  ja: "洗面",          en: "Washroom" },
+  { src: "web/interior/room-bath.jpg",      ja: "シャワー",      en: "Shower" },
   { src: "web/interior/room-toilet.jpg",    ja: "お手洗い",      en: "Lavatory" },
+  { src: "web/interior/room-terrace.jpg",   ja: "テラス",        en: "Terrace" },
+  { src: "web/interior/room-view.jpg",      ja: "眺め",          en: "View" },
 ];
 
 /* ── helper to render JA text with phrase wrap, EN as plain ── */
@@ -654,7 +656,7 @@ function ConceptSection({ lang }) {
   const c = C[lang];
   const k = c.concept;
   return (
-    <section className="ed-section ed-section--alt" id="concept">
+    <section className="ed-section ed-section--alt" id="concept" data-tone="moss">
       <div className="ed-inner">
         <div className="ed-head reveal">
           <div className="ed-head__left">
@@ -664,8 +666,8 @@ function ConceptSection({ lang }) {
           <p className="ed-head__lede"><L lang={lang}>{c.sectionHead.concept.lede}</L></p>
         </div>
 
-        <div className="ed-media reveal">
-          <img src="web/kamikura-shrine/shimenawa.jpg" alt="" />
+        <div className="ed-media ed-media--dark reveal">
+          <img src="web/concept/concept-room-dark.png" alt="" />
         </div>
 
         <div className="ed-body reveal">
@@ -675,7 +677,7 @@ function ConceptSection({ lang }) {
               <br />
               <L lang={lang}>{k.quote[1]}</L>
             </blockquote>
-            <div className="attrib">{k.attrib}</div>
+            {k.attrib && <div className="attrib">{k.attrib}</div>}
             {k.body.map((p, i) => <p key={i}><L lang={lang}>{p}</L></p>)}
           </div>
           <div className="ed-body__aside"></div>
@@ -690,17 +692,17 @@ function KamikuraBlock({ lang }) {
   const c = C[lang];
   const n = c.nearby;
   return (
-    <section className="ed-section" id="nearby">
+    <section className="ed-section" id="nearby" data-tone="stone">
       <div className="ed-inner">
         <div className="ed-head reveal">
           <div className="ed-head__left">
             <div className="ed-head__num"><span className="num">03</span><span className="sep">/</span>Kamikura Shrine</div>
             <h2 className="ed-head__ja">{n.featureTitle}</h2>
           </div>
-          <p className="ed-head__lede">{lang === "ja" ? "熊野古道のはじまりの地。" : "The starting place of the Kumano Kodō."}</p>
+          <p className="ed-head__lede">{lang === "ja" ? "熊野信仰の発祥地。" : "The birthplace of Kumano faith."}</p>
         </div>
         <div className="ed-media reveal">
-          <img src="web/kamikura-shrine/view-2.jpg" alt="" />
+          <img src="web/kamikura-shrine/view-2.jpg" alt="" style={{ objectPosition: "center 40%" }} />
         </div>
         <div className="ed-body reveal">
           <div className="ed-body__copy">
@@ -710,7 +712,8 @@ function KamikuraBlock({ lang }) {
             <div className="ed-meta">
               <div className="ed-meta__row"><span className="ed-meta__lbl">{lang === "ja" ? "距離" : "Distance"}</span><span className="ed-meta__val">{n.featureDist}</span></div>
               <div className="ed-meta__row"><span className="ed-meta__lbl">{lang === "ja" ? "石段" : "Steps"}</span><span className="ed-meta__val">538</span></div>
-              <div className="ed-meta__row"><span className="ed-meta__lbl">{lang === "ja" ? "御祭神" : "Deities"}</span><span className="ed-meta__val">{lang === "ja" ? "熊野権現" : "Kumano-gongen"}</span></div>
+              <div className="ed-meta__row"><span className="ed-meta__lbl">{lang === "ja" ? "御神体" : "Sacred body"}</span><span className="ed-meta__val">{lang === "ja" ? "ゴトビキ岩" : "Gotobiki-iwa"}</span></div>
+              <div className="ed-meta__row"><span className="ed-meta__lbl">{lang === "ja" ? "御祭神" : "Deities"}</span><span className="ed-meta__val">{lang === "ja" ? "天照大神・高倉下命" : "Amaterasu, Takakuraji"}</span></div>
             </div>
           </div>
         </div>
@@ -722,7 +725,7 @@ function KamikuraBlock({ lang }) {
 function HayatamaBlock({ lang, onOpenSpecial }) {
   const ja = lang === "ja";
   return (
-    <section className="ed-section ed-section--alt">
+    <section className="ed-section ed-section--alt" data-tone="vermillion">
       <div className="ed-inner">
         <div className="ed-head reveal">
           <div className="ed-head__left">
@@ -737,8 +740,8 @@ function HayatamaBlock({ lang, onOpenSpecial }) {
         <div className="ed-body reveal">
           <div className="ed-body__copy">
             <p>{ja
-              ? "神倉のゴトビキ岩に降臨した熊野の神を、この地にお迎えして造られました。神倉が「元宮」、速玉大社が「新宮」と呼ばれ、それが新宮市の地名の由来とも伝えられます。"
-              : "Built to receive the Kumano deities after their descent on Kamikura. Kamikura is the 'old shrine', Hayatama-Taisha the 'new shrine' — the origin of the city's name, Shingū."}</p>
+              ? "神倉山のゴトビキ岩に祀られていた熊野の神を、この地にお迎えして造営されたと伝わります。神倉が「元宮」、速玉大社が「新宮」と呼ばれ、それが新宮市の地名の由来とも伝えられます。"
+              : "Built to receive the Kumano deities who were enshrined on Gotobiki-iwa at Mt. Kamikura. Kamikura is the 'old shrine', Hayatama-Taisha the 'new shrine' — the origin of the city's name, Shingū."}</p>
           </div>
           <div className="ed-body__aside">
             <button className="ed-cta" type="button" onClick={() => onOpenSpecial("hayatama")}>
@@ -755,11 +758,11 @@ function NagiBlock({ lang }) {
   const c = C[lang];
   const n = c.nearby;
   return (
-    <section className="ed-section ed-section--alt">
+    <section className="ed-section" data-tone="indigo">
       <div className="ed-inner">
         <div className="ed-head reveal">
           <div className="ed-head__left">
-            <div className="ed-head__num"><span className="num">04</span><span className="sep">/</span>Nagi-no-yu</div>
+            <div className="ed-head__num"><span className="num">05</span><span className="sep">/</span>Nagi-no-yu</div>
             <h2 className="ed-head__ja">{n.nagiTitle}</h2>
           </div>
           <p className="ed-head__lede">{lang === "ja" ? "歩いていける、市民の銭湯。" : "The local public bathhouse, on foot."}</p>
@@ -788,11 +791,11 @@ function NagiBlock({ lang }) {
 function OtouBlock({ lang, onOpenSpecial }) {
   const o = C[lang].otou;
   return (
-    <section className="ed-section ed-section--ink">
+    <section className="ed-section ed-section--ink" data-tone="fire">
       <div className="ed-inner">
         <div className="ed-head reveal">
           <div className="ed-head__left">
-            <div className="ed-head__num"><span className="num">05</span><span className="sep">/</span>Otō Matsuri</div>
+            <div className="ed-head__num"><span className="num">06</span><span className="sep">/</span>Otō Matsuri</div>
             <h2 className="ed-head__ja">{o.title}</h2>
           </div>
           <p className="ed-head__lede">{o.date}</p>
@@ -818,11 +821,11 @@ function OtouBlock({ lang, onOpenSpecial }) {
 function KinegadaniBlock({ lang, onOpenSpecial }) {
   const k = C[lang].kinegadani;
   return (
-    <section className="ed-section">
+    <section className="ed-section" data-tone="forest">
       <div className="ed-inner">
         <div className="ed-head reveal">
           <div className="ed-head__left">
-            <div className="ed-head__num"><span className="num">06</span><span className="sep">/</span>Kinegadani-sha</div>
+            <div className="ed-head__num"><span className="num">07</span><span className="sep">/</span>Kinegadani-sha</div>
             <h2 className="ed-head__ja">{k.title}</h2>
           </div>
           <p className="ed-head__lede">{k.date}</p>
@@ -856,28 +859,29 @@ function ShopsBlock({ lang }) {
   const modal = modalIdx != null ? cards[modalIdx] : null;
 
   return (
-    <section className="ed-section ed-section--alt">
+    <section className="ed-section ed-section--alt" data-tone="warm">
       <div className="ed-inner">
         <div className="ed-head reveal">
           <div className="ed-head__left">
-            <div className="ed-head__num"><span className="num">07</span><span className="sep">/</span>Around</div>
+            <div className="ed-head__num"><span className="num">08</span><span className="sep">/</span>Around</div>
             <h2 className="ed-head__ja">{lang === "ja" ? "周辺の飲食と買物" : "Eat & shop nearby"}</h2>
           </div>
-          <p className="ed-head__lede">{lang === "ja" ? "徒歩圏内のお店。素泊まり前提でどうぞ。" : "Within walking distance — room-only, by design."}</p>
+          <p className="ed-head__lede">{lang === "ja" ? "徒歩圏内のお店です。" : "Shops within walking distance."}</p>
         </div>
 
         <div className="ed-shops__wrap">
           <ul className="ed-shops__list reveal">
             {cards.map((card, i) => (
               <li key={i}
-                  style={{ "--shop-bg": `url("../${card.src}")` }}
                   onMouseEnter={() => setHovered(i)}
                   onMouseLeave={() => setHovered(null)}
                   onClick={() => handleClick(i)}
                   className={hovered === i ? "is-hover" : ""}>
+                <span className="idx">{String(i + 1).padStart(2, "0")}</span>
                 <span className="name">{card.name}</span>
                 <span className="cat">{card.desc}</span>
                 <span className="dist">{card.dist}</span>
+                <span className="go" aria-hidden="true">→</span>
               </li>
             ))}
           </ul>
@@ -893,6 +897,9 @@ function ShopsBlock({ lang }) {
                 </div>
               </div>
             ))}
+            <div className="ed-shops__preview-idle">
+              {lang === "ja" ? "店名にふれると\n写真が表示されます" : "Hover a name\nto preview"}
+            </div>
           </div>
         </div>
       </div>
@@ -941,7 +948,7 @@ function AccessSection({ lang }) {
       <div className="ed-inner">
         <div className="ed-head reveal">
           <div className="ed-head__left">
-            <div className="ed-head__num"><span className="num">08</span><span className="sep">/</span>Access</div>
+            <div className="ed-head__num"><span className="num">09</span><span className="sep">/</span>Access</div>
             <h2 className="ed-head__ja">{c.sectionHead.access.title}</h2>
           </div>
           <p className="ed-head__lede">{c.sectionHead.access.lede}</p>
@@ -1058,8 +1065,8 @@ function IntroSection({ lang }) {
         </div>
         <p className="k-intro__tag">
           {ja
-            ? "新宮、神倉のふもと。ひとときの静けさを、一日一組さまに。"
-            : "At the foot of Kamikura, in Shingū. A quiet stay — one party per day."}
+            ? "新宮、神倉山のふもと。ひとときの休息を、一日一組さまに。"
+            : "At the foot of Mt. Kamikura, in Shingū. A quiet rest — one party per day."}
         </p>
         <div className="k-intro__rule"></div>
       </div>

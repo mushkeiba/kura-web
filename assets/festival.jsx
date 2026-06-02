@@ -68,12 +68,12 @@ function FestivalContent({ lang, onClose }) {
                 : "Otō Matsuri is a fire festival held at Kamikura Shrine every February 6, at night."}
               </p>
               <p>{ja
-                ? "白装束に荒縄を巻いた男たちが、燃える松明を手に538段の石段を駆け下ります。山がひとすじの火の流れになり、街の灯りと混じり合います。"
-                : "Men dressed in white, bound with rope, descend the 538 stone steps with burning torches. For a moment the mountain becomes a single line of fire."}
+                ? "白襦袢に荒縄を巻いた上り子たちが、松明を手に538段の石段を駆け下ります。山がひとすじの火の流れになり、街の灯りと混じり合います。"
+                : "Men in white — the agari-ko — bound with rope, run down the 538 stone steps with burning torches. For a moment the mountain becomes a single line of fire."}
               </p>
               <div className="otou-prose__pull">{ja
-                ? "「上り子（のぼりこ）」と呼ばれる参加者は、祭りの一週間前から白い物だけを食べる精進潔斎を経て、当日を迎えます。"
-                : "The participants, called nobori-ko, undergo a week of ritual purification before the festival — eating only foods that are white in colour."}
+                ? "「上り子（あがりこ）」と呼ばれる参加者は、祭りの一週間前から白い物だけを食べる精進潔斎を経て、当日を迎えます。"
+                : "The participants, called agari-ko, undergo a week of ritual purification before the festival — eating only foods that are white in colour."}
               </div>
             </div>
           </article>
@@ -112,8 +112,8 @@ function FestivalContent({ lang, onClose }) {
                 : "Anyone may come to watch. The procession of fire can be observed from outside the torii gate."}
               </p>
               <p>{ja
-                ? "参加できるのは男性のみで、一週間前から白い物のみを食す精進潔斎が必要です。二〇二五年は約一千五百八十名の上り子が参加しました。"
-                : "Only men may take part, after a week of ritual purification. In 2025, about 1,580 nobori-ko participated."}
+                ? "参加できるのは男子のみで、一週間前から白米・かまぼこ・豆腐など白い物のみを食す精進潔斎が必要です。二〇二五年は約一千五百八十名の上り子が参加しました。"
+                : "Only men may take part, after a week of ritual purification. In 2025, about 1,580 agari-ko participated."}
               </p>
 
               <div className="otou-info" style={{ marginTop: 36 }}>
@@ -145,7 +145,7 @@ function FestivalContent({ lang, onClose }) {
         <div className="otou-sec__inner">
           <div className="otou-position">
             <div className="otou-position__media">
-              <img src="web/kamikura-shrine/torii-entrance.jpg" alt="" />
+              <img src="web/kamikura-shrine/view-1.jpg" alt="" />
             </div>
             <div className="otou-position__copy">
               <div className="otou-prose__index" style={{ marginBottom: 22 }}>
@@ -158,8 +158,8 @@ function FestivalContent({ lang, onClose }) {
                 : "The stone steps of Kamikura Shrine — where the festival happens — are directly in front of Kumano Kodō KURA."}
               </p>
               <p>{ja
-                ? "祭りのあと、白装束のまま参加者が街へ戻ってくる時間帯まで、宿の窓から街の様子を眺めていただけます。"
-                : "From your window, you can watch the white-clad participants return through the town after the rite."}
+                ? "KURAからは、上り子たちの、まつりに向かう勇ましい姿を見送ることができます。また、駆け下りてくる姿もすぐ近くで見ることができます。"
+                : "From KURA, you can see off the agari-ko as they head bravely to the festival — and watch them run back down, close at hand."}
               </p>
               <p>{ja
                 ? "二月六日前後のご宿泊は、例年お問い合わせが集中いたします。お早めにご相談ください。"
@@ -182,28 +182,28 @@ function FestivalContent({ lang, onClose }) {
             {ja ? "数字でみる御燈祭" : "05 / In numbers"}
           </div>
           <h3 style={{ fontFamily: "var(--mincho)", fontWeight: 500, fontSize: "clamp(28px, 3.4vw, 44px)", margin: "0 0 16px", letterSpacing: ".04em" }}>
-            {ja ? "事実だけを、淡々と。" : "Just the facts, plainly."}
+            {ja ? "数字でたどる御燈祭" : "The festival in numbers"}
           </h3>
           <p style={{ fontSize: 15, lineHeight: 1.95, color: "rgba(244,239,232,.7)", maxWidth: "60ch", margin: 0 }}>
-            {ja ? "装飾ではなく、史実と当日の規模をそのまま記します。" : "No flourishes — the history and the scale, as they are."}
+            {ja ? "歴史・石段・参加者数など、御燈祭にまつわる数字をまとめました。" : "A few figures behind the festival — its history, steps, and participants."}
           </p>
 
           <div className="otou-band">
             <div className="otou-band__cell">
               <div className="otou-band__num">1,400<span style={{ fontSize: ".6em", opacity: .7 }}>+</span></div>
-              <div className="otou-band__lbl">{ja ? "年の歴史" : "Years of tradition"}<br/>{ja ? "Years of tradition" : ""}</div>
+              <div className="otou-band__lbl">{ja ? "年の歴史" : "Years of tradition"}</div>
             </div>
             <div className="otou-band__cell">
               <div className="otou-band__num">538</div>
-              <div className="otou-band__lbl">{ja ? "石段の数" : "Stone steps"}<br/>{ja ? "Stone steps" : ""}</div>
+              <div className="otou-band__lbl">{ja ? "石段の数" : "Stone steps"}</div>
             </div>
             <div className="otou-band__cell">
               <div className="otou-band__num">1,580</div>
-              <div className="otou-band__lbl">{ja ? "上り子（2025年）" : "Participants in 2025"}<br/>{ja ? "Participants in 2025" : ""}</div>
+              <div className="otou-band__lbl">{ja ? "上り子（2025年）" : "Participants (2025)"}</div>
             </div>
             <div className="otou-band__cell">
               <div className="otou-band__num">2 / 6</div>
-              <div className="otou-band__lbl">{ja ? "例年の開催日" : "Annual date"}<br/>{ja ? "Annual date" : ""}</div>
+              <div className="otou-band__lbl">{ja ? "例年の開催日" : "Annual date"}</div>
             </div>
           </div>
         </div>
@@ -221,12 +221,6 @@ function FestivalContent({ lang, onClose }) {
             </ul>
           </div>
           <div>
-            <h6>{ja ? "この特設ページについて" : "About this page"}</h6>
-            <p style={{ fontFamily: "var(--serif-ja)", fontSize: 13, lineHeight: 1.95, color: "var(--ink-soft)", margin: "0 0 24px", maxWidth: "60ch" }}>
-              {ja
-                ? <>写真は宿主が当日に撮影したものです。記述は出典に基づき、事実情報を中心にまとめました。<br/>Photograph by the host. Information sourced from the references above.</>
-                : "Photograph by the host. Information sourced from the references above."}
-            </p>
             <button className="otou-foot__back" onClick={onClose}>
               {ja ? "熊野古道KURA トップへ戻る" : "Back to KURA"}
             </button>
@@ -354,7 +348,7 @@ function KinegadaniContent({ lang, onClose }) {
               {ja ? "歴史 / Heritage" : "02 / Heritage"}
             </div>
             <div className="otou-prose__body">
-              <h3>{ja ? "神倉から、貴祢谷へ。" : "From Kamikura, to Kinegadani."}</h3>
+              <h3>{ja ? "神倉山から、貴祢谷へ。" : "From Kamikura, to Kinegadani."}</h3>
               <p>{ja
                 ? "神代の頃、新宮の神倉山に降りた熊野の神が、約2,500年前にこの貴祢谷へ移ったと伝えられています。"
                 : "In the age of the gods, the Kumano deities are said to have descended on Mt. Kamikura in Shingū, then moved here to Kinegadani about 2,500 years ago."}
@@ -448,7 +442,7 @@ function KinegadaniContent({ lang, onClose }) {
             {ja ? "熊野の神々の道のり" : "05 / The migration of the gods"}
           </div>
           <h3 style={{ fontFamily: "var(--mincho)", fontWeight: 500, fontSize: "clamp(28px, 3.4vw, 44px)", margin: "0 0 16px", letterSpacing: ".04em" }}>
-            {ja ? "神倉から、本宮、新宮へ。" : "From Kamikura, to Hongū, to Shingū."}
+            {ja ? "神倉山から、本宮、新宮へ。" : "From Kamikura, to Hongū, to Shingū."}
           </h3>
           <p style={{ fontSize: 15, lineHeight: 1.95, color: "rgba(244,239,232,.7)", maxWidth: "60ch", margin: "0 0 clamp(40px, 5vw, 70px)" }}>
             {ja
@@ -539,12 +533,6 @@ function KinegadaniContent({ lang, onClose }) {
             </ul>
           </div>
           <div>
-            <h6>{ja ? "この特設ページについて" : "About this page"}</h6>
-            <p style={{ fontFamily: "var(--serif-ja)", fontSize: 13, lineHeight: 1.95, color: "var(--ink-soft)", margin: "0 0 24px", maxWidth: "60ch" }}>
-              {ja
-                ? <>写真は宿主が撮影したものです。記述は出典に基づき、事実情報を中心にまとめました。<br/>Photographs by the host. Information sourced from the references above.</>
-                : "Photographs by the host. Information sourced from the references above."}
-            </p>
             <button className="otou-foot__back" onClick={onClose}>
               {ja ? "熊野古道KURA トップへ戻る" : "Back to KURA"}
             </button>
@@ -591,7 +579,7 @@ function HayatamaContent({ lang, onClose }) {
               </h1>
               <p className="otou-hero__sub">
                 {ja
-                  ? <>神倉のゴトビキ岩に降り立った熊野の神を、この地にお迎えして造られた神社です。<br/>熊野三山のひとつで、世界遺産にも登録されています。</>
+                  ? <>神倉山のゴトビキ岩に祀られていた熊野の神を、この地にお迎えして造営されたと伝えられています（景行天皇58年遷座）。<br/>熊野三山のひとつで、世界遺産にも登録されています。</>
                   : <>The shrine built to enshrine the Kumano deities after their descent on Gotobiki-iwa.<br/>One of the three Kumano Grand Shrines, a UNESCO World Heritage site.</>}
               </p>
             </div>
@@ -617,19 +605,19 @@ function HayatamaContent({ lang, onClose }) {
               {ja ? "概要 / Outline" : "01 / Outline"}
             </div>
             <div className="otou-prose__body">
-              <h3>{ja ? "神倉から、この地へ。" : "From Kamikura, to this place."}</h3>
+              <h3>{ja ? "神倉山から、この地へ。" : "From Kamikura, to this place."}</h3>
               <p>{ja
                 ? "熊野速玉大社は、熊野三山の一社です。"
                 : "Kumano Hayatama-Taisha is one of the three Kumano Grand Shrines."}
               </p>
               <p>{ja
-                ? "神倉神社のゴトビキ岩に降臨した熊野の神を、この地にお迎えして造られました。神倉が「元宮」、速玉大社が「新宮」と呼ばれ、それが新宮市の地名の由来とも伝えられています。"
+                ? "神倉山のゴトビキ岩に祀られていた熊野の神を、この地にお迎えして造営されたと伝えられています（景行天皇58年遷座）。神倉が「元宮」、速玉大社が「新宮」と呼ばれ、それが新宮市の地名の由来とも伝えられています。"
                 : "The shrine was founded to receive the Kumano deities who first descended on Gotobiki-iwa at Kamikura Shrine. Kamikura is called the 'old shrine', Hayatama-Taisha the 'new shrine' — the origin of the city's name, Shingū."}
               </p>
               <div className="otou-prose__pull">
                 {ja
-                  ? "「全國熊野神社總本宮」— 全国に三千あるとされる熊野神社の総本宮です。"
-                  : "Head shrine of an estimated 3,000 Kumano shrines throughout Japan."}
+                  ? "2004年7月、世界遺産「紀伊山地の霊場と参詣道」の構成資産として登録されました。"
+                  : "In July 2004 it was registered as part of the UNESCO World Heritage Sites and Pilgrimage Routes in the Kii Mountain Range."}
               </div>
             </div>
           </article>
@@ -642,15 +630,15 @@ function HayatamaContent({ lang, onClose }) {
             <div className="otou-prose__body">
               <h3>{ja ? "夫婦神と、千年のナギ。" : "A divine couple, and a thousand-year nagi tree."}</h3>
               <p>{ja
-                ? "熊野速玉大神と熊野夫須美大神の夫婦神をお祀りしています。境内には樹齢約千年とされるナギの巨木が立ち、国の天然記念物に指定されています。"
-                : "The shrine enshrines a divine couple — Hayatama and Fusumi. In its grounds stands a nagi tree said to be a thousand years old, designated a National Natural Monument."}
+                ? "熊野速玉大神と熊野夫須美大神の夫婦神をはじめ、十二神をお祀りしています。境内には樹齢約千年・平重盛の手植えと伝わるナギの大樹が立ち、国の天然記念物に指定されています。"
+                : "The shrine enshrines a divine couple — Hayatama and Fusumi — among twelve deities. In its grounds stands a nagi tree, said to be a thousand years old and planted by Taira no Shigemori, designated a National Natural Monument."}
               </p>
               <p>{ja
                 ? "ナギの木は夫婦円満・縁結びのご利益で知られ、葉を護符として持ち帰る参拝者も多くおられます。"
                 : "The tree is associated with marital harmony and the tying of fates. Visitors often take a leaf home as a charm."}
               </p>
               <p>{ja
-                ? "境内の熊野神宝館には、室町時代に奉納された蒔絵手箱や檜扇などの神宝、約一千二百点が収められています。"
+                ? "境内の熊野神宝館（1957年築）には、室町時代に奉納された蒔絵手箱や檜扇などの神宝、約一千二百点が収められています。"
                 : "The shrine's treasure house preserves about 1,200 sacred objects, including lacquered boxes and folding fans donated during the Muromachi period."}
               </p>
             </div>
@@ -714,12 +702,6 @@ function HayatamaContent({ lang, onClose }) {
             </ul>
           </div>
           <div>
-            <h6>{ja ? "この特設ページについて" : "About this page"}</h6>
-            <p style={{ fontFamily: "var(--serif-ja)", fontSize: 13, lineHeight: 1.95, color: "var(--ink-soft)", margin: "0 0 24px", maxWidth: "60ch" }}>
-              {ja
-                ? <>写真は宿主が撮影したものです。記述は出典に基づき、事実情報を中心にまとめました。<br/>Photographs by the host. Information sourced from the references above.</>
-                : "Photographs by the host. Information sourced from the references above."}
-            </p>
             <button className="otou-foot__back" onClick={onClose}>
               {ja ? "熊野古道KURA トップへ戻る" : "Back to KURA"}
             </button>
