@@ -20,6 +20,7 @@
   <div style="font-size:12px;letter-spacing:.35em;color:#3D4A35;margin-bottom:28px;">KUMANO KODO KURA</div>
   <div style="font-size:13px;color:rgba(42,42,38,.6);margin-bottom:20px;letter-spacing:.1em;">準備中サイトです。パスワードを入力してください。</div>
   <input id="kura-pw" type="password" inputmode="numeric" autocomplete="off" placeholder="••••" style="border:none;border-bottom:1px solid #3D4A35;background:transparent;font-size:20px;padding:10px 4px;text-align:center;color:#2A2A26;outline:none;width:180px;letter-spacing:.3em;" />
+  <button id="kura-go" type="button" style="margin-top:22px;background:transparent;border:1px solid #3D4A35;color:#3D4A35;padding:10px 36px;font-size:13px;letter-spacing:.3em;cursor:pointer;font-family:inherit;-webkit-appearance:none;border-radius:0;">入　る</button>
   <div id="kura-err" style="font-size:12px;color:#A85542;margin-top:14px;height:16px;letter-spacing:.05em;"></div>
 </div>
 <script>
@@ -35,6 +36,7 @@
     else { err.textContent = 'パスワードが違います'; inp.value = ''; inp.focus(); }
   }
   inp.addEventListener('keydown', function(e){ if (e.key === 'Enter') check(); });
+  document.getElementById('kura-go').addEventListener('click', check);
 })();
 </script>
 
