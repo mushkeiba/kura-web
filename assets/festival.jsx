@@ -69,11 +69,11 @@ function FestivalContent({ lang, onClose }) {
               </p>
               <p>{ja
                 ? "白襦袢に荒縄を巻いた上り子たちが、松明を手に538段の石段を駆け下ります。山がひとすじの火の流れになり、街の灯りと混じり合います。"
-                : "Men in white — the agari-ko — bound with rope, run down the 538 stone steps with burning torches. For a moment the mountain becomes a single line of fire."}
+                : "Men in white — the nobori-ko — bound with rope, run down the 538 stone steps with burning torches. For a moment the mountain becomes a single line of fire."}
               </p>
               <div className="otou-prose__pull">{ja
-                ? "「上り子（あがりこ）」と呼ばれる参加者は、祭りの一週間前から白い物だけを食べる精進潔斎を経て、当日を迎えます。"
-                : "The participants, called agari-ko, undergo a week of ritual purification before the festival — eating only foods that are white in colour."}
+                ? "「上り子（のぼりこ）」と呼ばれる参加者は、当日に白い物だけを食べる精進潔斎を行い、まつりに臨みます。"
+                : "The participants, called nobori-ko, observe a purification on the day itself — eating only foods that are white in colour."}
               </div>
             </div>
           </article>
@@ -112,28 +112,9 @@ function FestivalContent({ lang, onClose }) {
                 : "Anyone may come to watch. The procession of fire can be observed from outside the torii gate."}
               </p>
               <p>{ja
-                ? "参加できるのは男子のみで、一週間前から白米・かまぼこ・豆腐など白い物のみを食す精進潔斎が必要です。二〇二五年は約一千五百八十名の上り子が参加しました。"
-                : "Only men may take part, after a week of ritual purification. In 2025, about 1,580 agari-ko participated."}
+                ? "参加できるのは男子のみで、当日は白米・かまぼこ・豆腐など白い物のみを食します。二〇二五年は約一千五百八十名の上り子が参加しました。"
+                : "Only men may take part, observing a purification on the day. In 2025, about 1,580 nobori-ko participated."}
               </p>
-
-              <div className="otou-info" style={{ marginTop: 36 }}>
-                <div className="otou-info__cell">
-                  <h5>Date · {ja ? "日程" : "When"}</h5>
-                  <div className="val">{ja ? "二月六日" : "Feb 6"}<em>{ja ? "Every Feb 6" : "Annually"}</em></div>
-                </div>
-                <div className="otou-info__cell">
-                  <h5>Time · {ja ? "時間" : "Time"}</h5>
-                  <div className="val">{ja ? "夜" : "Night"}<em>From sunset</em></div>
-                </div>
-                <div className="otou-info__cell">
-                  <h5>Place · {ja ? "場所" : "Where"}</h5>
-                  <div className="val">{ja ? "神倉神社" : "Kamikura Shrine"}<em>538 stone steps</em></div>
-                </div>
-                <div className="otou-info__cell">
-                  <h5>Visit · {ja ? "見学" : "Watching"}</h5>
-                  <div className="val">{ja ? "自由" : "Free"}<em>Open to all</em></div>
-                </div>
-              </div>
             </div>
           </article>
 
@@ -159,7 +140,7 @@ function FestivalContent({ lang, onClose }) {
               </p>
               <p>{ja
                 ? "KURAからは、上り子たちの、まつりに向かう勇ましい姿を見送ることができます。また、駆け下りてくる姿もすぐ近くで見ることができます。"
-                : "From KURA, you can see off the agari-ko as they head bravely to the festival — and watch them run back down, close at hand."}
+                : "From KURA, you can see off the nobori-ko as they head bravely to the festival — and watch them run back down, close at hand."}
               </p>
               <p>{ja
                 ? "二月六日前後のご宿泊は、例年お問い合わせが集中いたします。お早めにご相談ください。"
@@ -379,25 +360,6 @@ function KinegadaniContent({ lang, onClose }) {
                 ? "※詳しいアクセス・駐車場・参拝の作法は、現地にてご確認ください。"
                 : "Please check on-site for detailed access, parking and visiting customs."}
               </p>
-
-              <div className="otou-info" style={{ marginTop: 36 }}>
-                <div className="otou-info__cell">
-                  <h5>Where · {ja ? "所在地" : "Location"}</h5>
-                  <div className="val">{ja ? "三重県紀宝町" : "Kihō, Mie"}<em>Kihō, Minamimuro, Mie</em></div>
-                </div>
-                <div className="otou-info__cell">
-                  <h5>Enshrined · {ja ? "御祭神" : "Deities"}</h5>
-                  <div className="val">{ja ? "熊野三所権現" : "3 Kumano deities"}<em>Hayatama · Fusumi · Ketsu-mi-ko</em></div>
-                </div>
-                <div className="otou-info__cell">
-                  <h5>Status · {ja ? "文化財" : "Heritage"}</h5>
-                  <div className="val">{ja ? "町指定文化財" : "Town designated"}<em>Cultural Property of Kihō</em></div>
-                </div>
-                <div className="otou-info__cell">
-                  <h5>Visit · {ja ? "参拝" : "Access"}</h5>
-                  <div className="val">{ja ? "要確認" : "Check on site"}<em>Refer to signage on arrival</em></div>
-                </div>
-              </div>
             </div>
           </article>
 
@@ -425,10 +387,6 @@ function KinegadaniContent({ lang, onClose }) {
                 ? "神倉神社（御燈祭）が「神が降りた地」、貴祢谷社が「神が移った地」。あわせてご参拝いただくと、熊野信仰のはじまりを順にたどることができます。"
                 : "Kamikura is where the gods descended; Kinegadani is where they moved. Visited together, you trace the beginning of the Kumano faith in order."}
               </p>
-              <a className="otou-position__cta" href="#access" onClick={onClose}>
-                {ja ? "アクセスを見る" : "See access details"}
-                <span className="en">{ja ? "Access" : "アクセス"}</span>
-              </a>
             </div>
           </div>
         </div>
@@ -655,39 +613,9 @@ function HayatamaContent({ lang, onClose }) {
                 ? "KURAから徒歩でお越しいただける距離にあります。神倉神社（元宮）とあわせてお参りいただくと、熊野信仰のはじまりの順をたどっていただけます。"
                 : "Hayatama-Taisha is a short walk from KURA. Visit Kamikura Shrine (the old shrine) together, and you trace the founding of Kumano faith in order."}
               </p>
-              <a className="otou-position__cta" href="#access" onClick={onClose}>
-                {ja ? "アクセスを見る" : "See access"}
-                <span className="en">{ja ? "Access" : "アクセス"}</span>
-              </a>
             </div>
           </article>
 
-          <article className="otou-prose">
-            <div className="otou-prose__index">
-              <span className="num">04</span>
-              {ja ? "実用情報 / Practical" : "04 / Practical"}
-            </div>
-            <div className="otou-prose__body">
-              <div className="otou-info" style={{ marginTop: 0 }}>
-                <div className="otou-info__cell">
-                  <h5>Where · {ja ? "所在地" : "Location"}</h5>
-                  <div className="val">{ja ? "新宮市新宮1番地" : "1 Shingū, Shingū"}<em>Shingū, Wakayama</em></div>
-                </div>
-                <div className="otou-info__cell">
-                  <h5>Status · {ja ? "認定" : "Status"}</h5>
-                  <div className="val">{ja ? "世界遺産" : "World Heritage"}<em>UNESCO listed</em></div>
-                </div>
-                <div className="otou-info__cell">
-                  <h5>Deities · {ja ? "御祭神" : "Deities"}</h5>
-                  <div className="val">{ja ? "夫婦神" : "Divine couple"}<em>Hayatama · Fusumi</em></div>
-                </div>
-                <div className="otou-info__cell">
-                  <h5>Visit · {ja ? "参拝" : "Hours"}</h5>
-                  <div className="val">{ja ? "要確認" : "Check on site"}<em>Hours vary</em></div>
-                </div>
-              </div>
-            </div>
-          </article>
         </div>
       </section>
 

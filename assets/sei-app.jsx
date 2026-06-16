@@ -30,7 +30,7 @@ const C = {
       { id: "nearby",  label: "神倉・速玉" },
       { id: "otou",    label: "御燈祭", overlay: "otou" },
       { id: "hayatama", label: "速玉大社", overlay: "hayatama" },
-      { id: "kinegadani", label: "貴祷谷社", overlay: "kinegadani" },
+      { id: "kinegadani", label: "貴祢谷社", overlay: "kinegadani" },
       { id: "access",  label: "アクセス" },
       { id: "book",    label: "予約" },
     ],
@@ -48,7 +48,7 @@ const C = {
         index: "01 / 客室",
         title: "客室のご案内",
         titleEn: "The Room",
-        lede: "1日1組さま限定。ひのきの床板に整えた、落ち着いた一室です。"
+        lede: "ひのきの床板に整えた、落ち着いた一室です。"
       },
       concept: {
         index: "02 / コンセプト",
@@ -91,7 +91,7 @@ const C = {
       stats: [
         { num: "1",        unit: "室",   lbl: "1日1組" },
         { num: "5–6",      unit: "名",   lbl: "最大収容" },
-        { num: "¥10,000",  unit: "〜",   lbl: "素泊まり" }
+        { num: "¥12,000",  unit: "〜",   lbl: "素泊まり" }
       ],
       caption: "客室全景"
     },
@@ -130,11 +130,11 @@ const C = {
     nearby: {
       featureTitle: "神倉神社",
       featureLabel: "ご紹介 · 神倉神社",
-      featureBody: "神倉山のふもとから538段の石段を上った先に鎮座する古社です。ゴトビキ岩（巨岩）を御神体としてお祭りしています。熊野速玉大社の摂社で、熊野信仰の発祥地とされています。",
+      featureBody: "神倉山のふもとから538段の石段を上った先に鎮座する古社です。ゴトビキ岩（巨岩）を御神体としてお祀りしています。熊野速玉大社の摂社で、熊野信仰の発祥地とされています。",
       featureDist: "徒歩 約5分",
       nagiTitle: "なぎの湯",
-      nagiLabel: "お風呂 · 市民の銜湯",
-      nagiBody: "なぎの湯は、新宮市の公衆浴場です。素泊まりの夜は、歩いて地元の銜湯へ。富士山の壁絵がある、昭和の嬉しさのあるお風呂です。",
+      nagiLabel: "お風呂 · 市民の銭湯",
+      nagiBody: "なぎの湯は、新宮市の公衆浴場です。素泊まりの夜は、歩いて地元の銭湯へ。富士山の壁絵がある、昭和の嬉しさのあるお風呂です。",
       nagiDist: "徒歩 約15分",
       nagiHours: "16:00〜21:00（11、3月は 15:30〜20:30）",
       nagiClosed: "日曜・1/1・1/3・1/4休",
@@ -197,9 +197,9 @@ const C = {
     },
     kinegadani: {
       eyebrow: "特設ページ",
-      title: "貴祷谷社",
+      title: "貴祢谷社",
       sub: "神倉山を降りた熊野の神が、のちに移ったと伝わる古社。静かな森のなかへ。",
-      cta: "貴祷谷社 特設ページへ",
+      cta: "貴祢谷社 特設ページへ",
       date: "三重・紀宝町"
     },
     footer: {
@@ -235,7 +235,7 @@ const C = {
         index: "01 / Room",
         title: "The Room",
         titleEn: "客室のご案内",
-        lede: "One party per day. A calm room with newly-laid hinoki-wood floors."
+        lede: "A calm room with hinoki-wood floors."
       },
       concept: {
         index: "02 / Philosophy",
@@ -278,7 +278,7 @@ const C = {
       stats: [
         { num: "1",      unit: "room",  lbl: "One party / day" },
         { num: "5–6",    unit: "guests", lbl: "Maximum" },
-        { num: "¥10,000", unit: "~",    lbl: "Room only" }
+        { num: "¥12,000", unit: "~",    lbl: "Room only" }
       ],
       caption: "Room overview"
     },
@@ -399,8 +399,8 @@ const C = {
   }
 };
 
-const BUS_FROM = ["7:16","8:46","10:56","12:16","13:31","15:01","16:01","17:11","18:21"];
-const BUS_TO   = ["7:45","8:17","9:30","11:07","13:07","14:17","15:37","17:07","18:27"];
+const BUS_FROM = [];
+const BUS_TO   = [];
 
 const ROOM_IMAGES = [
   { src: "web/interior/room-overview.jpg",  ja: "客室全景",      en: "Overview" },
@@ -410,7 +410,6 @@ const ROOM_IMAGES = [
   { src: "web/interior/room-washroom.jpg",  ja: "洗面",          en: "Washroom" },
   { src: "web/interior/room-bath.jpg",      ja: "シャワー",      en: "Shower" },
   { src: "web/interior/room-toilet.jpg",    ja: "お手洗い",      en: "Lavatory" },
-  { src: "web/interior/room-terrace.jpg",   ja: "テラス",        en: "Terrace" },
   { src: "web/interior/room-view.jpg",      ja: "眺め",          en: "View" },
 ];
 
@@ -603,7 +602,7 @@ function RoomSection({ lang, layout = "strip", onOpen }) {
               </div>
               <div className="ed-meta__row">
                 <span className="ed-meta__lbl">{lang === "ja" ? "素泊まり" : "Room only"}</span>
-                <span className="ed-meta__val"><span className="price">¥10,000</span>〜</span>
+                <span className="ed-meta__val"><span className="price">¥12,000</span>〜</span>
               </div>
               <div className="ed-meta__row">
                 <span className="ed-meta__lbl">{lang === "ja" ? "床材" : "Floors"}</span>
@@ -976,16 +975,9 @@ function AccessSection({ lang }) {
                 <h5 style={{ fontFamily: "var(--mincho)", fontSize: 16, margin: "0 0 6px", letterSpacing: ".06em", fontWeight: 500 }}><L lang={lang}>{row.head}</L></h5>
                 <p style={{ fontSize: 14, lineHeight: 1.85, color: "var(--ink-soft)", margin: 0 }}><L lang={lang}>{row.body}</L></p>
                 {row.table && (
-                  <table className="k-bus-table" style={{ marginTop: 14 }}>
-                    <thead>
-                      <tr><th>{a.busTableHead[0]}</th><th>{a.busTableHead[1]}</th></tr>
-                    </thead>
-                    <tbody>
-                      {BUS_FROM.map((t, j) => (
-                        <tr key={j}><td>{t}</td><td>{BUS_TO[j]}</td></tr>
-                      ))}
-                    </tbody>
-                  </table>
+                  <p style={{ fontSize: 13, lineHeight: 1.8, color: "var(--ink-soft)", margin: "10px 0 0" }}>
+                    {lang === "ja" ? "運行時刻は熊野御坊南海バスの公式時刻表をご確認ください。" : "Please check the official Kumakou bus timetable for departure times."}
+                  </p>
                 )}
               </div>
             ))}
@@ -1005,51 +997,36 @@ function AccessSection({ lang }) {
 
 /* ── Booking ──────────────────────────────────────────────── */
 function BookingSection({ lang }) {
-  const [sent, setSent] = useState(false);
   const c = C[lang];
   const b = c.book;
+  const ja = lang === "ja";
   return (
     <section className="k-sec k-book" id="book">
       <div className="k-sec__inner">
         <SecHead data={c.sectionHead.book} lang={lang} />
-        <div className="k-book__grid">
-          <div className="k-book__channel reveal">
-            <h4>{b.channelTitle}</h4>
-            <div className="en">{b.channelSub}</div>
-            <div className="k-book__price">
-              <span className="num"><span className="yen">¥</span>10,000<span style={{ fontSize: 22, opacity: .7 }}>〜</span></span>
-              <span className="lbl">{b.priceUnit}</span>
-            </div>
-            <a className="k-book__cta" href="#" target="_blank" rel="noreferrer">{b.cta}</a>
-            <div className="k-book__notes">
-              {b.notes.map((line, i) => <div key={i}>{line}</div>)}
-            </div>
+        <div className="k-book__panel reveal">
+          <p className="k-book__intro">
+            {ja
+              ? "Airbnbからのご予約、または直接のお問い合わせを承ります。"
+              : "Reserve via Airbnb, or contact us directly."}
+          </p>
+
+          <div className="k-book__price">
+            <span className="num"><span className="yen">¥</span>12,000<span className="tilde">〜</span></span>
+            <span className="lbl">{b.priceUnit}</span>
           </div>
 
-          <form className="k-form reveal" data-delay="100" onSubmit={(e) => { e.preventDefault(); setSent(true); }}>
-            <h4>{b.formTitle}</h4>
-            <div className="en">{b.formSub}</div>
+          <div className="k-book__actions">
+            <a className="k-book__cta" href="#" target="_blank" rel="noreferrer">{b.cta}</a>
+            <a className="k-book__tel" href="tel:+819014840536">
+              <span className="k-book__tel-label">{b.telLabel}</span>
+              <span className="k-book__tel-num">090ー1484ー0536</span>
+            </a>
+          </div>
 
-            <div className="row">
-              <div><label>{b.fields.name}</label><input required name="name" /></div>
-              <div><label>{b.fields.email}</label><input required type="email" name="email" /></div>
-            </div>
-            <div className="row">
-              <div><label>{b.fields.ci}</label><input type="date" name="ci" /></div>
-              <div><label>{b.fields.co}</label><input type="date" name="co" /></div>
-            </div>
-            <div>
-              <label>{b.fields.guests}</label>
-              <select name="guests">
-                {[1,2,3,4,5,6].map(n => <option key={n}>{lang === "ja" ? `${n}名` : `${n} ${n === 1 ? "guest" : "guests"}`}</option>)}
-              </select>
-            </div>
-            <div>
-              <label>{b.fields.msg}</label>
-              <textarea name="msg" placeholder={b.msgPlaceholder}></textarea>
-            </div>
-            <button type="submit">{sent ? b.sent : b.submit}</button>
-          </form>
+          <div className="k-book__notes">
+            {b.notes.map((line, i) => <div key={i}>{line}</div>)}
+          </div>
         </div>
       </div>
     </section>

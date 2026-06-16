@@ -1121,58 +1121,50 @@ body.kura-sei[data-font="gothic"] {
 .k-book .k-sec__title em { color: rgba(244,239,232,.5); }
 .k-book .k-sec__lede { color: rgba(244,239,232,.65); }
 
-.k-book__grid {
-  display: grid;
-  grid-template-columns: 1.1fr 1fr;
-  gap: clamp(40px, 6vw, 100px);
-  align-items: start;
+.k-book__panel {
+  max-width: 620px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex; flex-direction: column; align-items: center;
 }
-.k-book__channel {
-  background: rgba(244,239,232,.04);
-  border: 1px solid rgba(244,239,232,.14);
-  padding: clamp(36px, 4vw, 56px);
-}
-.k-book__channel h4 {
+.k-book__intro {
   font-family: var(--mincho);
-  font-size: clamp(22px, 2.4vw, 30px);
-  font-weight: 500;
-  margin: 0 0 10px;
-  letter-spacing: .06em;
-}
-.k-book__channel .en {
-  font-family: var(--serif-en);
-  font-style: italic;
-  font-size: 13px;
-  color: rgba(244,239,232,.55);
-  margin-bottom: 30px;
+  font-size: clamp(17px, 1.8vw, 21px);
+  line-height: 1.9;
+  letter-spacing: .08em;
+  color: var(--paper);
+  margin: 0 0 44px;
+  max-width: 30ch;
 }
 .k-book__price {
-  display: flex; align-items: baseline; gap: 14px;
-  padding: 18px 0;
-  border-bottom: 1px solid rgba(244,239,232,.14);
-  margin-bottom: 32px;
-  flex-wrap: wrap;
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+  padding-bottom: 38px;
+  margin-bottom: 38px;
+  border-bottom: 1px solid rgba(244,239,232,.16);
 }
 .k-book__price .num {
   font-family: var(--serif-en);
-  font-size: clamp(40px, 5vw, 64px);
+  font-size: clamp(52px, 8vw, 84px);
   font-weight: 300;
   line-height: 1;
   letter-spacing: .04em;
   white-space: nowrap;
 }
-.k-book__price .yen { font-size: 22px; opacity: .7; margin-right: 4px; }
+.k-book__price .yen { font-size: .42em; opacity: .7; margin-right: 6px; vertical-align: middle; }
+.k-book__price .tilde { font-size: .42em; opacity: .7; }
 .k-book__price .lbl {
   font-family: var(--mincho);
   font-size: 12px;
   letter-spacing: .3em;
-  color: rgba(244,239,232,.65);
-  flex: 1;
-  text-align: right;
+  color: rgba(244,239,232,.6);
+}
+.k-book__actions {
+  display: flex; align-items: center; justify-content: center; gap: 28px;
+  flex-wrap: wrap;
 }
 .k-book__cta {
-  display: inline-flex; align-items: center; gap: 18px;
-  padding: 18px 32px;
+  display: inline-flex; align-items: center; gap: 16px;
+  padding: 18px 34px;
   background: var(--paper); color: var(--ink);
   font-family: var(--serif-en);
   font-size: 13px;
@@ -1183,8 +1175,27 @@ body.kura-sei[data-font="gothic"] {
 .k-book__cta:hover { transform: translateY(-2px); background: var(--hinoki); }
 .k-book__cta::after { content: "→"; }
 
+.k-book__tel {
+  display: flex; flex-direction: column; gap: 3px; text-align: left;
+}
+.k-book__tel-label {
+  font-family: var(--serif-en);
+  font-size: 11px;
+  letter-spacing: .26em;
+  text-transform: uppercase;
+  color: rgba(244,239,232,.55);
+}
+.k-book__tel-num {
+  font-family: var(--serif-en);
+  font-size: clamp(24px, 2.8vw, 30px);
+  letter-spacing: .1em;
+  color: var(--paper);
+  transition: color .3s;
+}
+.k-book__tel:hover .k-book__tel-num { color: var(--hinoki); }
+
 .k-book__notes {
-  margin-top: 28px;
+  margin-top: 40px;
   font-family: var(--mincho);
   font-size: 12px;
   letter-spacing: .14em;
@@ -2159,7 +2170,7 @@ body.kura-sei[data-mode="dark"] .ed-media--sketch img {
   font-weight: 500;
   font-size: clamp(22px, 2.6vw, 30px);
   line-height: 1.85;
-  margin-bottom: 28px;
+  margin: 0 0 28px;
   letter-spacing: .04em;
   padding-top: 20px;
   position: relative;
@@ -2394,7 +2405,8 @@ body.kura-sei[data-mode="dark"] .ed-media--sketch img {
 @media (max-width: 720px) {
   .ed-shops__modal { padding: 16px; }
   .ed-shops__modal-inner { grid-template-columns: 1fr; max-width: 420px; }
-  .ed-shops__modal-media { aspect-ratio: 4/3; min-height: 0; }
+  .ed-shops__modal-media { aspect-ratio: 3/4; min-height: 0; }
+  .ed-shops__modal-media img { object-position: center 60%; }
 }
 
 .ed-shops__modal-meta {
