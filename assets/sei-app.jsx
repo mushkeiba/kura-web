@@ -696,6 +696,31 @@ function ConceptSection({ lang }) {
   );
 }
 
+/* ── Intro Film（コンセプト直後の映像セクション）─────────── */
+function IntroFilm({ lang }) {
+  return (
+    <section className="k-sec k-film" aria-label={lang === "ja" ? "映像" : "Film"}>
+      <div className="k-sec__inner">
+        <div className="k-film__head reveal">
+          <span className="k-film__eyebrow">{lang === "ja" ? "映像 · Film" : "Film"}</span>
+          <h3 className="k-film__title">
+            {lang === "ja" ? "宿のひと続きを、映像で。" : "The inn, in motion."}
+          </h3>
+        </div>
+        <div className="k-film__frame reveal">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/RxxfyDZjkes?rel=0&modestbranding=1"
+            title={lang === "ja" ? "熊野古道KURA 紹介動画" : "Kumano Kodō KURA – Introduction"}
+            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </section>
+  );
+}
+
 /* ── Kamikura / Nagi / Shops blocks (ex-Nearby) ─────────── */
 function KamikuraBlock({ lang }) {
   const c = C[lang];
@@ -1325,6 +1350,7 @@ function App() {
       <IntroSection lang={lang} />
       <RoomSection lang={lang} layout={t.rooms} onOpen={openLB} />
       <ConceptSection lang={lang} />
+      <IntroFilm lang={lang} />
       <KamikuraBlock lang={lang} />
       <HayatamaBlock lang={lang} onOpenSpecial={openSpecial} />
       <NagiBlock lang={lang} />
