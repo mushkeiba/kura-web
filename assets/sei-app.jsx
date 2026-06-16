@@ -147,8 +147,7 @@ const C = {
         { src: "web/nearby/naka-kori.jpg",           name: "仲氷店",            dist: "徒歩7分",   desc: "かき氷・年中無休",          addr: "和歌山県新宮市仲之町2-2-21",  tel: "—",            hours: "日中",                closed: "年中無休" },
         { src: "web/nearby/familymart.jpg",          name: "ファミリーマート 千穂三丁目店", dist: "徒歩3分", desc: "コンビニ、24時間",     addr: "和歌山県新宮市千穂3丁目",      tel: "—",            hours: "24時間",             closed: "—" },
         { src: "web/nearby/shop-organic-marche.jpg", name: "自然食品 コケコッコ",  dist: "徒歩3分",   desc: "無農薬野菜・天然酵母パン", addr: "和歌山県新宮市千穂1-1-45",   tel: "0735-23-0423", hours: "—",                    closed: "—" },
-        { src: "web/nearby/shop-liquor.jpg",         name: "堀酒店",            dist: "徒歩4分",   desc: "酒店・地酒",            addr: "和歌山県新宮市千穂1-8-13",   tel: "0735-22-5353", hours: "～19:00",              closed: "—" },
-        { src: "web/nearby/nachi-falls.jpg",         name: "那智の滝",          dist: "車で約30分", desc: "熊野三山・名瀑",          addr: "和歌山県那智勝浦町那智山",    tel: "—",            hours: "—",                    closed: "—" }
+        { src: "web/nearby/shop-liquor.jpg",         name: "堀酒店",            dist: "徒歩4分",   desc: "酒店・地酒",            addr: "和歌山県新宮市千穂1-8-13",   tel: "0735-22-5353", hours: "～19:00",              closed: "—" }
       ]
     },
     access: {
@@ -340,8 +339,7 @@ const C = {
         { src: "web/nearby/restaurant-manten.jpg",   name: "Manten",           dist: "12 min walk", desc: "Okonomiyaki",             addr: "542-1 Shingū, Shingū",       tel: "0735-23-9277", hours: "—",                    closed: "Sun" },
         { src: "web/nearby/familymart.jpg",          name: "FamilyMart Senbo 3-chome", dist: "3 min walk", desc: "Convenience, 24h",  addr: "Senbo 3-chōme, Shingū",       tel: "—",            hours: "24h",                  closed: "—" },
         { src: "web/nearby/shop-organic-marche.jpg", name: "Cocekokko",        dist: "3 min walk",  desc: "Organic produce & bakery", addr: "1-1-45 Senbo, Shingū",       tel: "0735-23-0423", hours: "—",                    closed: "—" },
-        { src: "web/nearby/shop-liquor.jpg",         name: "Hori Sake Shop",    dist: "4 min walk",  desc: "Local sake & spirits",    addr: "1-8-13 Senbo, Shingū",       tel: "0735-22-5353", hours: "– 19:00",            closed: "—" },
-        { src: "web/nearby/nachi-falls.jpg",         name: "Nachi Falls",       dist: "30 min by car", desc: "Kumano Sanzan, famous waterfall", addr: "Nachisan, Nachikatsuura", tel: "—", hours: "—", closed: "—" }
+        { src: "web/nearby/shop-liquor.jpg",         name: "Hori Sake Shop",    dist: "4 min walk",  desc: "Local sake & spirits",    addr: "1-8-13 Senbo, Shingū",       tel: "0735-22-5353", hours: "– 19:00",            closed: "—" }
       ]
     },
     access: {
@@ -940,7 +938,7 @@ function ShopsBlock({ lang }) {
                     {modal.tel && modal.tel !== "—" && <li><span>{lang === "ja" ? "電話" : "Tel"}</span><a href={"tel:" + modal.tel.replace(/-/g, "")}>{modal.tel}</a></li>}
                   </ul>
                 )}
-                <a className="ed-cta" href={"https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(modal.addr || modal.name + " 和歌山県新宮市")} target="_blank" rel="noreferrer">
+                <a className="ed-cta" href={"https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent((modal.name || "") + " " + (modal.addr || "和歌山県新宮市"))} target="_blank" rel="noreferrer">
                   {lang === "ja" ? "Googleマップで開く" : "Open in Google Maps"} <span className="arrow">→</span>
                 </a>
               </div>
