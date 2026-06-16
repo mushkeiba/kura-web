@@ -175,9 +175,12 @@ const C = {
     },
     book: {
       channelTitle: "そのままご予約",
-      channelSub: "Airbnbよりお手続きいただけます",
+      channelSub: "Airbnb または Booking.com からお手続きいただけます",
       priceUnit: "素泊まり / 1室1泊",
       cta: "Airbnbで予約する",
+      ctaBooking: "Booking.comで予約する",
+      airbnbUrl: "https://www.booking.com/hotel/jp/kumanokodo-kura.ja.html",
+      bookingUrl: "https://www.booking.com/hotel/jp/kumanokodo-kura.ja.html",
       notes: ["チェックイン 16:00 〜 / チェックアウト 10:00", "お電話でも承ります：090ー1484ー0536"],
       formTitle: "直接のお問い合わせ",
       formSub: "ご質問・ご予約のご相談はこちらから。",
@@ -362,9 +365,12 @@ const C = {
     },
     book: {
       channelTitle: "Reserve directly",
-      channelSub: "Book your stay via Airbnb",
+      channelSub: "Book via Airbnb or Booking.com",
       priceUnit: "Room only / per night",
       cta: "Reserve on Airbnb",
+      ctaBooking: "Reserve on Booking.com",
+      airbnbUrl: "https://www.booking.com/hotel/jp/kumanokodo-kura.ja.html",
+      bookingUrl: "https://www.booking.com/hotel/jp/kumanokodo-kura.ja.html",
       notes: ["Check-in 16:00 / Check-out 10:00", "Call us at +81 90-1484-0536"],
       formTitle: "Send a direct enquiry",
       formSub: "Questions and booking requests welcome.",
@@ -1007,8 +1013,8 @@ function BookingSection({ lang }) {
         <div className="k-book__panel reveal">
           <p className="k-book__intro">
             {ja
-              ? "Airbnbからのご予約、または直接のお問い合わせを承ります。"
-              : "Reserve via Airbnb, or contact us directly."}
+              ? "Airbnbまたは Booking.com からご予約いただけます。"
+              : "Reserve via Airbnb or Booking.com."}
           </p>
 
           <div className="k-book__price">
@@ -1017,7 +1023,8 @@ function BookingSection({ lang }) {
           </div>
 
           <div className="k-book__actions">
-            <a className="k-book__cta" href="#" target="_blank" rel="noreferrer">{b.cta}</a>
+            <a className="k-book__cta" href={b.airbnbUrl} target="_blank" rel="noreferrer">{b.cta}</a>
+            <a className="k-book__cta" href={b.bookingUrl} target="_blank" rel="noreferrer">{b.ctaBooking}</a>
             <a className="k-book__tel" href="tel:+819014840536">
               <span className="k-book__tel-label">{b.telLabel}</span>
               <span className="k-book__tel-num">090ー1484ー0536</span>
