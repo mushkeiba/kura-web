@@ -1012,6 +1012,14 @@ function BookingSection({ lang }) {
   const c = C[lang];
   const b = c.book;
   const ja = lang === "ja";
+  const [soon, setSoon] = React.useState(false);
+  const soonTimer = React.useRef(null);
+  const handleSoon = (e) => {
+    e.preventDefault();
+    setSoon(true);
+    if (soonTimer.current) clearTimeout(soonTimer.current);
+    soonTimer.current = setTimeout(() => setSoon(false), 3500);
+  };
   return (
     <section className="k-sec k-book" id="book">
       <div className="k-sec__inner">
@@ -1029,8 +1037,8 @@ function BookingSection({ lang }) {
           </div>
 
           <div className="k-book__actions">
-            <a className="k-book__cta" href={b.airbnbUrl} target="_blank" rel="noreferrer">{b.cta}</a>
-            <a className="k-book__cta" href={b.bookingUrl} target="_blank" rel="noreferrer">{b.ctaBooking}</a>
+            <a className="k-book__cta" href="#" onClick={handleSoon}>{b.cta}</a>
+            <a className="k-book__cta" href="#" onClick={handleSoon}>{b.ctaBooking}</a>
             <a className="k-book__tel" href="tel:+819014840536">
               <span className="k-book__tel-label">{b.telLabel}</span>
               <span className="k-book__tel-num">090ー1484ー0536</span>
@@ -1039,6 +1047,24 @@ function BookingSection({ lang }) {
 
           <div className="k-book__notes">
             {b.notes.map((line, i) => <div key={i}>{line}</div>)}
+          </div>
+
+          <div
+            aria-live="polite"
+            style={{
+              minHeight: 22,
+              marginTop: 18,
+              textAlign: "center",
+              fontSize: 13,
+              letterSpacing: ".15em",
+              color: "rgba(244,239,232,0.85)",
+              opacity: soon ? 1 : 0,
+              transform: soon ? "translateY(0)" : "translateY(-4px)",
+              transition: "opacity .4s ease, transform .4s ease",
+              pointerEvents: "none"
+            }}
+          >
+            {ja ? "ただいま準備中です。決まり次第ご案内いたします。" : "Coming soon. We'll update once it's ready."}
           </div>
         </div>
       </div>
