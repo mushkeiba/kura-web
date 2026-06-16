@@ -213,8 +213,7 @@ const C = {
       tagline: "新宮にて。",
       licenseLabel: "営業情報",
       licenseType: "旅館業（簡易宿所）",
-      licenseNumber: "許可番号：和歌山県指令新保衛第 20-7 号",
-      licenseOperator: "営業者：森本みさ"
+      licenseNumber: "許可番号：和歌山県指令新保衛第 20-7 号"
     }
   },
   en: {
@@ -407,8 +406,7 @@ const C = {
       tagline: "Shingū, Japan.",
       licenseLabel: "Business License",
       licenseType: "Inn Business Act – Simple Lodging",
-      licenseNumber: "Permit No. Shin-ho-ei 20-7 (Wakayama Pref.)",
-      licenseOperator: "Operator: Misa Morimoto"
+      licenseNumber: "Permit No. Shin-ho-ei 20-7 (Wakayama Pref.)"
     }
   }
 };
@@ -1180,7 +1178,6 @@ function Footer({ lang }) {
       <div className="k-footer__license" style={{ borderTop: "1px solid rgba(244,239,232,0.18)", padding: "20px 0 16px", fontSize: "11px", letterSpacing: "0.08em", lineHeight: 1.9, opacity: 0.7, display: "flex", flexWrap: "wrap", gap: "8px 24px", justifyContent: "center" }}>
         <span>{f.licenseLabel}：{f.licenseType}</span>
         <span>{f.licenseNumber}</span>
-        <span>{f.licenseOperator}</span>
       </div>
       <div className="k-footer__bottom">
         <span>{f.cred}</span>
