@@ -1189,6 +1189,18 @@ function OtouBanner({ lang, onOpen }) {
   );
 }
 
+function ObfuscatedEmail() {
+  const [email, setEmail] = React.useState(null);
+  React.useEffect(() => {
+    const local = "info";
+    const domain = "kumano-kodo-kura";
+    const tld = "com";
+    setEmail(local + "@" + domain + "." + tld);
+  }, []);
+  if (!email) return <span aria-hidden="true">info [at] kumano-kodo-kura [dot] com</span>;
+  return <a className="k-footer__mail" href={"mailto:" + email}>{email}</a>;
+}
+
 function Footer({ lang }) {
   const c = C[lang];
   const f = c.footer;
@@ -1219,6 +1231,7 @@ function Footer({ lang }) {
           <h6>{f.contact}</h6>
           <ul>
             <li><a href="tel:+819014840536">090 – 1484 – 0536</a></li>
+            <li><ObfuscatedEmail /></li>
           </ul>
         </div>
       </div>

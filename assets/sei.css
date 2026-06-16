@@ -1822,6 +1822,7 @@ body.kura-sei[data-mode="dark"] .k-intro__mark img {
 }
 .k-footer li a { transition: opacity .3s; }
 .k-footer li a:hover { opacity: .55; }
+.k-footer__mail { word-break: break-all; }
 .k-footer__bottom {
   max-width: var(--maxw);
   margin: 0 auto;
