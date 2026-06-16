@@ -72,8 +72,8 @@ function FestivalContent({ lang, onClose }) {
                 : "Men in white — the nobori-ko — bound with rope, run down the 538 stone steps with burning torches. For a moment the mountain becomes a single line of fire."}
               </p>
               <div className="otou-prose__pull">{ja
-                ? "「上り子（のぼりこ）」と呼ばれる参加者は、当日に白い物だけを食べる精進潔斎を行い、まつりに臨みます。"
-                : "The participants, called nobori-ko, observe a purification on the day itself — eating only foods that are white in colour."}
+                ? "「上り子（のぼりこ）」と呼ばれる参加者は、祭りの一週間前から白い物だけを食べる精進潔斎を行い、まつりに臨みます。"
+                : "The participants, called nobori-ko, observe a week of purification before the festival — eating only foods that are white in colour."}
               </div>
             </div>
           </article>
@@ -112,8 +112,8 @@ function FestivalContent({ lang, onClose }) {
                 : "Anyone may come to watch. The procession of fire can be observed from outside the torii gate."}
               </p>
               <p>{ja
-                ? "参加できるのは男子のみで、当日は白米・かまぼこ・豆腐など白い物のみを食します。二〇二五年は約一千五百八十名の上り子が参加しました。"
-                : "Only men may take part, observing a purification on the day. In 2025, about 1,580 nobori-ko participated."}
+                ? "参加できるのは男子のみで、一週間前から白米・かまぼこ・豆腐など白い物のみを食します。二〇二五年は約一千五百八十名の上り子が参加しました。"
+                : "Only men may take part, observing a week of purification beforehand — eating only white foods such as rice, kamaboko and tofu. In 2025, about 1,580 nobori-ko participated."}
               </p>
             </div>
           </article>
