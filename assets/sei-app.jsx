@@ -698,21 +698,19 @@ function ConceptSection({ lang }) {
 
 /* ── Intro Film（コンセプト直後の映像セクション）─────────── */
 function IntroFilm({ lang }) {
+  const VID = "RxxfyDZjkes";
+  const src = `https://www.youtube-nocookie.com/embed/${VID}?autoplay=1&mute=1&loop=1&playlist=${VID}&controls=0&rel=0&modestbranding=1&playsinline=1&iv_load_policy=3&disablekb=1&fs=0`;
   return (
-    <section className="k-sec k-film" aria-label={lang === "ja" ? "映像" : "Film"}>
+    <section className="k-sec k-film" aria-label={lang === "ja" ? "館内の映像" : "Film"}>
       <div className="k-sec__inner">
         <div className="k-film__head reveal">
-          <span className="k-film__eyebrow">{lang === "ja" ? "映像 · Film" : "Film"}</span>
-          <h3 className="k-film__title">
-            {lang === "ja" ? "宿のひと続きを、映像で。" : "The inn, in motion."}
-          </h3>
+          <span className="k-film__eyebrow">{lang === "ja" ? "館内の映像" : "Film"}</span>
         </div>
         <div className="k-film__frame reveal">
           <iframe
-            src="https://www.youtube-nocookie.com/embed/RxxfyDZjkes?rel=0&modestbranding=1"
-            title={lang === "ja" ? "熊野古道KURA 紹介動画" : "Kumano Kodō KURA – Introduction"}
-            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowFullScreen
+            src={src}
+            title={lang === "ja" ? "館内の映像" : "Inn film"}
+            allow="autoplay; encrypted-media; picture-in-picture"
             loading="lazy"
           />
         </div>
