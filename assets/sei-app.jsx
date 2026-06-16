@@ -180,7 +180,7 @@ const C = {
       ctaBooking: "Booking.comで予約する",
       airbnbUrl: "https://www.booking.com/hotel/jp/kumanokodo-kura.ja.html",
       bookingUrl: "https://www.booking.com/hotel/jp/kumanokodo-kura.ja.html",
-      notes: ["チェックイン 16:00 〜 / チェックアウト 10:00", "お電話でも承ります：090ー1484ー0536"],
+      notes: ["チェックイン 15:00 〜 / チェックアウト 10:00", "お電話でも承ります：090ー1484ー0536"],
       formTitle: "直接のお問い合わせ",
       formSub: "ご質問・ご予約のご相談はこちらから。",
       fields: {
@@ -372,7 +372,7 @@ const C = {
       ctaBooking: "Reserve on Booking.com",
       airbnbUrl: "https://www.booking.com/hotel/jp/kumanokodo-kura.ja.html",
       bookingUrl: "https://www.booking.com/hotel/jp/kumanokodo-kura.ja.html",
-      notes: ["Check-in 16:00 / Check-out 10:00", "Call us at +81 90-1484-0536"],
+      notes: ["Check-in 15:00 / Check-out 10:00", "Call us at +81 90-1484-0536"],
       formTitle: "Send a direct enquiry",
       formSub: "Questions and booking requests welcome.",
       fields: {
