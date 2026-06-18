@@ -72,7 +72,7 @@ const C = {
         index: "05 / アクセス",
         title: "アクセス",
         titleEn: "Getting Here",
-        lede: "〒647-0044 和歌山県新宮市千穂1-8-5"
+        lede: "〒647-0015 和歌山県新宮市千穂1-8-5"
       },
       book: {
         index: "06 / 予約",
@@ -264,7 +264,7 @@ const C = {
         index: "05 / Access",
         title: "Getting Here",
         titleEn: "アクセス",
-        lede: "1-8-5 Senbo, Shingū, Wakayama 647-0044, Japan"
+        lede: "1-8-5 Senbo, Shingū, Wakayama 647-0015, Japan"
       },
       book: {
         index: "06 / Reserve",
@@ -1216,7 +1216,7 @@ function Footer({ lang }) {
         <div>
           <h6>{f.location}</h6>
           <ul>
-            <li>〒647-0044</li>
+            <li>〒647-0015</li>
             <li>{lang === "ja" ? "和歌山県新宮市" : "Shingū, Wakayama"}</li>
             <li>{lang === "ja" ? "千穂 1-8-5" : "1-8-5 Senbo"}</li>
           </ul>
