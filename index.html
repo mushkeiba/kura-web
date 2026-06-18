@@ -4,7 +4,16 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>熊野古道KURA｜神倉山のふもとのゲストハウス</title>
-<meta name="robots" content="noindex, nofollow, noarchive, nosnippet" />
+<meta name="description" content="神倉山のふもと、熊野古道を歩く方のためのひのきの床板が美しい一室貸しのゲストハウス。1日1組さま限定、最大5〜6名様まで。和歌山県新宮市千穂。" />
+<link rel="canonical" href="https://kumano-kodo-kura.com/" />
+
+<!-- Open Graph / Twitter -->
+<meta property="og:title" content="熊野古道KURA｜神倉山のふもとのゲストハウス" />
+<meta property="og:description" content="神倉山のふもと、ひとときの休憩。熊野古道を歩く方のための、ひのきの床板が美しい一室貸しのゲストハウスです。" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://kumano-kodo-kura.com/" />
+<meta property="og:image" content="https://kumano-kodo-kura.com/logo/logo-transparent.png" />
+<meta name="twitter:card" content="summary_large_image" />
 
 <!-- Google Analytics 4 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-WTDPEV63JR"></script>
@@ -24,31 +33,6 @@
 <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
 </head>
 <body>
-<!-- 簡易パスワードゲート（公開前の目隠し） -->
-<div id="kura-gate" style="position:fixed;inset:0;z-index:99999;background:#F4EFE8;display:flex;align-items:center;justify-content:center;flex-direction:column;font-family:'Yu Mincho','YuMincho',serif;">
-  <div style="font-size:12px;letter-spacing:.35em;color:#3D4A35;margin-bottom:28px;">KUMANO KODO KURA</div>
-  <div style="font-size:13px;color:rgba(42,42,38,.6);margin-bottom:20px;letter-spacing:.1em;">準備中サイトです。パスワードを入力してください。</div>
-  <input id="kura-pw" type="password" inputmode="numeric" autocomplete="off" placeholder="••••" style="border:none;border-bottom:1px solid #3D4A35;background:transparent;font-size:20px;padding:10px 4px;text-align:center;color:#2A2A26;outline:none;width:180px;letter-spacing:.3em;" />
-  <button id="kura-go" type="button" style="margin-top:22px;background:transparent;border:1px solid #3D4A35;color:#3D4A35;padding:10px 36px;font-size:13px;letter-spacing:.3em;cursor:pointer;font-family:inherit;-webkit-appearance:none;border-radius:0;">入　る</button>
-  <div id="kura-err" style="font-size:12px;color:#A85542;margin-top:14px;height:16px;letter-spacing:.05em;"></div>
-</div>
-<script>
-(function(){
-  var GATE = document.getElementById('kura-gate');
-  var PW = '3290';
-  if (sessionStorage.getItem('kura_auth') === '1') { GATE.style.display = 'none'; return; }
-  var inp = document.getElementById('kura-pw');
-  var err = document.getElementById('kura-err');
-  setTimeout(function(){ inp.focus(); }, 100);
-  function check(){
-    if (inp.value === PW) { sessionStorage.setItem('kura_auth','1'); GATE.style.display = 'none'; }
-    else { err.textContent = 'パスワードが違います'; inp.value = ''; inp.focus(); }
-  }
-  inp.addEventListener('keydown', function(e){ if (e.key === 'Enter') check(); });
-  document.getElementById('kura-go').addEventListener('click', check);
-})();
-</script>
-
 <div id="root"></div>
 
 <!-- 編集ツール(tweaks-panel)の本番スタブ — パネルUIは出さず、デザインはデフォルト値で固定 -->

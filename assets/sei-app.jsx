@@ -178,7 +178,7 @@ const C = {
       priceUnit: "素泊まり / 1室1泊",
       cta: "Airbnbで予約する",
       ctaBooking: "Booking.comで予約する",
-      airbnbUrl: "https://www.booking.com/hotel/jp/kumanokodo-kura.ja.html",
+      airbnbUrl: "https://airbnb.jp/h/kumano-kodo-kura",
       bookingUrl: "https://www.booking.com/hotel/jp/kumanokodo-kura.ja.html",
       notes: ["チェックイン 15:00 〜 / チェックアウト 10:00", "お電話でも承ります：090ー1484ー0536"],
       formTitle: "直接のお問い合わせ",
@@ -370,8 +370,8 @@ const C = {
       priceUnit: "Room only / per night",
       cta: "Reserve on Airbnb",
       ctaBooking: "Reserve on Booking.com",
-      airbnbUrl: "https://www.booking.com/hotel/jp/kumanokodo-kura.ja.html",
-      bookingUrl: "https://www.booking.com/hotel/jp/kumanokodo-kura.ja.html",
+      airbnbUrl: "https://airbnb.jp/h/kumano-kodo-kura",
+      bookingUrl: "https://www.booking.com/hotel/jp/kumanokodo-kura.en-gb.html",
       notes: ["Check-in 15:00 / Check-out 10:00", "Call us at +81 90-1484-0536"],
       formTitle: "Send a direct enquiry",
       formSub: "Questions and booking requests welcome.",
@@ -1033,13 +1033,13 @@ function BookingSection({ lang }) {
   const c = C[lang];
   const b = c.book;
   const ja = lang === "ja";
-  const [soon, setSoon] = React.useState(false);
-  const soonTimer = React.useRef(null);
-  const handleSoon = (e) => {
-    e.preventDefault();
-    setSoon(true);
-    if (soonTimer.current) clearTimeout(soonTimer.current);
-    soonTimer.current = setTimeout(() => setSoon(false), 3500);
+  const trackClick = (channel) => {
+    if (typeof window !== "undefined" && typeof window.gtag === "function") {
+      window.gtag("event", "click_booking", {
+        channel: channel,
+        language: lang,
+      });
+    }
   };
   return (
     <section className="k-sec k-book" id="book">
@@ -1058,9 +1058,25 @@ function BookingSection({ lang }) {
           </div>
 
           <div className="k-book__actions">
-            <a className="k-book__cta" href="#" onClick={handleSoon}>{b.cta}</a>
-            <a className="k-book__cta" href="#" onClick={handleSoon}>{b.ctaBooking}</a>
-            <a className="k-book__tel" href="tel:+819014840536">
+            <a
+              className="k-book__cta"
+              href={b.airbnbUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => trackClick("airbnb")}
+            >{b.cta}</a>
+            <a
+              className="k-book__cta"
+              href={b.bookingUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => trackClick("booking")}
+            >{b.ctaBooking}</a>
+            <a
+              className="k-book__tel"
+              href="tel:+819014840536"
+              onClick={() => trackClick("phone")}
+            >
               <span className="k-book__tel-label">{b.telLabel}</span>
               <span className="k-book__tel-num">090ー1484ー0536</span>
             </a>
@@ -1068,24 +1084,6 @@ function BookingSection({ lang }) {
 
           <div className="k-book__notes">
             {b.notes.map((line, i) => <div key={i}>{line}</div>)}
-          </div>
-
-          <div
-            aria-live="polite"
-            style={{
-              minHeight: 22,
-              marginTop: 18,
-              textAlign: "center",
-              fontSize: 13,
-              letterSpacing: ".15em",
-              color: "rgba(244,239,232,0.85)",
-              opacity: soon ? 1 : 0,
-              transform: soon ? "translateY(0)" : "translateY(-4px)",
-              transition: "opacity .4s ease, transform .4s ease",
-              pointerEvents: "none"
-            }}
-          >
-            {ja ? "ただいま準備中です。決まり次第ご案内いたします。" : "Coming soon. We'll update once it's ready."}
           </div>
         </div>
       </div>
